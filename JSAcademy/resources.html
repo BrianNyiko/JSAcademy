@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Resources | JSAcademy</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    .resource-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+    .file-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .gradient-bg {
+      background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    }
+    .mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .mobile-menu.open {
+      max-height: 500px;
+      transition: max-height 0.5s ease-in;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <nav class="flex items-center justify-between px-6 py-4 shadow-md relative">
+    <div class="text-2xl font-bold text-blue-600">JS<span class="text-yellow-500">Academy</span></div>
+    <div class="hidden md:flex gap-6 items-center">
+      <a href="index.html" class="hover:text-blue-600">Home</a>
+      <a href="Pricing-Subjects.html" class="hover:text-blue-600">Subjects</a>
+      <a href="resources.html" class="text-blue-600 font-medium">Resources</a>
+      <a href="contact.html" class="hover:text-blue-600">Contact</a>
+      <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Login</button>
+    </div>
+    <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+      <i class="fas fa-bars text-2xl"></i>
+    </button>
+    <div id="mobile-menu" class="mobile-menu absolute top-full left-0 right-0 bg-white shadow-md md:hidden">
+      <div class="px-6 py-4 space-y-4">
+        <a href="index.html" class="block hover:text-blue-600">Home</a>
+        <a href="Pricing-Subjects.html" class="block hover:text-blue-600">Subjects</a>
+        <a href="resources.html" class="block text-blue-600 font-medium">Resources</a>
+        <a href="contact.html" class="block hover:text-blue-600">Contact</a>
+        <button class="w-full bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Login</button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="gradient-bg text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">Study Resources Hub</h1>
+      <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Access premium learning materials, past papers, and study guides for all subjects</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#past-papers" class="bg-white text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
+          <i class="fas fa-file-alt mr-2"></i> Past Papers
+        </a>
+        <a href="#study-guides" class="bg-white text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
+          <i class="fas fa-book mr-2"></i> Study Guides
+        </a>
+        <a href="#video-lessons" class="bg-white text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
+          <i class="fas fa-video mr-2"></i> Video Lessons
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div id="past-papers" class="mb-16">
+        <div class="flex justify-between items-center mb-8">
+          <h2 class="text-3xl font-bold text-gray-800">
+            <i class="fas fa-file-alt text-blue-600 mr-3"></i> Past Exam Papers
+          </h2>
+          <div class="relative">
+            <select class="appearance-none bg-gray-100 border border-gray-300 rounded-lg pl-4 pr-8 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+              <option>Filter by Subject</option>
+              <option>Mathematics</option>
+              <option>Physical Sciences</option>
+              <option>Life Sciences</option>
+              <option>Accounting</option>
+              <option>Geography</option>
+            </select>
+            <i class="fas fa-chevron-down absolute right-3 top-3 text-gray-500"></i>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white rounded-lg shadow-md p-6 resource-card transition duration-300">
+            <div class="text-blue-600 file-icon">
+              <i class="fas fa-file-pdf"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Mathematics Paper 1 (2023)</h3>
+            <p class="text-gray-600 mb-4">November final exam with memorandum</p>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-500">
+                <i class="fas fa-file-alt mr-1"></i> PDF • 2.4MB
+              </span>
+              <a href="path/to/file.pdf" download class="text-blue-600 hover:text-blue-800 font-medium">
+                Download <i class="fas fa-download ml-1"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md p-6 resource-card transition duration-300">
+            <div class="text-red-600 file-icon">
+              <i class="fas fa-file-pdf"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Physical Sciences (2022)</h3>
+            <p class="text-gray-600 mb-4">Paper 1 & 2 with detailed solutions</p>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-500">
+                <i class="fas fa-file-alt mr-1"></i> PDF • 3.1MB
+              </span>
+              <a href="path/to/file.pdf" download class="text-blue-600 hover:text-blue-800 font-medium">
+                Download <i class="fas fa-download ml-1"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md p-6 resource-card transition duration-300">
+            <div class="text-amber-600 file-icon">
+              <i class="fas fa-file-archive"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Accounting Papers (2019-2022)</h3>
+            <p class="text-gray-600 mb-4">Complete set with memorandums</p>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-500">
+                <i class="fas fa-file-archive mr-1"></i> ZIP • 14.5MB
+              </span>
+              <a href="path/to/file.zip" download class="text-blue-600 hover:text-blue-800 font-medium">
+                Download <i class="fas fa-download ml-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="study-guides" class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-800 mb-8">
+          <i class="fas fa-book text-green-600 mr-3"></i> Study Guides & Notes
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- DOCX Resource Card -->
+          <div class="bg-white rounded-lg shadow-md p-6 resource-card transition duration-300">
+            <div class="text-blue-400 file-icon">
+              <i class="fas fa-file-word"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Life Sciences Summary</h3>
+            <p class="text-gray-600 mb-4">Grade 12 Term 1-4 key concepts</p>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-500">
+                <i class="fas fa-file-word mr-1"></i> DOCX • 1.7MB
+              </span>
+              <a href="path/to/file.docx" download class="text-blue-600 hover:text-blue-800 font-medium">
+                Download <i class="fas fa-download ml-1"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- PPT Resource Card -->
+          <div class="bg-white rounded-lg shadow-md p-6 resource-card transition duration-300">
+            <div class="text-orange-500 file-icon">
+              <i class="fas fa-file-powerpoint"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Geography Slides</h3>
+            <p class="text-gray-600 mb-4">Climate & Weather presentations</p>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-500">
+                <i class="fas fa-file-powerpoint mr-1"></i> PPTX • 5.2MB
+              </span>
+              <a href="path/to/file.pptx" download class="text-blue-600 hover:text-blue-800 font-medium">
+                Download <i class="fas fa-download ml-1"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md p-6 resource-card transition duration-300">
+            <div class="text-purple-500 file-icon">
+              <i class="fas fa-file-image"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Maths Formula Sheets</h3>
+            <p class="text-gray-600 mb-4">All essential formulas for exams</p>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-500">
+                <i class="fas fa-file-image mr-1"></i> JPG • 2.8MB
+              </span>
+              <a href="path/to/file.jpg" download class="text-blue-600 hover:text-blue-800 font-medium">
+                Download <i class="fas fa-download ml-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="video-lessons" class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-800 mb-8">
+          <i class="fas fa-video text-red-600 mr-3"></i> Video Lessons
+        </h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Video Resource 1 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden resource-card transition duration-300">
+          
+            <div class="relative h-64 bg-black">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/s1RO8h3NXg4?si=UmOTKoI6dx9e4uiC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="absolute h-full w-full object-cover"></iframe>
+              
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition">
+                  <i class="fas fa-play text-white text-2xl"></i>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Trigonometry Masterclass</h3>
+              <p class="text-gray-600 mb-4">3 minute comprehensive lesson covering all Grade 12 concepts</p>
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-gray-500">
+                  <i class="fas fa-clock mr-1"></i> 3 min • <i class="fas fa-eye mr-1"></i> 1.2K views
+                </span>
+                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">
+                  Watch <i class="fas fa-external-link-alt ml-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+         
+        <div class="bg-white rounded-lg shadow-md overflow-hidden resource-card transition duration-300">
+            <div class="relative h-64 bg-black">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/LQi15HSRcLk?si=RfFgKKQyuWcKyHFJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="absolute h-full w-full object-cover"></iframe>
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition">
+                <i class="fas fa-play text-white text-2xl"></i>
+                </div>
+            </div>
+            </div>
+            <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Sequences and Series</h3>
+            <p class="text-gray-600 mb-4">Master Sequences & Series like a pro — watch this quick lesson and level up your Grade 11 & 12 maths game!</p>
+            <div class="flex justify-between items-center">
+                <span class="text-sm text-gray-500">
+                <i class="fas fa-clock mr-1"></i> 11 min • <i class="fas fa-eye mr-1"></i> 890 views
+                </span>
+                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">
+                Watch <i class="fas fa-external-link-alt ml-1"></i>
+                </a>
+            </div>
+            </div>
+        </div>
+        </div>
+      </div>
+
+      <!-- Additional Resources -->
+      <div>
+        <h2 class="text-3xl font-bold text-gray-800 mb-8">
+          <i class="fas fa-folder-open text-yellow-500 mr-3"></i> Additional Resources
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Excel File -->
+          <div class="bg-white rounded-lg shadow-md p-6 resource-card transition duration-300">
+            <div class="text-green-600 file-icon">
+              <i class="fas fa-file-excel"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Accounting Templates</h3>
+            <p class="text-gray-600 mb-4">Ledger and financial statement templates</p>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-500">
+                <i class="fas fa-file-excel mr-1"></i> XLSX • 1.1MB
+              </span>
+              <a href="path/to/file.xlsx" download class="text-blue-600 hover:text-blue-800 font-medium">
+                Download <i class="fas fa-download ml-1"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Audio File -->
+          <div class="bg-white rounded-lg shadow-md p-6 resource-card transition duration-300">
+            <div class="text-purple-600 file-icon">
+              <i class="fas fa-file-audio"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Poetry Analysis</h3>
+            <p class="text-gray-600 mb-4">Audio guide for English HL prescribed poems</p>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-500">
+                <i class="fas fa-file-audio mr-1"></i> MP3 • 28MB
+              </span>
+              <a href="path/to/file.mp3" download class="text-blue-600 hover:text-blue-800 font-medium">
+                Download <i class="fas fa-download ml-1"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md p-6 resource-card transition duration-300">
+            <div class="text-gray-600 file-icon">
+              <i class="fas fa-file-alt"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Exam Tips</h3>
+            <p class="text-gray-600 mb-4">Time management and answering techniques</p>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-500">
+                <i class="fas fa-file-alt mr-1"></i> TXT • 0.4MB
+              </span>
+              <a href="path/to/file.txt" download class="text-blue-600 hover:text-blue-800 font-medium">
+                Download <i class="fas fa-download ml-1"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md p-6 resource-card transition duration-300">
+            <div class="text-amber-600 file-icon">
+              <i class="fas fa-file-archive"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Complete Resources Pack</h3>
+            <p class="text-gray-600 mb-4">All study materials for Mathematics</p>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-500">
+                <i class="fas fa-file-archive mr-1"></i> ZIP • 45MB
+              </span>
+              <a href="path/to/file.zip" download class="text-blue-600 hover:text-blue-800 font-medium">
+                Download <i class="fas fa-download ml-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gradient-bg text-white py-16">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-6">Need More Resources?</h2>
+      <p class="text-xl mb-8">Join our premium membership for unlimited access to all study materials</p>
+      <a href="pricing.html" class="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
+        View Pricing Plans
+      </a>
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 text-gray-300 py-12 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h3 class="text-xl font-semibold text-white mb-4">JSAcademy</h3>
+          <p>Specialized tutoring for South African high school students.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-white mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="hover:text-white">Home</a></li>
+            <li><a href="subjects.html" class="hover:text-white">Subjects</a></li>
+            <li><a href="resources.html" class="hover:text-white">Resources</a></li>
+            <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-white mb-4">Contact Us</h3>
+          <ul class="space-y-2">
+            <li class="flex items-center">
+              <i class="fas fa-phone-alt mr-2"></i> +27 79 031 9247
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-envelope mr-2"></i> info@jsacademy.co.za
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-white mb-4">Follow Us</h3>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white text-xl">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white text-xl">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white text-xl">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 text-center">
+        <p>&copy; 2025 JSAcademy. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuButton.addEventListener('click', function() {
+      mobileMenu.classList.toggle('open');
+      
+      const icon = this.querySelector('i');
+      if (mobileMenu.classList.contains('open')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+    
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        mobileMenuButton.querySelector('i').classList.remove('fa-times');
+        mobileMenuButton.querySelector('i').classList.add('fa-bars');
+      });
+    });
+  </script>
+</body>
+</html>
