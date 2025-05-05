@@ -2,23 +2,68 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LRVQFXXCQM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LRVQFXXCQM');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRVQFXXCQM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LRVQFXXCQM');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JSAcademy - Home</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <title>JSAcademy - Master Maths & Science for Grades 8-12</title>
+  <meta name="description" content="JSAcademy offers expert tutoring in Mathematics and Physical Sciences for Grades 8-12, with CAPS-aligned programs, live lessons, and 24/7 support.">
+  <meta name="keywords" content="JSAcademy, maths tutoring, science tutoring, CAPS curriculum, online tutoring, South Africa, grades 8-12">
+  <meta name="author" content="JSAcademy">
+  <!-- Open Graph / Twitter Card -->
+  <meta property="og:title" content="JSAcademy - Master Maths & Science">
+  <meta property="og:description" content="Join JSAcademy for expert tutoring in Maths and Science, with CAPS-aligned programs for Grades 8-12.">
+  <meta property="og:image" content="https://yourdomain.com/Images/JSImage.jpg">
+  <meta property="og:url" content="https://yourdomain.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "JSAcademy",
+    "url": "https://yourdomain.com",
+    "logo": "https://yourdomain.com/Images/JSImage.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Mabodibeng Secondary School, Ga-Moloi Village",
+      "addressRegion": "Limpopo",
+      "addressCountry": "ZA"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+27-79-031-9247",
+      "contactType": "Customer Service",
+      "availableLanguage": "English"
+    }
+  }
+  </script>
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-pM4+b5tT...snipped-for-length..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'js-blue': '#2563EB', /* Matches bg-blue-600 */
+            'js-yellow': '#FBBF24', /* Matches text-yellow-400 */
+          },
+        },
+      },
+    };
+  </script>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    /* Smooth transitions for mobile menu */
+    html {
+      scroll-behavior: smooth;
+    }
+    /* Mobile menu transitions */
     .mobile-menu {
       max-height: 0;
       overflow: hidden;
@@ -28,312 +73,346 @@
       max-height: 500px;
       transition: max-height 0.5s ease-in;
     }
+    /* Fixed navbar spacing */
+    body {
+      padding-top: 4rem; /* Height of navbar */
+    }
+    /* Fallback styles for critical elements */
+    nav {
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .text-js-blue {
+      color: #2563EB;
+    }
+    .bg-js-blue {
+      background-color: #2563EB;
+    }
+    .text-js-yellow {
+      color: #FBBF24;
+    }
+    .hover\:bg-js-blue:hover {
+      background-color: #1E40AF;
+    }
+    /* Mobile menu button styles */
+    .mobile-menu-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+      color: #374151; /* Matches text-gray-700 */
+      font-size: 1.5rem; /* Matches text-2xl */
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      visibility: visible !important;
+    }
+    .mobile-menu-button:hover {
+      color: #2563EB; /* Matches text-js-blue */
+    }
+    .mobile-menu-button i,
+    .mobile-menu-button svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+      stroke: currentColor;
+      visibility: visible !important;
+    }
+    button, a[role="button"] {
+      transition: background-color 0.3s, color 0.3s;
+    }
+    @media (max-width: 768px) {
+      .hero-section {
+        padding-top: 5rem; /* Extra padding for mobile to avoid navbar overlap */
+      }
+    }
+    @media (min-width: 768px) {
+      .mobile-menu-button {
+        display: none; /* Hide on desktop */
+      }
+    }
   </style>
 </head>
-<body class="bg-white text-gray-800">
-
-  <nav class="flex items-center justify-between px-6 py-4 shadow-md relative">
-    <div class="text-2xl font-bold text-blue-600">JS<span class="text-yellow-500">Academy</span></div>
+<body class="bg-white text-gray-800 font-sans">
+  <!-- Fixed Navbar -->
+  <nav class="fixed top-0 left-0 right-0 bg-white z-50 flex items-center justify-between px-6 py-4 shadow-md">
+    <div class="text-2xl font-bold text-js-blue">JS<span class="text-js-yellow">Academy</span></div>
     
     <!-- Desktop Navigation -->
     <div class="hidden md:flex gap-6 items-center">
-      <a href="index.html" class="text-blue-600 font-medium">Home</a>
-      <a href="Pricing-Subjects.html" class="hover:text-blue-600">Subjects</a>
-      <a href="resources.html" class="hover:text-blue-600">Resources</a>
-      <a href="contact.html" class="hover:text-blue-600">Contact</a>
-      <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700" onclick="window.location.href='login.html'">Login</button>
+      <a href="index.html" class="text-js-blue font-medium hover:text-blue-700">Home</a>
+      <a href="Pricing-Subjects.html" class="text-gray-700 hover:text-js-blue">Subjects</a>
+      <a href="resources.html" class="text-gray-700 hover:text-js-blue">Resources</a>
+      <a href="contact.html" class="text-gray-700 hover:text-js-blue">Contact</a>
     </div>
 
-    <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-button" class="mobile-menu-button md:hidden focus:outline-none" aria-label="Toggle mobile menu" aria-expanded="false">
+      <!-- Font Awesome Icon (default: hamburger) -->
       <i class="fas fa-bars text-2xl"></i>
+      <!-- Fallback SVG Icons (hidden by default) -->
+      <svg class="hamburger-icon hidden" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"/>
+      </svg>
+      <svg class="close-icon hidden" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"/>
+      </svg>
     </button>
     
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="mobile-menu absolute top-full left-0 right-0 bg-white shadow-md md:hidden">
+    <div id="mobile-menu" class="mobile-menu absolute top-full left-0 right-0 bg-white shadow-md md:hidden z-40">
       <div class="px-6 py-4 space-y-4">
-        <a href="index.html" class="block text-blue-600 font-medium">Home</a>
-        <a href="Pricing-Subjects.html" class="block hover:text-blue-600">Subjects</a>
-        <a href="resources.html" class="block hover:text-blue-600">Resources</a>
-        <a href="contact.html" class="block hover:text-blue-600">Contact</a>
-        <button class="w-full bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700" onclick="window.location.href='login.html'">Login</button>
+        <a href="index.html" class="block text-js-blue font-medium hover:text-blue-700">Home</a>
+        <a href="Pricing-Subjects.html" class="block text-gray-700 hover:text-js-blue">Subjects</a>
+        <a href="resources.html" class="block text-gray-700 hover:text-js-blue">Resources</a>
+        <a href="contact.html" class="block text-gray-700 hover:text-js-blue">Contact</a>
       </div>
     </div>
   </nav>
 
-  <section class="flex flex-col-reverse md:flex-row items-center justify-between px-6 py-10 max-w-7xl mx-auto">
-
+  <!-- Hero Section -->
+  <section class="hero-section flex flex-col-reverse md:flex-row items-center justify-between px-6 py-10 max-w-7xl mx-auto min-h-[calc(100vh-4rem)]">
     <div class="md:w-1/2 space-y-6 mt-6">
-      <h1 class="text-4xl md:text-5xl font-bold mt-4">Master Maths. Ace Exams.</h1>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900">Master Maths. Ace Exams.</h1>
+      <p class="text-lg text-gray-600">Join JSAcademy for CAPS-aligned tutoring in Maths and Science, designed for Grades 8-12.</p>
       <ul class="space-y-2 text-gray-700">
         <li>✅ 1,000+ Lessons Delivered</li>
-        <li>✅ Qualified Tutors for Grades 8 - 12</li>
+        <li>✅ Qualified Tutors for Grades 8-12</li>
         <li>✅ 90% Pass Rate Improvement</li>
       </ul>
       <div class="flex gap-4 pt-4">
-        <button class="bg-blue-600 text-white px-5 py-3 rounded-lg hover:bg-blue-700">Explore Subjects</button>
-        <button class="border border-blue-600 text-blue-600 px-5 py-3 rounded-lg hover:bg-blue-50" onclick="window.location.href='book.html'">Book a Lesson</button>
+        <a href="Pricing-Subjects.html" class="bg-js-blue text-white px-5 py-3 rounded-lg hover:bg-blue-700" onclick="gtag('event', 'click_explore_subjects', { 'event_category': 'CTA', 'event_label': 'Explore Subjects' })">Explore Subjects</a>
+        <a href="contact.html" class="border border-js-blue text-js-blue px-5 py-3 rounded-lg hover:bg-blue-50" onclick="gtag('event', 'click_book_lesson', { 'event_category': 'CTA', 'event_label': 'Book a Lesson' })">Book a Lesson</a>
       </div>
     </div>
-
     <div class="md:w-[60%] flex justify-center items-center">
       <div class="w-full h-80 md:h-[420px] rounded-lg overflow-hidden bg-white p-2">
-        <img src="Images/JSImage.jpg"
-             alt="Student"
-             class="w-full h-full object-contain brightness-105" />
+        <img src="Images/JSImage.jpg" alt="Student studying with JSAcademy" class="w-full h-full object-contain brightness-105" loading="eager">
       </div>
     </div>
   </section>  
 
-<section class="bg-blue-50 py-16 px-6">
-    <h2 class="text-3xl font-bold text-center mb-12">Explore Our Top Programs</h2>
-    
+  <!-- Programs Section -->
+  <section class="bg-blue-50 py-16 px-6">
+    <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Explore Our Top Programs</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
       <div class="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition duration-300">
-        <img src="Images/Booster.png" alt="Program Logo" class="w-24 mx-auto mb-4">
-        <h3 class="text-xl font-semibold">Pure Maths Booster</h3>
+        <img src="Images/Booster.png" alt="Pure Maths Booster Program" class="w-24 mx-auto mb-4" loading="lazy">
+        <h3 class="text-xl font-semibold text-gray-900">Pure Maths Booster</h3>
         <p class="text-gray-600">Duration: 3 Months<br>Start: 6 May 2025</p>
-        <button class="mt-4 text-blue-600 hover:underline">View Program</button>
+        <a href="Pricing-Subjects.html" class="mt-4 text-js-blue hover:underline" onclick="gtag('event', 'click_view_program', { 'event_category': 'Programs', 'event_label': 'Pure Maths Booster' })">View Program</a>
       </div>
       <div class="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition duration-300">
-        <img src="Images/FinalPrep.jpeg" alt="Program Logo" class="w-24 mx-auto mb-4">
-        <h3 class="text-xl font-semibold">Grade 12 Final Prep</h3>
+        <img src="Images/FinalPrep.jpeg" alt="Grade 12 Final Prep Program" class="w-24 mx-auto mb-4" loading="lazy">
+        <h3 class="text-xl font-semibold text-gray-900">Grade 12 Final Prep</h3>
         <p class="text-gray-600">Duration: 2 Months<br>Start: 12 May 2025</p>
-        <button class="mt-4 text-blue-600 hover:underline">View Program</button>
+        <a href="Pricing-Subjects.html" class="mt-4 text-js-blue hover:underline" onclick="gtag('event', 'click_view_program', { 'event_category': 'Programs', 'event_label': 'Grade 12 Final Prep' })">View Program</a>
       </div>
       <div class="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition duration-300">
-        <img src="Images/Trig.jpeg" alt="Program Logo" class="w-24 mx-auto mb-4">
-        <h3 class="text-xl font-semibold">Trigonomentry Mastery</h3>
+        <img src="Images/Trig.jpeg" alt="Trigonometry Mastery Program" class="w-24 mx-auto mb-4" loading="lazy">
+        <h3 class="text-xl font-semibold text-gray-900">Trigonometry Mastery</h3>
         <p class="text-gray-600">Duration: 1 Month<br>Start: 20 May 2025</p>
-        <button class="mt-4 text-blue-600 hover:underline">View Program</button>
+        <a href="Pricing-Subjects.html" class="mt-4 text-js-blue hover:underline" onclick="gtag('event', 'click_view_program', { 'event_category': 'Programs', 'event_label': 'Trigonometry Mastery' })">View Program</a>
       </div>
     </div>
- 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-12">
       <div class="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition duration-300">
-        <img src="Images/Algebra.jpeg" alt="Program Logo" class="w-24 mx-auto mb-4">
-        <h3 class="text-xl font-semibold">Algebra Crash Course</h3>
+        <img src="Images/Algebra.jpeg" alt="Algebra Crash Course Program" class="w-24 mx-auto mb-4" loading="lazy">
+        <h3 class="text-xl font-semibold text-gray-900">Algebra Crash Course</h3>
         <p class="text-gray-600">Duration: 4 Weeks<br>Start: 25 May 2025</p>
-        <button class="mt-4 text-blue-600 hover:underline">View Program</button>
+        <a href="Pricing-Subjects.html" class="mt-4 text-js-blue hover:underline" onclick="gtag('event', 'click_view_program', { 'event_category': 'Programs', 'event_label': 'Algebra Crash Course' })">View Program</a>
       </div>
       <div class="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition duration-300">
-        <img src="Images/Functions & Graphs.png" alt="Program Logo" class="w-24 mx-auto mb-4">
-        <h3 class="text-xl font-semibold">Functions & Graphs</h3>
+        <img src="Images/Functions & Graphs.png" alt="Functions & Graphs Program" class="w-24 mx-auto mb-4" loading="lazy">
+        <h3 class="text-xl font-semibold text-gray-900">Functions & Graphs</h3>
         <p class="text-gray-600">Duration: 6 Weeks<br>Start: 1 June 2025</p>
-        <button class="mt-4 text-blue-600 hover:underline">View Program</button>
+        <a href="Pricing-Subjects.html" class="mt-4 text-js-blue hover:underline" onclick="gtag('event', 'click_view_program', { 'event_category': 'Programs', 'event_label': 'Functions & Graphs' })">View Program</a>
       </div>
       <div class="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition duration-300">
-        <img src="Images/ExamSkills.jpeg" alt="Program Logo" class="w-24 mx-auto mb-4">
-        <h3 class="text-xl font-semibold">Exam Skills Masterclass</h3>
+        <img src="Images/ExamSkills.jpeg" alt="Exam Skills Masterclass Program" class="w-24 mx-auto mb-4" loading="lazy">
+        <h3 class="text-xl font-semibold text-gray-900">Exam Skills Masterclass</h3>
         <p class="text-gray-600">Duration: 2 Weeks<br>Start: 10 June 2025</p>
-        <button class="mt-4 text-blue-600 hover:underline">View Program</button>
+        <a href="Pricing-Subjects.html" class="mt-4 text-js-blue hover:underline" onclick="gtag('event', 'click_view_program', { 'event_category': 'Programs', 'event_label': 'Exam Skills Masterclass' })">View Program</a>
       </div>
     </div>
   </section>
   
   <!-- Trust Section -->
-    <section class="py-16 px-6 bg-white">
-        <div class="max-w-6xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-12">Join <span class="text-yellow-400">More Than 300</span> Learners Who Trust Learning with Us</h2>
-
-        <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12">
-            <div class="flex flex-col items-center w-40">
-            <img src="Images/Tribby.jpeg" 
-                alt="Themba M." 
-                class="w-16 h-16 rounded-full border-2 border-blue-100 mb-3">
-            <span class="font-medium text-gray-800">Tribby M.</span>
-            <div class="mt-2">
-                <span class="text-yellow-400 text-xl">★★★★★</span>
-                <span class="ml-1 text-gray-700">4.6</span>
-            </div>
-            </div>
-
-            <div class="flex flex-col items-center w-40">
-            <img src="Images/Tribby.jpeg" 
-                alt="Tshepang M." 
-                class="w-16 h-16 rounded-full border-2 border-blue-100 mb-3">
-            <span class="font-medium text-gray-800">Tribby M.</span>
-            <div class="mt-2">
-                <span class="text-yellow-400 text-xl">★★★★★</span>
-                <span class="ml-1 text-gray-700">4.4</span>
-            </div>
-            </div>
-
-            <div class="flex flex-col items-center w-40">
-            <img src="Images/Tribby.jpeg" 
-                alt="Tribby M." 
-                class="w-16 h-16 rounded-full border-2 border-blue-100 mb-3">
-            <span class="font-medium text-gray-800">Tribby M.</span>
-            <div class="mt-2">
-                <span class="text-yellow-400 text-xl">★★★★★</span>
-                <span class="ml-1 text-gray-700">4.5</span>
-            </div>
-            </div>
+  <section class="py-16 px-6 bg-white">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12">Join <span class="text-js-yellow">More Than 300</span> Learners Who Trust Learning with Us</h2>
+      <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12">
+        <div class="flex flex-col items-center w-40">
+          <img src="Images/Reviewer1.jpg" alt="Reviewer Themba M." class="w-16 h-16 rounded-full border-2 border-blue-100 mb-3" loading="lazy">
+          <span class="font-medium text-gray-800">Themba M.</span>
+          <div class="mt-2">
+            <span class="text-js-yellow text-xl">★★★★★</span>
+            <span class="ml-1 text-gray-700">4.6</span>
+          </div>
         </div>
-
-        <div class="flex justify-center gap-8 mt-12">
-            <span class="text-gray-600 font-medium">switchup</span>
-            <span class="text-gray-600 font-medium">CAREER</span>
-            <span class="text-gray-600 font-medium">COURSE REPORT</span>
+        <div class="flex flex-col items-center w-40">
+          <img src="Images/Reviewer2.jpg" alt="Reviewer Tshepang M." class="w-16 h-16 rounded-full border-2 border-blue-100 mb-3" loading="lazy">
+          <span class="font-medium text-gray-800">Tshepang M.</span>
+          <div class="mt-2">
+            <span class="text-js-yellow text-xl">★★★★★</span>
+            <span class="ml-1 text-gray-700">4.4</span>
+          </div>
         </div>
+        <div class="flex flex-col items-center w-40">
+          <img src="Images/Reviewer3.jpg" alt="Reviewer Priya M." class="w-16 h-16 rounded-full border-2 border-blue-100 mb-3" loading="lazy">
+          <span class="font-medium text-gray-800">Priya M.</span>
+          <div class="mt-2">
+            <span class="text-js-yellow text-xl">★★★★★</span>
+            <span class="ml-1 text-gray-700">4.5</span>
+          </div>
         </div>
-    </section>
-    <section class="py-16 px-4 bg-white">
-        <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold">Real Stories, <span class="block">Incredible Journeys</span></h2>
+      </div>
+      <div class="flex justify-center gap-8 mt-12">
+        <span class="text-gray-600 font-medium">SwitchUp</span>
+        <span class="text-gray-600 font-medium">Career</span>
+        <span class="text-gray-600 font-medium">Course Report</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-16 px-4 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Real Stories, <span class="block">Incredible Journeys</span></h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div class="text-center p-6 border border-gray-100 rounded-lg">
+          <p class="text-5xl font-bold text-js-blue mb-2">99.9%</p>
+          <p class="text-gray-600">Pass rate</p>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            <div class="text-center p-6 border border-gray-100 rounded-lg">
-            <p class="text-5xl font-bold text-blue-600 mb-2">99.9%</p>
-            <p class="text-gray-600">Pass rate</p>
-            </div>
-            <div class="text-center p-6 border border-gray-100 rounded-lg">
-            <p class="text-5xl font-bold text-blue-600 mb-2">4.8<span class="text-xl">/5</span></p>
-            <p class="text-gray-600">Rated by learners</p>
-            </div>
-            <div class="text-center p-6 border border-gray-100 rounded-lg">
-            <p class="text-5xl font-bold text-blue-600 mb-2">65%+</p>
-            <p class="text-gray-600">Increase in math skills</p>
-            </div>
+        <div class="text-center p-6 border border-gray-100 rounded-lg">
+          <p class="text-5xl font-bold text-js-blue mb-2">4.8<span class="text-xl">/5</span></p>
+          <p class="text-gray-600">Rated by learners</p>
         </div>
-
-        <div class="border-t border-gray-200 my-12"></div>
-
-        <div class="relative">
-            <div class="overflow-hidden">
-            <div class="flex transition-transform duration-300 ease-in-out" id="testimonial-carousel">
-                <div class="w-full flex-shrink-0 px-4">
-                <div class="flex flex-col md:flex-row gap-8 items-center bg-gray-50 p-8 rounded-xl">
-                    <div class="w-32 h-32 md:w-40 md:h-40 flex-shrink-0">
-                    <img src="Images/Tribby.jpeg" 
-                        alt="Rafael Andres" 
-                        class="w-full h-full rounded-lg object-cover">
-                    </div>
-                    <div class="flex-1">
-                    <h3 class="text-xl font-semibold mb-2">Tribby Wa Dibozza</h3>
-                    <div class="flex items-center mb-4">
-                        <div class="text-yellow-400">★★★★★</div>
-                        <span class="ml-2 text-gray-600">4.8/5</span>
-                    </div>
-                    <p class="text-gray-700">"John Squad academy has helped me alot in acquiring my matric certification despite the fact that I did not complete my grade 11. They helped me throughout the whole process and I was able to write. Not forgeting the fact that John Squad presented mathematics, in such a way that I grasped the whole content within a week, especially trig."</p>
-                    </div>
+        <div class="text-center p-6 border border-gray-100 rounded-lg">
+          <p class="text-5xl font-bold text-js-blue mb-2">65%+</p>
+          <p class="text-gray-600">Increase in math skills</p>
+        </div>
+      </div>
+      <div class="border-t border-gray-200 my-12"></div>
+      <div class="relative">
+        <div class="overflow-hidden">
+          <div class="flex transition-transform duration-300 ease-in-out" id="testimonial-carousel">
+            <div class="w-full flex-shrink-0 px-4">
+              <div class="flex flex-col md:flex-row gap-8 items-center bg-gray-50 p-8 rounded-xl">
+                <div class="w-32 h-32 md:w-40 md:h-40 flex-shrink-0">
+                  <img src="Images/Reviewer1.jpg" alt="Rafael Andres testimonial" class="w-full h-full rounded-lg object-cover" loading="lazy">
                 </div>
+                <div class="flex-1">
+                  <h3 class="text-xl font-semibold text-gray-900 mb-2">Rafael Andres</h3>
+                  <div class="flex items-center mb-4">
+                    <div class="text-js-yellow">★★★★★</div>
+                    <span class="ml-2 text-gray-600">4.8/5</span>
+                  </div>
+                  <p class="text-gray-700">"JSAcademy transformed my understanding of trigonometry. The live sessions were engaging, and I passed my matric with distinction!"</p>
                 </div>
-    
-                <div class="w-full flex-shrink-0 px-4">
-                <div class="flex flex-col md:flex-row gap-8 items-center bg-gray-50 p-8 rounded-xl">
-                    <div class="w-32 h-32 md:w-40 md:h-40 flex-shrink-0">
-                    <img src="Images/Tribby.jpeg" 
-                        alt="Bhaskar Banerji" 
-                        class="w-full h-full rounded-lg object-cover">
-                    </div>
-                    <div class="flex-1">
-                    <h3 class="text-xl font-semibold mb-2">Tribby Wa Dibozza</h3>
-                    <div class="flex items-center mb-4">
-                        <div class="text-yellow-400">★★★★★</div>
-                        <span class="ml-2 text-gray-600">5/5</span>
-                    </div>
-                    <p class="text-gray-700">"John Squad academy has helped me alot in acquiring my matric certification despite the fact that I did not complete my grade 11. They helped me throughout the whole process and I was able to write. Not forgeting the fact that John Squad presented mathematics, in such a way that I grasped the whole content within a week, especially trig."</p>
-                    </div>
-                </div>
-                </div>
-
-                <div class="w-full flex-shrink-0 px-4">
-                <div class="flex flex-col md:flex-row gap-8 items-center bg-gray-50 p-8 rounded-xl">
-                    <div class="w-32 h-32 md:w-40 md:h-40 flex-shrink-0">
-                    <img src="Images/Tribby.jpeg" 
-                        alt="Priya M." 
-                        class="w-full h-full rounded-lg object-cover">
-                    </div>
-                    <div class="flex-1">
-                    <h3 class="text-xl font-semibold mb-2">Tribby Wa Dibozza</h3>
-                    <div class="flex items-center mb-4">
-                        <div class="text-yellow-400">★★★★★</div>
-                        <span class="ml-2 text-gray-600">4.9/5</span>
-                    </div>
-                    <p class="text-gray-700">"John Squad academy has helped me alot in acquiring my matric certification despite the fact that I did not complete my grade 11. They helped me throughout the whole process and I was able to write. Not forgeting the fact that John Squad presented mathematics, in such a way that I grasped the whole content within a week, especially trig."</p>
-                    </div>
-                </div>
-                </div>
+              </div>
             </div>
+            <div class="w-full flex-shrink-0 px-4">
+              <div class="flex flex-col md:flex-row gap-8 items-center bg-gray-50 p-8 rounded-xl">
+                <div class="w-32 h-32 md:w-40 md:h-40 flex-shrink-0">
+                  <img src="Images/Reviewer2.jpg" alt="Bhaskar Banerji testimonial" class="w-full h-full rounded-lg object-cover" loading="lazy">
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-xl font-semibold text-gray-900 mb-2">Bhaskar Banerji</h3>
+                  <div class="flex items-center mb-4">
+                    <div class="text-js-yellow">★★★★★</div>
+                    <span class="ml-2 text-gray-600">5/5</span>
+                  </div>
+                  <p class="text-gray-700">"The Standard Program gave me personalized support. I improved my maths skills by 60% in just two months!"</p>
+                </div>
+              </div>
             </div>
-
-            <button class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 transition" id="prev-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-            </svg>
-            </button>
-            <button class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 transition" id="next-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-            </button>
+            <div class="w-full flex-shrink-0 px-4">
+              <div class="flex flex-col md:flex-row gap-8 items-center bg-gray-50 p-8 rounded-xl">
+                <div class="w-32 h-32 md:w-40 md:h-40 flex-shrink-0">
+                  <img src="Images/Reviewer3.jpg" alt="Priya M. testimonial" class="w-full h-full rounded-lg object-cover" loading="lazy">
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-xl font-semibold text-gray-900 mb-2">Priya M.</h3>
+                  <div class="flex items-center mb-4">
+                    <div class="text-js-yellow">★★★★★</div>
+                    <span class="ml-2 text-gray-600">4.9/5</span>
+                  </div>
+                  <p class="text-gray-700">"The tutors at JSAcademy made complex topics simple. Their 24/7 support helped me ace my exams!"</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div class="flex justify-center mt-6 space-x-2" id="dots-container">
-        </div>
-        </div>
+        <button class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 transition" id="prev-btn" aria-label="Previous testimonial">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 transition" id="next-btn" aria-label="Next testimonial">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex justify-center mt-6 space-x-2" id="dots-container"></div>
+    </div>
   </section>
 
   <!-- Why We Stand Out Section -->
-    <section class="py-16 px-6 bg-white">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-12">
-                <h1 class="text-3xl md:text-4xl font-bold mb-4">Why Our Programs Stand Out</h1>
-            </div>
-        
-            <div class="flex flex-col md:flex-row gap-6 items-center">
-                <div class="w-16 h-16 flex-shrink-0 bg-blue-100 rounded-full flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                </svg>
-                </div>
-                <div>
-                <h2 class="text-2xl font-semibold mb-2">CAPS Aligned Curriculum</h2>
-                <p class="text-gray-600 mb-12 mt-6">All content taught is aligned with CAPS</p>
-                </div>
-            </div>
-            <!-- Divider -->
-            <div class="border-t border-gray-200 w-3/4 mx-auto"></div>
-            <div class="flex flex-col md:flex-row gap-6 items-center mb-12 mt-6">
-                <div class="w-16 h-16 flex-shrink-0 bg-blue-100 rounded-full flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                </svg>
-                </div>
-                <div>
-                <h2 class="text-2xl font-semibold mb-2">Taught Live by SA's trig Expert</h2>
-                <p class="text-gray-600">Exprience online/contact lessons with John Squad</p>
-                </div>
-            </div>
-            <!-- Divider -->
-            <div class="border-t border-gray-200 w-3/4 mx-auto"></div>
-
-            <div class="flex flex-col md:flex-row gap-6 items-center mb-12 mt-6">
-            <div class="w-16 h-16 flex-shrink-0 bg-blue-100 rounded-full flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-            </div>
-            <div>
-                <h2 class="text-2xl font-semibold mb-2">24/7 Learner Support</h2>
-                <p class="text-gray-600">Dedicated assistance for upgrading learners <br> including after-hours help and exam crisis support</p>
-            </div>
-            </div>
+  <section class="py-16 px-6 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Our Programs Stand Out</h2>
+      </div>
+      <div class="flex flex-col md:flex-row gap-6 items-center mb-12">
+        <div class="w-16 h-16 flex-shrink-0 bg-blue-100 rounded-full flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-js-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          </svg>
         </div>
-    </section>
+        <div>
+          <h3 class="text-2xl font-semibold text-gray-900 mb-2">CAPS Aligned Curriculum</h3>
+          <p class="text-gray-600">All content taught is aligned with the CAPS curriculum.</p>
+        </div>
+      </div>
+      <div class="border-t border-gray-200 w-3/4 mx-auto mb-12"></div>
+      <div class="flex flex-col md:flex-row gap-6 items-center mb-12">
+        <div class="w-16 h-16 flex-shrink-0 bg-blue-100 rounded-full flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-js-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-2xl font-semibold text-gray-900 mb-2">Taught Live by SA's Trig Expert</h3>
+          <p class="text-gray-600">Experience online or in-person lessons with top educators.</p>
+        </div>
+      </div>
+      <div class="border-t border-gray-200 w-3/4 mx-auto mb-12"></div>
+      <div class="flex flex-col md:flex-row gap-6 items-center">
+        <div class="w-16 h-16 flex-shrink-0 bg-blue-100 rounded-full flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-js-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-2xl font-semibold text-gray-900 mb-2">24/7 Learner Support</h3>
+          <p class="text-gray-600">Dedicated assistance for learners, including after-hours help and exam crisis support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Pricing Section -->
-<section class="py-16 px-6 bg-blue-50">
+  <!-- Pricing Section -->
+  <section class="py-16 px-6 bg-blue-50">
     <div class="max-w-6xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Our Tutoring Packages</h2>
-      
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">Our Tutoring Packages</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Package 1 -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
           <div class="p-6">
-            <h3 class="text-2xl font-bold text-blue-600 mb-2">Basic Support</h3>
+            <h3 class="text-2xl font-bold text-js-blue mb-2">Basic Support</h3>
             <p class="text-gray-600 mb-4">Weekly group sessions</p>
             <div class="text-4xl font-bold mb-6">R499<span class="text-lg text-gray-500">/month</span></div>
             <ul class="space-y-3 mb-8">
@@ -353,7 +432,7 @@
                 <svg class="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
-                practice tests
+                Practice tests
               </li>
               <li class="flex items-center">
                 <svg class="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -364,19 +443,15 @@
             </ul>
           </div>
           <div class="px-6 pb-6">
-            <button class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
-              Get Started
-            </button>
+            <a href="contact.html" class="w-full bg-js-blue text-white py-3 rounded-lg hover:bg-blue-700 transition block text-center" onclick="gtag('event', 'click_get_started', { 'event_category': 'Pricing', 'event_label': 'Basic Support' })">Get Started</a>
           </div>
         </div>
-  
-        <!-- Package 2 (Featured) -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden border-2 border-blue-500 transform hover:scale-105 transition">
-          <div class="bg-blue-500 text-white text-center py-2">
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden border-2 border-js-blue transform hover:scale-105 transition">
+          <div class="bg-js-blue text-white text-center py-2">
             <span class="font-semibold">MOST POPULAR</span>
           </div>
           <div class="p-6">
-            <h3 class="text-2xl font-bold text-blue-600 mb-2">Standard Program</h3>
+            <h3 class="text-2xl font-bold text-js-blue mb-2">Standard Program</h3>
             <p class="text-gray-600 mb-4">Comprehensive support</p>
             <div class="text-4xl font-bold mb-6">R899<span class="text-lg text-gray-500">/month</span></div>
             <ul class="space-y-3 mb-8">
@@ -407,16 +482,12 @@
             </ul>
           </div>
           <div class="px-6 pb-6">
-            <button class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
-              Enroll Now
-            </button>
+            <a href="contact.html" class="w-full bg-js-blue text-white py-3 rounded-lg hover:bg-blue-700 transition block text-center" onclick="gtag('event', 'click_enroll_now', { 'event_category': 'Pricing', 'event_label': 'Standard Program' })">Enroll Now</a>
           </div>
         </div>
-  
-        <!-- Package 3 -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
           <div class="p-6">
-            <h3 class="text-2xl font-bold text-blue-600 mb-2">Premium Tutoring</h3>
+            <h3 class="text-2xl font-bold text-js-blue mb-2">Premium Tutoring</h3>
             <p class="text-gray-600 mb-4">Personalized 1-on-1</p>
             <div class="text-4xl font-bold mb-6">R1,499<span class="text-lg text-gray-500">/month</span></div>
             <ul class="space-y-3 mb-8">
@@ -447,77 +518,58 @@
             </ul>
           </div>
           <div class="px-6 pb-6">
-            <button class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
-              Contact Us
-            </button>
+            <a href="contact.html" class="w-full bg-js-blue text-white py-3 rounded-lg hover:bg-blue-700 transition block text-center" onclick="gtag('event', 'click_contact_us', { 'event_category': 'Pricing', 'event_label': 'Premium Tutoring' })">Contact Us</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-<section class="py-16 px-6 bg-blue-50">
+  <!-- For Schools Section -->
+  <section class="py-16 px-6 bg-blue-50">
     <div class="max-w-6xl mx-auto">
       <div class="flex flex-col md:flex-row items-center justify-center gap-8 mb-12">
         <div class="text-center md:text-left">
-          <h1 class="text-3xl md:text-4xl font-bold mb-2">For Schools</h1>
-          <h2 class="text-2xl md:text-3xl font-bold text-blue-600 mb-4">JSAcademy</h2>
-          <h3 class="text-xl md:text-2xl font-semibold">Learning Hub+</h3>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">For Schools</h2>
+          <h3 class="text-2xl md:text-3xl font-bold text-js-blue mb-4">JSAcademy</h3>
+          <h4 class="text-xl md:text-2xl font-semibold text-gray-900">Learning Hub+</h4>
         </div>
-
         <div class="relative w-full md:w-1/3 h-64 overflow-hidden rounded-xl shadow-lg">
           <div class="absolute inset-0 transition-opacity duration-500 opacity-100" id="carousel-image-1">
-            <img src="Images/Class1.jpg" 
-                 alt="Students learning" 
-                 class="w-full h-full object-cover">
+            <img src="Images/Class1.jpg" alt="Students learning in classroom" class="w-full h-full object-cover" loading="lazy">
           </div>
-      
           <div class="absolute inset-0 transition-opacity duration-500 opacity-0" id="carousel-image-2">
-            <img src="Images/Class2.jpg" 
-                 alt="Graduation ceremony" 
-                 class="w-full h-full object-cover">
+            <img src="Images/Class2.jpg" alt="Graduation ceremony" class="w-full h-full object-cover" loading="lazy">
           </div>
-        
           <div class="absolute inset-0 transition-opacity duration-500 opacity-0" id="carousel-image-3">
-            <img src="Images/Class3.jpg" 
-                 alt="Group study" 
-                 class="w-full h-full object-cover">
+            <img src="Images/Class3.jpg" alt="Group study session" class="w-full h-full object-cover" loading="lazy">
           </div>
-          
-          <!-- Navigation Dots -->
           <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
-            <button class="w-3 h-3 rounded-full bg-white bg-opacity-80 carousel-dot active" data-target="1"></button>
-            <button class="w-3 h-3 rounded-full bg-white bg-opacity-80 carousel-dot" data-target="2"></button>
-            <button class="w-3 h-3 rounded-full bg-white bg-opacity-80 carousel-dot" data-target="3"></button>
+            <button class="w-3 h-3 rounded-full bg-white bg-opacity-80 carousel-dot active" data-target="1" aria-label="Carousel image 1"></button>
+            <button class="w-3 h-3 rounded-full bg-white bg-opacity-80 carousel-dot" data-target="2" aria-label="Carousel image 2"></button>
+            <button class="w-3 h-3 rounded-full bg-white bg-opacity-80 carousel-dot" data-target="3" aria-label="Carousel image 3"></button>
           </div>
         </div>
       </div>
-  
       <div class="grid md:grid-cols-2 gap-12 items-center mb-12">
         <div>
           <p class="text-lg text-gray-700 mb-6">
-            Get a complete learning solution with unlimited live and interactive classes for your school, 
-            offering 10+ monthly classes across Mathematics, Physical Sciences, and other STEM subjects 
-            aligned with the CAPS curriculum.
+            Get a complete learning solution with unlimited live and interactive classes for your school, offering 10+ monthly classes across Mathematics, Physical Sciences, and other STEM subjects aligned with the CAPS curriculum.
           </p>
-          <button class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
-            Explore Our Solutions
-          </button>
+          <a href="contact.html" class="bg-js-blue text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition" onclick="gtag('event', 'click_explore_solutions', { 'event_category': 'For Schools', 'event_label': 'Explore Our Solutions' })">Explore Our Solutions</a>
         </div>
-  
         <div class="space-y-8">
           <div class="flex items-center gap-6">
-            <div class="text-4xl font-bold text-blue-600 w-24">30%+</div>
-            <div class="text-gray-700">average improvement in matric pass rates</div>
+            <div class="text-4xl font-bold text-js-blue w-24">30%+</div>
+            <div class="text-gray-700">Average improvement in matric pass rates</div>
           </div>
-
           <div class="space-y-4">
-            <button class="text-blue-600 font-medium hover:underline flex items-center gap-2">
+            <a href="contact.html" class="text-js-blue font-medium hover:underline flex items-center gap-2" onclick="gtag('event', 'click_request_callback', { 'event_category': 'For Schools', 'event_label': 'Request a Callback' })">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
               </svg>
               Request a callback
-            </button>
+            </a>
             <div class="flex items-center text-gray-600">
               <span class="mr-2">WhatsApp</span>
               <span class="font-medium">+27 79 031 9247</span>
@@ -525,67 +577,55 @@
           </div>
         </div>
       </div>
-  
-      <!-- Live Chat Button -->
       <div class="text-center">
-        <button class="border border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-50 transition">
-          Live Chat
-        </button>
+        <a href="contact.html" class="border border-js-blue text-js-blue px-6 py-3 rounded-lg hover:bg-blue-50 transition" onclick="gtag('event', 'click_live_chat', { 'event_category': 'For Schools', 'event_label': 'Live Chat' })">Live Chat</a>
       </div>
     </div>
   </section>
 
   <!-- Google Maps Section -->
-<section class="py-12 px-6 bg-white">
+  <section class="py-12 px-6 bg-white">
     <div class="max-w-6xl mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-8">Visit Us</h2>
-      
-      <!-- Google Map Embed -->
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Visit Us</h2>
       <div class="rounded-xl overflow-hidden shadow-lg">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.9410797856644!2d29.812542374267856!3d-24.797471008163665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec198bf971dd41b%3A0xcb9ca17c481d3216!2sMabodibeng%20Secondary%20School!5e0!3m2!1sen!2sza!4v1745415156624!5m2!1sen!2sza" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
-
       <div class="mt-6 text-center">
         <p class="text-lg text-gray-700 mb-2">
           <strong>Mabodibeng Secondary School</strong><br>
           Ga-Moloi Village, Limpopo
         </p>
-        <a href="https://maps.google.com?q=Mabudibeng+Secondary+School+GaMoloi" 
-           class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition mt-4"
-           target="_blank">
-          Get Directions
-        </a>
+        <a href="https://maps.google.com?q=Mabudibeng+Secondary+School+GaMoloi" class="inline-block bg-js-blue text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition mt-4" target="_blank" onclick="gtag('event', 'click_get_directions', { 'event_category': 'Google Maps', 'event_label': 'Get Directions' })">Get Directions</a>
       </div>
     </div>
   </section>
 
-<footer class="bg-gray-900 text-gray-300 py-16 px-6">
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-16 px-6">
     <div class="max-w-7xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
         <div>
           <h3 class="text-2xl font-bold text-white mb-4">Follow us!</h3>
           <div class="flex space-x-4 mb-6">
-            <a href="#" class="text-gray-400 hover:text-white transition">
+            <a href="#" class="text-gray-400 hover:text-white transition" aria-label="Follow JSAcademy on Facebook" onclick="gtag('event', 'click_social_media', { 'event_category': 'Footer', 'event_label': 'Facebook' })">
               <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
               </svg>
             </a>
-            <a href="#" class="text-gray-400 hover:text-white transition">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
-                </svg>
+            <a href="#" class="text-gray-400 hover:text-white transition" aria-label="Follow JSAcademy on WhatsApp" onclick="gtag('event', 'click_social_media', { 'event_category': 'Footer', 'event_label': 'WhatsApp' })">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+              </svg>
             </a>
-            <a href="#" class="text-gray-400 hover:text-white transition">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
-                </svg>
+            <a href="#" class="text-gray-400 hover:text-white transition" aria-label="Follow JSAcademy on YouTube" onclick="gtag('event', 'click_social_media', { 'event_category': 'Footer', 'event_label': 'YouTube' })">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
+              </svg>
             </a>
-        
           </div>
           <h4 class="text-xl font-semibold text-white mb-3">Refer and Earn</h4>
-          <p class="text-gray-400">Get rewards when you refer friends to JSAcademy</p>
+          <p class="text-gray-400">Get rewards when you refer friends to JSAcademy.</p>
         </div>
-  
         <div>
           <h3 class="text-xl font-semibold text-white mb-4">Company</h3>
           <ul class="space-y-2">
@@ -596,7 +636,6 @@
             <li><a href="#" class="hover:text-white transition">Contact us</a></li>
           </ul>
         </div>
-
         <div>
           <h3 class="text-xl font-semibold text-white mb-4">Work with us</h3>
           <ul class="space-y-2">
@@ -607,7 +646,6 @@
             <li><a href="#" class="hover:text-white transition">Exam Prep Materials</a></li>
           </ul>
         </div>
-
         <div>
           <h3 class="text-xl font-semibold text-white mb-4">For Schools</h3>
           <ul class="space-y-2 mb-6">
@@ -615,38 +653,35 @@
             <li><a href="#" class="hover:text-white transition">JSAcademy Hub+</a></li>
             <li><a href="#" class="hover:text-white transition">Guaranteed results</a></li>
           </ul>
-  
           <h4 class="text-lg font-semibold text-white mb-3">Learn On the Go!</h4>
           <div class="space-y-3">
-            <a href="#" class="flex items-center text-gray-400 hover:text-white transition">
+            <a href="#" class="flex items-center text-gray-400 hover:text-white transition" onclick="gtag('event', 'click_app_download', { 'event_category': 'Footer', 'event_label': 'Android App' })">
               <span class="w-5 h-5 border border-gray-400 rounded mr-2 flex items-center justify-center">✓</span>
               Get the Android App
             </a>
-            <a href="#" class="flex items-center text-gray-400 hover:text-white transition">
+            <a href="#" class="flex items-center text-gray-400 hover:text-white transition" onclick="gtag('event', 'click_app_download', { 'event_category': 'Footer', 'event_label': 'iOS App' })">
               <span class="w-5 h-5 border border-gray-400 rounded mr-2 flex items-center justify-center">✓</span>
               Get the iOS App
             </a>
           </div>
         </div>
       </div>
-
       <div class="mb-12">
         <h3 class="text-xl font-semibold text-white mb-4">Trending Grade 12 Programs</h3>
         <div class="flex flex-wrap gap-4 text-sm">
-          <a href="#" class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded transition">Maths Mastery</a>
-          <a href="#" class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded transition">Physical Sciences</a>
-          <a href="#" class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded transition">Exam Crash Course</a>
-          <a href="#" class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded transition">Finals Prep</a>
-          <a href="#" class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded transition">Trigonometry Intensive</a>
-          <a href="#" class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded transition">Calculus Program</a>
-          <a href="#" class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded transition">Algebra Fundamentals</a>
+          <a href="#" class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded transition" onclick="gtag('event', 'click_trending_program', { 'event_category': 'Footer', 'event_label': 'Maths Mastery' })">Maths Mastery</a>
+          <a href="#" class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded transition" onclick="gtag('event', 'click_trending_program', { 'event_category': 'Footer', 'event_label': 'Physical Sciences' })">Physical Sciences</a>
+          <a href="#" class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded transition" onclick="gtag('event', 'click_trending_program', { 'event_category': 'Footer', 'event_label': 'Exam Crash Course' })">Exam Crash Course</a>
+          <a href="#" class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded transition" onclick="gtag('event', 'click_trending_program', { 'event_category': 'Footer', 'event_label': 'Finals Prep' })">Finals Prep</a>
+          <a href="#" class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded transition" onclick="gtag('event', 'click_trending_program', { 'event_category': 'Footer', 'event_label': 'Trigonometry Intensive' })">Trigonometry Intensive</a>
+          <a href="#" class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded transition" onclick="gtag('event', 'click_trending_program', { 'event_category': 'Footer', 'event_label': 'Calculus Program' })">Calculus Program</a>
+          <a href="#" class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded transition" onclick="gtag('event', 'click_trending_program', { 'event_category': 'Footer', 'event_label': 'Algebra Fundamentals' })">Algebra Fundamentals</a>
         </div>
       </div>
-
       <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-800">
         <div class="flex space-x-6 mb-4 md:mb-0">
-          <a href="#" class="text-blue-400 hover:text-blue-300 transition">Request a callback</a>
-          <a href="#" class="flex items-center text-gray-400 hover:text-white transition">
+          <a href="contact.html" class="text-blue-400 hover:text-blue-300 transition" onclick="gtag('event', 'click_request_callback', { 'event_category': 'Footer', 'event_label': 'Request a Callback' })">Request a callback</a>
+          <a href="tel:+27790319247" class="flex items-center text-gray-400 hover:text-white transition" onclick="gtag('event', 'click_phone', { 'event_category': 'Footer', 'event_label': 'Phone Call' })">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
               <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
             </svg>
@@ -659,142 +694,172 @@
       </div>
     </div>
   </footer>
-  
-  
+
+  <!-- JavaScript -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const carousel = document.getElementById('testimonial-carousel');
+      // Check if Font Awesome is loaded
+      const fontAwesomeLoaded = document.querySelector('link[href*="font-awesome"]') !== null;
+      console.log('Font Awesome loaded:', fontAwesomeLoaded);
+
+      // Mobile Menu Toggle
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      if (mobileMenuButton && mobileMenu) {
+        const faIcon = mobileMenuButton.querySelector('i');
+        const hamburgerSvg = mobileMenuButton.querySelector('.hamburger-icon');
+        const closeSvg = mobileMenuButton.querySelector('.close-icon');
+
+        // If Font Awesome failed, use SVG fallback
+        if (!fontAwesomeLoaded && hamburgerSvg && closeSvg) {
+          faIcon.style.display = 'none';
+          hamburgerSvg.classList.remove('hidden');
+        }
+
+        mobileMenuButton.addEventListener('click', function() {
+          mobileMenu.classList.toggle('open');
+          const isOpen = mobileMenu.classList.contains('open');
+
+          if (fontAwesomeLoaded && faIcon) {
+            // Toggle Font Awesome icons
+            faIcon.classList.toggle('fa-bars', !isOpen);
+            faIcon.classList.toggle('fa-times', isOpen);
+          } else if (hamburgerSvg && closeSvg) {
+            // Toggle SVG icons
+            hamburgerSvg.classList.toggle('hidden', isOpen);
+            closeSvg.classList.toggle('hidden', !isOpen);
+          }
+
+          mobileMenuButton.setAttribute('aria-expanded', isOpen);
+          gtag('event', 'toggle_mobile_menu', { 'event_category': 'Navigation', 'event_label': isOpen ? 'Open Menu' : 'Close Menu' });
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            if (fontAwesomeLoaded && faIcon) {
+              faIcon.classList.remove('fa-times');
+              faIcon.classList.add('fa-bars');
+            } else if (hamburgerSvg && closeSvg) {
+              closeSvg.classList.add('hidden');
+              hamburgerSvg.classList.remove('hidden');
+            }
+            mobileMenuButton.setAttribute('aria-expanded', 'false');
+            gtag('event', 'click_mobile_menu_link', { 'event_category': 'Navigation', 'event_label': link.textContent });
+          });
+        });
+      } else {
+        console.error('Mobile menu button or menu not found');
+      }
+
+      // Testimonial Carousel
+      const testimonialCarousel = document.getElementById('testimonial-carousel');
       const prevBtn = document.getElementById('prev-btn');
       const nextBtn = document.getElementById('next-btn');
       const dotsContainer = document.getElementById('dots-container');
       const testimonials = document.querySelectorAll('#testimonial-carousel > div');
-      let currentIndex = 0;
+      let currentTestimonialIndex = 0;
 
       testimonials.forEach((_, index) => {
         const dot = document.createElement('button');
-        dot.className = `w-3 h-3 rounded-full ${index === 0 ? 'bg-blue-600' : 'bg-gray-300'}`;
-        dot.addEventListener('click', () => goToTestimonial(index));
+        dot.className = `w-3 h-3 rounded-full ${index === 0 ? 'bg-js-blue' : 'bg-gray-300'}`;
+        dot.setAttribute('aria-label', `Go to testimonial ${index + 1}`);
+        dot.addEventListener('click', () => {
+          goToTestimonial(index);
+          gtag('event', 'click_testimonial_dot', { 'event_category': 'Testimonials', 'event_label': `Testimonial ${index + 1}` });
+        });
         dotsContainer.appendChild(dot);
       });
 
-      function updateCarousel() {
-        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-        
-        // Update active dot
+      function updateTestimonialCarousel() {
+        testimonialCarousel.style.transform = `translateX(-${currentTestimonialIndex * 100}%)`;
         document.querySelectorAll('#dots-container button').forEach((dot, index) => {
-          dot.className = `w-3 h-3 rounded-full ${index === currentIndex ? 'bg-blue-600' : 'bg-gray-300'}`;
+          dot.className = `w-3 h-3 rounded-full ${index === currentTestimonialIndex ? 'bg-js-blue' : 'bg-gray-300'}`;
         });
       }
-      
-      // Navigation functions
+
       function goToTestimonial(index) {
-        currentIndex = index;
-        updateCarousel();
+        currentTestimonialIndex = index;
+        updateTestimonialCarousel();
       }
-      
+
       function nextTestimonial() {
-        currentIndex = (currentIndex + 1) % testimonials.length;
-        updateCarousel();
+        currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
+        updateTestimonialCarousel();
+        gtag('event', 'view_testimonial', { 'event_category': 'Testimonials', 'event_label': `Testimonial ${currentTestimonialIndex + 1}` });
       }
-      
+
       function prevTestimonial() {
-        currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
-        updateCarousel();
+        currentTestimonialIndex = (currentTestimonialIndex - 1 + testimonials.length) % testimonials.length;
+        updateTestimonialCarousel();
+        gtag('event', 'view_testimonial', { 'event_category': 'Testimonials', 'event_label': `Testimonial ${currentTestimonialIndex + 1}` });
       }
-  
+
       prevBtn.addEventListener('click', prevTestimonial);
       nextBtn.addEventListener('click', nextTestimonial);
-      
-      // Auto-scroll (every 5 seconds)
-      let autoScroll = setInterval(nextTestimonial, 5000);
 
-      carousel.parentElement.addEventListener('mouseenter', () => clearInterval(autoScroll));
-      carousel.parentElement.addEventListener('mouseleave', () => {
-        autoScroll = setInterval(nextTestimonial, 5000);
+      let testimonialAutoScroll = setInterval(nextTestimonial, 5000);
+      testimonialCarousel.parentElement.addEventListener('mouseenter', () => clearInterval(testimonialAutoScroll));
+      testimonialCarousel.parentElement.addEventListener('mouseleave', () => {
+        testimonialAutoScroll = setInterval(nextTestimonial, 5000);
       });
-    });
 
+      // Image Carousel (For Schools Section)
+      let currentImage = 1;
+      const totalImages = 3;
+      let carouselInterval;
 
-    document.addEventListener('DOMContentLoaded', function() {
-    let currentImage = 1;
-    const totalImages = 3;
-    let carouselInterval;
-
-    function showImage(imageNumber) {
-      for (let i = 1; i <= totalImages; i++) {
-        const image = document.getElementById(`carousel-image-${i}`);
-        const dot = document.querySelector(`.carousel-dot[data-target="${i}"]`);
-        if (image && dot) {
-          image.classList.remove('opacity-100');
-          image.classList.add('opacity-0');
-          dot.classList.remove('active');
+      function showImage(imageNumber) {
+        for (let i = 1; i <= totalImages; i++) {
+          const image = document.getElementById(`carousel-image-${i}`);
+          const dot = document.querySelector(`.carousel-dot[data-target="${i}"]`);
+          if (image && dot) {
+            image.classList.remove('opacity-100');
+            image.classList.add('opacity-0');
+            dot.classList.remove('active');
+          }
+        }
+        const selectedImage = document.getElementById(`carousel-image-${imageNumber}`);
+        const selectedDot = document.querySelector(`.carousel-dot[data-target="${imageNumber}"]`);
+        if (selectedImage && selectedDot) {
+          selectedImage.classList.remove('opacity-0');
+          selectedImage.classList.add('opacity-100');
+          selectedDot.classList.add('active');
+          currentImage = imageNumber;
+          gtag('event', 'view_carousel_image', { 'event_category': 'For Schools', 'event_label': `Image ${imageNumber}` });
         }
       }
- 
-      const selectedImage = document.getElementById(`carousel-image-${imageNumber}`);
-      const selectedDot = document.querySelector(`.carousel-dot[data-target="${imageNumber}"]`);
-      if (selectedImage && selectedDot) {
-        selectedImage.classList.remove('opacity-0');
-        selectedImage.classList.add('opacity-100');
-        selectedDot.classList.add('active');
-        currentImage = imageNumber;
+
+      function startImageCarousel() {
+        carouselInterval = setInterval(() => {
+          currentImage = currentImage % totalImages + 1;
+          showImage(currentImage);
+        }, 5000);
       }
-    }
- 
-    function startCarousel() {
-      carouselInterval = setInterval(() => {
-        currentImage = currentImage % totalImages + 1;
-        showImage(currentImage);
-      }, 5000);
-    }
 
-    document.querySelectorAll('.carousel-dot').forEach(dot => {
-      dot.addEventListener('click', function() {
-        const target = this.getAttribute('data-target');
-        showImage(parseInt(target));
-        resetCarousel();
+      document.querySelectorAll('.carousel-dot').forEach(dot => {
+        dot.addEventListener('click', function() {
+          const target = this.getAttribute('data-target');
+          showImage(parseInt(target));
+          resetImageCarousel();
+          gtag('event', 'click_carousel_dot', { 'event_category': 'For Schools', 'event_label': `Image ${target}` });
+        });
       });
-    });
-    
-    function resetCarousel() {
-      clearInterval(carouselInterval);
-      startCarousel();
-    }
 
-    startCarousel();
-
-    const carousel = document.querySelector('.relative.w-full');
-    if (carousel) {
-      carousel.addEventListener('mouseenter', () => clearInterval(carouselInterval));
-      carousel.addEventListener('mouseleave', startCarousel);
-    }
-  });
-
-  // Mobile menu toggle
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    mobileMenuButton.addEventListener('click', function() {
-      mobileMenu.classList.toggle('open');
-
-      const icon = this.querySelector('i');
-      if (mobileMenu.classList.contains('open')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-times');
-      } else {
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
+      function resetImageCarousel() {
+        clearInterval(carouselInterval);
+        startImageCarousel();
       }
-    });
- 
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        mobileMenuButton.querySelector('i').classList.remove('fa-times');
-        mobileMenuButton.querySelector('i').classList.add('fa-bars');
-      });
+
+      startImageCarousel();
+
+      const imageCarousel = document.querySelector('.relative.w-full');
+      if (imageCarousel) {
+        imageCarousel.addEventListener('mouseenter', () => clearInterval(carouselInterval));
+        imageCarousel.addEventListener('mouseleave', startImageCarousel);
+      }
     });
   </script>
 </body>
 </html>
-
