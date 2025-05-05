@@ -2,24 +2,47 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LRVQFXXCQM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LRVQFXXCQM');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRVQFXXCQM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LRVQFXXCQM');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | JSAcademy</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta name="description" content="Contact JSAcademy for inquiries about our tutoring programs for Grades 8-12. Reach us via phone, email, or our online form.">
+  <meta name="keywords" content="JSAcademy, contact tutoring, South Africa tutoring, CAPS curriculum, Maths tutoring, Science tutoring">
+  <meta name="author" content="JSAcademy">
+  <!-- Open Graph / Twitter Card -->
+  <meta property="og:title" content="Contact Us | JSAcademy">
+  <meta property="og:description" content="Get in touch with JSAcademy for tutoring support for South African students in Grades 8-12.">
+  <meta property="og:image" content="https://yourdomain.com/Images/JSImage.jpg">
+  <meta property="og:url" content="https://yourdomain.com/contact.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'js-blue': '#2563EB', /* Matches bg-blue-600 */
+            'js-yellow': '#FBBF24', /* Matches text-yellow-400 */
+          },
+        },
+      },
+    };
+  </script>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
+    /* Gradient background */
     .gradient-bg {
       background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
     }
+    /* Mobile menu transitions */
     .mobile-menu {
       max-height: 0;
       overflow: hidden;
@@ -29,49 +52,100 @@
       max-height: 500px;
       transition: max-height 0.5s ease-in;
     }
+    /* Contact card hover effect */
     .contact-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     }
+    /* Input field focus styles */
     .input-field:focus {
       border-color: #3b82f6;
       box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
     }
+    /* Fixed navbar spacing */
+    body {
+      padding-top: 4rem; /* Height of navbar */
+    }
+    /* Mobile menu button styles */
+    .mobile-menu-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+      color: #374151; /* text-gray-700 */
+      font-size: 1.5rem; /* text-2xl */
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      visibility: visible !important;
+    }
+    .mobile-menu-button:hover {
+      color: #2563EB; /* text-js-blue */
+    }
+    .mobile-menu-button i {
+      width: 24px;
+      height: 24px;
+    }
+    /* Form input error styles */
+    input:invalid:focus, select:invalid:focus, textarea:invalid:focus {
+      border-color: #EF4444; /* red-500 */
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+    }
+    /* FAQ toggle animation */
+    .faq-toggle i {
+      transition: transform 0.3s ease;
+    }
+    .faq-toggle.active i {
+      transform: rotate(180deg);
+    }
+    /* Scroll animation for cards and FAQs */
+    .contact-card, .faq-item {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .contact-card.visible, .faq-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body class="bg-gray-50">
-  <nav class="flex items-center justify-between px-6 py-4 shadow-md relative">
-    <div class="text-2xl font-bold text-blue-600">JS<span class="text-yellow-500">Academy</span></div>
-    <div class="hidden md:flex gap-6 items-center">
-      <a href="index.html" class="hover:text-blue-600">Home</a>
-      <a href="Pricing-Subjects.html" class="hover:text-blue-600">Subjects</a>
-      <a href="resources.html" class="hover:text-blue-600">Resources</a>
-      <a href="contact.html" class="text-blue-600 font-medium">Contact</a>
-      <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Book Session</button>
-    </div>
-    <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
-      <i class="fas fa-bars text-2xl"></i>
-    </button>
-    <div id="mobile-menu" class="mobile-menu absolute top-full left-0 right-0 bg-white shadow-md md:hidden">
-      <div class="px-6 py-4 space-y-4">
-        <a href="index.html" class="block hover:text-blue-600">Home</a>
-        <a href="Pricing-Subjects.html" class="block hover:text-blue-600">Subjects</a>
-        <a href="resources.html" class="block hover:text-blue-600">Resources</a>
-        <a href="contact.html" class="block text-blue-600 font-medium">Contact</a>
-        <button class="w-full bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Book Session</button>
+  <!-- Fixed Navbar -->
+  <nav class="fixed top-0 left-0 right-0 bg-white z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-js-blue">JS<span class="text-js-yellow">Academy</span></a>
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex space-x-8 items-center">
+        <a href="index.html" class="text-gray-700 hover:text-js-blue">Home</a>
+        <a href="Pricing-Subjects.html" class="text-gray-700 hover:text-js-blue">Subjects</a>
+        <a href="contact.html" class="text-js-blue font-medium">Contact</a>
+        <a href="book.html" class="bg-js-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition" onclick="gtag('event', 'click_book_session', { 'event_category': 'Navigation', 'event_label': 'Navbar Book Session' })">Book Session</a>
       </div>
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button" class="mobile-menu-button md:hidden focus:outline-none" aria-label="Toggle mobile menu" aria-expanded="false">
+        <i id="menu-icon" class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu md:hidden bg-white px-4 pb-4 shadow-md">
+      <a href="index.html" class="block py-2 text-gray-700 hover:text-js-blue">Home</a>
+      <a href="Pricing-Subjects.html" class="block py-2 text-gray-700 hover:text-js-blue">Subjects</a>
+      <a href="contact.html" class="block py-2 text-js-blue font-medium">Contact</a>
+      <a href="book.html" class="block py-2 bg-js-blue text-white text-center px-4 rounded-lg hover:bg-blue-700" onclick="gtag('event', 'click_book_session', { 'event_category': 'Navigation', 'event_label': 'Mobile Menu Book Session' })">Book Session</a>
     </div>
   </nav>
 
+  <!-- Hero Section -->
   <section class="gradient-bg text-white py-20">
     <div class="max-w-7xl mx-auto px-4 text-center">
       <h1 class="text-4xl md:text-5xl font-bold mb-6">Contact JSAcademy</h1>
       <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">We're here to help with all your learning needs. Reach out to us with any questions.</p>
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="#contact-form" class="bg-white text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
+        <a href="#contact-form" class="bg-white text-js-blue px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition" onclick="gtag('event', 'click_send_message', { 'event_category': 'CTA', 'event_label': 'Hero Send Message' })">
           <i class="fas fa-envelope mr-2"></i> Send Message
         </a>
-        <a href="#contact-info" class="bg-white text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
+        <a href="#contact-info" class="bg-white text-js-blue px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition" onclick="gtag('event', 'click_contact_info', { 'event_category': 'CTA', 'event_label': 'Hero Contact Info' })">
           <i class="fas fa-phone-alt mr-2"></i> Contact Info
         </a>
       </div>
@@ -84,22 +158,22 @@
       <div class="p-8">
         <h2 class="text-3xl font-bold text-gray-800 mb-2">Send Us a Message</h2>
         <p class="text-gray-600 mb-8">Fill out the form below and we'll get back to you within 24 hours.</p>
-        
-        <form class="space-y-6">
+        <form id="contact-form" class="space-y-6" novalidate>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-              <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 input-field focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your name" required>
+              <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 input-field focus:outline-none focus:ring-2 focus:ring-js-blue" placeholder="Your name" required aria-describedby="name-error">
+              <p id="name-error" class="text-red-500 text-sm mt-1 hidden">Please enter your full name</p>
             </div>
             <div>
               <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-              <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 input-field focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="your@email.com" required>
+              <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 input-field focus:outline-none focus:ring-2 focus:ring-js-blue" placeholder="your@email.com" required aria-describedby="email-error">
+              <p id="email-error" class="text-red-500 text-sm mt-1 hidden">Please enter a valid email address</p>
             </div>
           </div>
-          
           <div>
             <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
-            <select id="subject" name="subject" class="w-full px-4 py-3 rounded-lg border border-gray-300 input-field focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <select id="subject" name="subject" class="w-full px-4 py-3 rounded-lg border border-gray-300 input-field focus:outline-none focus:ring-2 focus:ring-js-blue" required aria-describedby="subject-error">
               <option value="">Select a subject</option>
               <option value="general">General Inquiry</option>
               <option value="tutoring">Tutoring Services</option>
@@ -107,22 +181,22 @@
               <option value="technical">Technical Support</option>
               <option value="other">Other</option>
             </select>
+            <p id="subject-error" class="text-red-500 text-sm mt-1 hidden">Please select a subject</p>
           </div>
-          
           <div>
             <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
-            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-300 input-field focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Type your message here..." required></textarea>
+            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-300 input-field focus:outline-none focus:ring-2 focus:ring-js-blue" placeholder="Type your message here..." required aria-describedby="message-error"></textarea>
+            <p id="message-error" class="text-red-500 text-sm mt-1 hidden">Please enter your message</p>
           </div>
-          
           <div class="flex items-center">
-            <input type="checkbox" id="consent" name="consent" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" required>
+            <input type="checkbox" id="consent" name="consent" class="h-4 w-4 text-js-blue focus:ring-js-blue border-gray-300 rounded" required aria-describedby="consent-error">
             <label for="consent" class="ml-2 block text-sm text-gray-700">
-              I agree to the <a href="#" class="text-blue-600 hover:underline">privacy policy</a> and terms of service
+              I agree to the <a href="#" class="text-js-blue hover:underline">privacy policy</a> and terms of service
             </label>
+            <p id="consent-error" class="text-red-500 text-sm mt-1 hidden">Please agree to the privacy policy</p>
           </div>
-          
           <div>
-            <button type="submit" class="w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+            <button type="submit" class="w-full bg-js-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-js-blue focus:ring-offset-2" onclick="gtag('event', 'submit_contact_form', { 'event_category': 'Form', 'event_label': 'Contact Form Submission' })">
               Send Message <i class="fas fa-paper-plane ml-2"></i>
             </button>
           </div>
@@ -135,38 +209,31 @@
   <section id="contact-info" class="py-16 px-4 bg-gray-100">
     <div class="max-w-7xl mx-auto">
       <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">Other Ways to Reach Us</h2>
-      
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Phone Card -->
         <div class="bg-white rounded-lg shadow-md p-8 text-center contact-card transition duration-300">
           <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-            <i class="fas fa-phone-alt text-blue-600 text-2xl"></i>
+            <i class="fas fa-phone-alt text-js-blue text-2xl"></i>
           </div>
           <h3 class="text-xl font-semibold mb-2">Phone Support</h3>
           <p class="text-gray-600 mb-4">Speak directly with our support team</p>
-          <a href="tel:+27790319247" class="text-blue-600 font-medium hover:text-blue-800">
-            +27 79 031 9247
-          </a>
+          <a href="tel:+27790319247" class="text-js-blue font-medium hover:text-blue-800" onclick="gtag('event', 'click_contact', { 'event_category': 'Contact', 'event_label': 'Phone' })">+27 79 031 9247</a>
           <p class="text-sm text-gray-500 mt-2">Mon-Fri, 8am-5pm</p>
         </div>
-        
         <!-- Email Card -->
         <div class="bg-white rounded-lg shadow-md p-8 text-center contact-card transition duration-300">
           <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-            <i class="fas fa-envelope text-blue-600 text-2xl"></i>
+            <i class="fas fa-envelope text-js-blue text-2xl"></i>
           </div>
           <h3 class="text-xl font-semibold mb-2">Email Us</h3>
           <p class="text-gray-600 mb-4">Send us an email for general inquiries</p>
-          <a href="mailto:info@jsacademy.co.za" class="text-blue-600 font-medium hover:text-blue-800">
-            info@jsacademy.co.za
-          </a>
+          <a href="mailto:info@jsacademy.co.za" class="text-js-blue font-medium hover:text-blue-800" onclick="gtag('event', 'click_contact', { 'event_category': 'Contact', 'event_label': 'Email' })">info@jsacademy.co.za</a>
           <p class="text-sm text-gray-500 mt-2">Response within 24 hours</p>
         </div>
-        
         <!-- Visit Card -->
         <div class="bg-white rounded-lg shadow-md p-8 text-center contact-card transition duration-300">
           <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-            <i class="fas fa-map-marker-alt text-blue-600 text-2xl"></i>
+            <i class="fas fa-map-marker-alt text-js-blue text-2xl"></i>
           </div>
           <h3 class="text-xl font-semibold mb-2">Visit Us</h3>
           <p class="text-gray-600 mb-4">Schedule an in-person consultation</p>
@@ -185,173 +252,285 @@
   <section class="py-16 px-4">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">Frequently Asked Questions</h2>
-      
       <div class="space-y-4">
-        <div class="border border-gray-200 rounded-lg overflow-hidden">
-          <button class="faq-toggle w-full flex justify-between items-center p-6 text-left focus:outline-none">
+        <div class="border border-gray-200 rounded-lg overflow-hidden faq-item">
+          <button class="faq-toggle w-full flex justify-between items-center p-6 text-left focus:outline-none" aria-expanded="false">
             <h3 class="text-lg font-semibold">What subjects do you offer tutoring for?</h3>
-            <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300"></i>
+            <i class="fas fa-chevron-down text-js-blue"></i>
           </button>
           <div class="faq-content px-6 pb-6 hidden">
-            <p class="text-gray-600">We offer tutoring for all major South African high school subjects including Mathematics, Physical Sciences, Life Sciences, Accounting, Geography, and Economics. Our full subject list can be found on our <a href="Pricing-Subjects.html" class="text-blue-600 hover:underline">Subjects page</a>.</p>
+            <p class="text-gray-600">We offer tutoring for all major South African high school subjects including Mathematics, Physical Sciences, Life Sciences, Accounting, Geography, and Economics. Visit our <a href="Pricing-Subjects.html" class="text-js-blue hover:underline" onclick="gtag('event', 'click_faq_link', { 'event_category': 'FAQ', 'event_label': 'Subjects Page' })">Subjects & Pricing page</a> for the full list.</p>
           </div>
         </div>
-
-        <div class="border border-gray-200 rounded-lg overflow-hidden">
-          <button class="faq-toggle w-full flex justify-between items-center p-6 text-left focus:outline-none">
-            <h3 class="text-lg font-semibold">How do I access the study resources?</h3>
-            <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300"></i>
+        <div class="border border-gray-200 rounded-lg overflow-hidden faq-item">
+          <button class="faq-toggle w-full flex justify-between items-center p-6 text-left focus:outline-none" aria-expanded="false">
+            <h3 class="text-lg font-semibold">How do I book a tutoring session?</h3>
+            <i class="fas fa-chevron-down text-js-blue"></i>
           </button>
           <div class="faq-content px-6 pb-6 hidden">
-            <p class="text-gray-600">All our free resources are available on our <a href="resources.html" class="text-blue-600 hover:underline">Resources page</a>. For premium resources, you'll need to create an account and subscribe to one of our membership plans.</p>
+            <p class="text-gray-600">You can book a session directly through our <a href="book.html" class="text-js-blue hover:underline" onclick="gtag('event', 'click_faq_link', { 'event_category': 'FAQ', 'event_label': 'Book Session Page' })">Book Session page</a>. Choose your subject, session type, and preferred time, and our team will confirm your booking.</p>
           </div>
         </div>
-
-        <div class="border border-gray-200 rounded-lg overflow-hidden">
-          <button class="faq-toggle w-full flex justify-between items-center p-6 text-left focus:outline-none">
+        <div class="border border-gray-200 rounded-lg overflow-hidden faq-item">
+          <button class="faq-toggle w-full flex justify-between items-center p-6 text-left focus:outline-none" aria-expanded="false">
             <h3 class="text-lg font-semibold">What are your tutoring rates?</h3>
-            <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300"></i>
+            <i class="fas fa-chevron-down text-js-blue"></i>
           </button>
           <div class="faq-content px-6 pb-6 hidden">
-            <p class="text-gray-600">Our rates vary depending on the subject, tutor experience, and whether sessions are individual or group-based. Please contact us directly for our current rate sheet and package deals.</p>
+            <p class="text-gray-600">Our rates vary by subject and plan (Basic, Standard, Premium). Individual subjects start at R200/month, and our All Subjects Package is R1,399/month. See our <a href="Pricing-Subjects.html#pricing" class="text-js-blue hover:underline" onclick="gtag('event', 'click_faq_link', { 'event_category': 'FAQ', 'event_label': 'Pricing Section' })">Pricing section</a> for details.</p>
           </div>
         </div>
-    
-        <div class="border border-gray-200 rounded-lg overflow-hidden">
-          <button class="faq-toggle w-full flex justify-between items-center p-6 text-left focus:outline-none">
+        <div class="border border-gray-200 rounded-lg overflow-hidden faq-item">
+          <button class="faq-toggle w-full flex justify-between items-center p-6 text-left focus:outline-none" aria-expanded="false">
             <h3 class="text-lg font-semibold">Do you offer online tutoring?</h3>
-            <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300"></i>
+            <i class="fas fa-chevron-down text-js-blue"></i>
           </button>
           <div class="faq-content px-6 pb-6 hidden">
-            <p class="text-gray-600">Yes! We offer both in-person and online tutoring sessions via Zoom or Microsoft Teams. Our online platform includes interactive whiteboards and file sharing for an effective learning experience.</p>
+            <p class="text-gray-600">Yes! We offer both in-person and online tutoring via Zoom or Microsoft Teams, with interactive whiteboards and file sharing for an effective learning experience.</p>
           </div>
         </div>
       </div>
-      
       <div class="text-center mt-12">
         <p class="text-gray-600 mb-4">Didn't find what you were looking for?</p>
-        <a href="#contact-form" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">
+        <a href="#contact-form" class="inline-block bg-js-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300" onclick="gtag('event', 'click_ask_question', { 'event_category': 'FAQ', 'event_label': 'Ask Your Question' })">
           Ask Your Question
         </a>
       </div>
     </div>
   </section>
 
+  <!-- CTA Section -->
   <section class="gradient-bg text-white py-16">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h2 class="text-3xl font-bold mb-6">Ready to Get Started?</h2>
-      <p class="text-xl mb-8">Join hundreds of students who are already excelling with JSAcademy</p>
+      <p class="text-xl mb-8">Join hundreds of students who are already excelling with JSAcademy.</p>
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="tel:+27790319247" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
+        <a href="tel:+27790319247" class="bg-white text-js-blue px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300" onclick="gtag('event', 'click_call_now', { 'event_category': 'CTA', 'event_label': 'Footer Call Now' })">
           <i class="fas fa-phone-alt mr-2"></i> Call Us Now
         </a>
-        <a href="mailto:info@jsacademy.co.za" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
+        <a href="mailto:info@jsacademy.co.za" class="bg-white text-js-blue px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300" onclick="gtag('event', 'click_send_email', { 'event_category': 'CTA', 'event_label': 'Footer Send Email' })">
           <i class="fas fa-envelope mr-2"></i> Send Email
         </a>
       </div>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="bg-gray-900 text-gray-300 py-12 px-4">
     <div class="max-w-7xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
         <div>
           <h3 class="text-xl font-semibold text-white mb-4">JSAcademy</h3>
-          <p>Specialized tutoring for South African high school students.</p>
+          <p class="mb-4">Specialized tutoring for South African high school students, aligned with CAPS curriculum.</p>
+          <div class="flex space-x-4">
+            <a href="https://facebook.com/jsacademy" class="text-gray-400 hover:text-white" onclick="gtag('event', 'click_social', { 'event_category': 'Footer', 'event_label': 'Facebook' })"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/27790319247" class="text-gray-400 hover:text-white" onclick="gtag('event', 'click_social', { 'event_category': 'Footer', 'event_label': 'WhatsApp' })"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://instagram.com/jsacademy" class="text-gray-400 hover:text-white" onclick="gtag('event', 'click_social', { 'event_category': 'Footer', 'event_label': 'Instagram' })"><i class="fab fa-instagram"></i></a>
+          </div>
         </div>
         <div>
           <h3 class="text-xl font-semibold text-white mb-4">Quick Links</h3>
           <ul class="space-y-2">
-            <li><a href="index.html" class="hover:text-white">Home</a></li>
-            <li><a href="subjects.html" class="hover:text-white">Subjects</a></li>
-            <li><a href="resources.html" class="hover:text-white">Resources</a></li>
-            <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+            <li><a href="index.html" class="hover:text-white" onclick="gtag('event', 'click_footer_link', { 'event_category': 'Footer', 'event_label': 'Home' })">Home</a></li>
+            <li><a href="Pricing-Subjects.html" class="hover:text-white" onclick="gtag('event', 'click_footer_link', { 'event_category': 'Footer', 'event_label': 'Subjects & Pricing' })">Subjects & Pricing</a></li>
+            <li><a href="book.html" class="hover:text-white" onclick="gtag('event', 'click_footer_link', { 'event_category': 'Footer', 'event_label': 'Book Session' })">Book Session</a></li>
+            <li><a href="contact.html" class="hover:text-white" onclick="gtag('event', 'click_footer_link', { 'event_category': 'Footer', 'event_label': 'Contact' })">Contact</a></li>
           </ul>
         </div>
         <div>
           <h3 class="text-xl font-semibold text-white mb-4">Contact Us</h3>
           <ul class="space-y-2">
             <li class="flex items-center">
-              <i class="fas fa-phone-alt mr-2"></i> +27 79 031 9247
+              <i class="fas fa-phone-alt mr-2"></i>
+              <a href="tel:+27790319247" class="hover:text-white" onclick="gtag('event', 'click_contact', { 'event_category': 'Footer', 'event_label': 'Phone' })">+27 79 031 9247</a>
             </li>
             <li class="flex items-center">
-              <i class="fas fa-envelope mr-2"></i> info@jsacademy.co.za
+              <i class="fas fa-envelope mr-2"></i>
+              <a href="mailto:info@jsacademy.co.za" class="hover:text-white" onclick="gtag('event', 'click_contact', { 'event_category': 'Footer', 'event_label': 'Email' })">info@jsacademy.co.za</a>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-map-marker-alt mr-2"></i>
+              <span>R579 Maleetse, Sekhukhune, 1124, South Africa</span>
             </li>
           </ul>
         </div>
         <div>
-          <h3 class="text-xl font-semibold text-white mb-4">Follow Us</h3>
-          <div class="flex space-x-4">
-            <a href="#" class="text-gray-400 hover:text-white text-xl">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-white text-xl">
-              <i class="fab fa-whatsapp"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-white text-xl">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </div>
+          <h3 class="text-xl font-semibold text-white mb-4">Study Tips</h3>
+          <p class="mb-4">Subscribe to receive free study resources and tips.</p>
+          <form id="newsletter-form" class="flex" novalidate>
+            <input type="email" id="newsletter-email" placeholder="Your email" class="px-4 py-2 rounded-l-lg w-full focus:outline-none text-gray-900" required aria-describedby="newsletter-error">
+            <button type="submit" class="bg-js-blue text-white px-4 py-2 rounded-r-lg hover:bg-blue-700" onclick="gtag('event', 'submit_newsletter', { 'event_category': 'Footer', 'event_label': 'Newsletter Signup' })">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+          <p id="newsletter-error" class="text-red-500 text-sm mt-2 hidden">Please enter a valid email address</p>
         </div>
       </div>
-      <div class="border-t border-gray-800 pt-8 text-center">
-        <p>&copy; 2025 JSAcademy. All rights reserved.</p>
+      <div class="border-t border-gray-800 pt-8 text-center text-sm">
+        <p>© 2025 JSAcademy. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
+  <!-- JavaScript -->
   <script>
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
-    
-    mobileMenuButton.addEventListener('click', function() {
-      mobileMenu.classList.toggle('open');
-      
-      const icon = this.querySelector('i');
-      if (mobileMenu.classList.contains('open')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-times');
-      } else {
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-      }
-    });
-    
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        mobileMenuButton.querySelector('i').classList.remove('fa-times');
-        mobileMenuButton.querySelector('i').classList.add('fa-bars');
-      });
-    });
+    const menuIcon = document.getElementById('menu-icon');
 
+    if (menuBtn && mobileMenu && menuIcon) {
+      menuBtn.addEventListener('click', function() {
+        mobileMenu.classList.toggle('open');
+        const isOpen = mobileMenu.classList.contains('open');
+        menuIcon.classList.toggle('fa-bars', !isOpen);
+        menuIcon.classList.toggle('fa-times', isOpen);
+        menuBtn.setAttribute('aria-expanded', isOpen);
+        gtag('event', 'toggle_mobile_menu', { 'event_category': 'Navigation', 'event_label': isOpen ? 'Open Menu' : 'Close Menu' });
+      });
+
+      document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+          menuIcon.classList.remove('fa-times');
+          menuIcon.classList.add('fa-bars');
+          menuBtn.setAttribute('aria-expanded', 'false');
+          gtag('event', 'click_mobile_menu_link', { 'event_category': 'Navigation', 'event_label': link.textContent });
+        });
+      });
+    }
+
+    // FAQ Toggle
     document.querySelectorAll('.faq-toggle').forEach(button => {
       button.addEventListener('click', () => {
         const content = button.nextElementSibling;
         const icon = button.querySelector('i');
-    
-        content.classList.toggle('hidden');
-        
-        icon.classList.toggle('rotate-180');
-        
-        document.querySelectorAll('.faq-toggle').forEach(otherButton => {
-          if (otherButton !== button) {
-            otherButton.nextElementSibling.classList.add('hidden');
-            otherButton.querySelector('i').classList.remove('rotate-180');
-          }
+        const isOpen = !content.classList.contains('hidden');
+
+        document.querySelectorAll('.faq-content').forEach(otherContent => {
+          otherContent.classList.add('hidden');
         });
+        document.querySelectorAll('.faq-toggle').forEach(otherButton => {
+          otherButton.classList.remove('active');
+          otherButton.querySelector('i').classList.remove('rotate-180');
+          otherButton.setAttribute('aria-expanded', 'false');
+        });
+
+        if (!isOpen) {
+          content.classList.remove('hidden');
+          button.classList.add('active');
+          icon.classList.add('rotate-180');
+          button.setAttribute('aria-expanded', 'true');
+          gtag('event', 'toggle_faq', { 'event_category': 'FAQ', 'event_label': button.querySelector('h3').textContent });
+        }
       });
     });
 
-    const contactForm = document.querySelector('form');
-    if (contactForm) {
-      contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-    
+    // Contact Form Validation
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let isValid = true;
+
+      const name = document.getElementById('name');
+      const email = document.getElementById('email');
+      const subject = document.getElementById('subject');
+      const message = document.getElementById('message');
+      const consent = document.getElementById('consent');
+
+      const nameError = document.getElementById('name-error');
+      const emailError = document.getElementById('email-error');
+      const subjectError = document.getElementById('subject-error');
+      const messageError = document.getElementById('message-error');
+      const consentError = document.getElementById('consent-error');
+
+      // Reset errors
+      nameError.classList.add('hidden');
+      emailError.classList.add('hidden');
+      subjectError.classList.add('hidden');
+      messageError.classList.add('hidden');
+      consentError.classList.add('hidden');
+      name.classList.remove('border-red-500');
+      email.classList.remove('border-red-500');
+      subject.classList.remove('border-red-500');
+      message.classList.remove('border-red-500');
+
+      // Validate fields
+      if (!name.value.trim()) {
+        nameError.classList.remove('hidden');
+        name.classList.add('border-red-500');
+        isValid = false;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        emailError.classList.remove('hidden');
+        email.classList.add('border-red-500');
+        isValid = false;
+      }
+      if (!subject.value) {
+        subjectError.classList.remove('hidden');
+        subject.classList.add('border-red-500');
+        isValid = false;
+      }
+      if (!message.value.trim()) {
+        messageError.classList.remove('hidden');
+        message.classList.add('border-red-500');
+        isValid = false;
+      }
+      if (!consent.checked) {
+        consentError.classList.remove('hidden');
+        isValid = false;
+      }
+
+      if (isValid) {
+        gtag('event', 'submit_contact_form', { 'event_category': 'Form', 'event_label': 'Contact Form Submission', 'value': 1 });
         alert('Thank you for your message! We will get back to you soon.');
         this.reset();
+      }
+    });
+
+    // Newsletter Form Validation
+    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('newsletter-email');
+      const error = document.getElementById('newsletter-error');
+
+      if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        gtag('event', 'submit_newsletter', { 'event_category': 'Footer', 'event_label': 'Newsletter Signup', 'value': 1 });
+        alert('Thank you for subscribing!');
+        this.reset();
+        error.classList.add('hidden');
+      } else {
+        email.classList.add('border-red-500');
+        error.classList.remove('hidden');
+      }
+    });
+
+    // Scroll Animations
+    document.addEventListener('DOMContentLoaded', function() {
+      const cards = document.querySelectorAll('.contact-card, .faq-item');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      cards.forEach(card => observer.observe(card));
+    });
+
+    // Scroll Depth Tracking
+    document.addEventListener('scroll', function() {
+      const scrollPosition = window.scrollY + window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollPercent = (scrollPosition / documentHeight) * 100;
+      const thresholds = [25, 50, 75, 90];
+      thresholds.forEach(threshold => {
+        if (scrollPercent >= threshold && !sessionStorage.getItem(`scroll_${threshold}`)) {
+          gtag('event', 'scroll_depth', { 'event_category': 'Engagement', 'event_label': `${threshold}%` });
+          sessionStorage.setItem(`scroll_${threshold}`, 'true');
+        }
       });
-    }
+    });
   </script>
 </body>
 </html>
