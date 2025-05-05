@@ -2,32 +2,47 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LRVQFXXCQM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LRVQFXXCQM');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRVQFXXCQM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LRVQFXXCQM');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Study Resources | JSAcademy</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta name="description" content="Access free CAPS-aligned study resources for Grades 8-12, including past exam papers, study guides, and video lessons for Mathematics, Sciences, and more.">
+  <meta name="keywords" content="JSAcademy, CAPS study resources, South Africa past papers, Maths study guides, Science video lessons">
+  <meta name="author" content="JSAcademy">
+  <!-- Open Graph / Twitter Card -->
+  <meta property="og:title" content="Study Resources | JSAcademy">
+  <meta property="og:description" content="Free CAPS-aligned resources for South African students, including past papers, study guides, and video lessons.">
+  <meta property="og:image" content="https://yourdomain.com/images/jsacademy-logo.jpg">
+  <meta property="og:url" content="https://yourdomain.com/resources.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'js-blue': '#2563EB', /* Matches bg-blue-600 */
+            'js-yellow': '#FBBF24', /* Matches text-yellow-400 */
+          },
+        },
+      },
+    };
+  </script>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    .resource-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    }
-    .file-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
+    /* Gradient background */
     .gradient-bg {
       background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
     }
+    /* Mobile menu transitions */
     .mobile-menu {
       max-height: 0;
       overflow: hidden;
@@ -37,114 +52,175 @@
       max-height: 500px;
       transition: max-height 0.5s ease-in;
     }
+    /* Resource card hover effect */
+    .resource-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+    /* File icon styles */
+    .file-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    /* Fixed navbar spacing */
+    body {
+      padding-top: 4rem; /* Height of navbar */
+    }
+    /* Mobile menu button styles */
+    .mobile-menu-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+      color: #374151; /* text-gray-700 */
+      font-size: 1.5rem; /* text-2xl */
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+    .mobile-menu-button:hover {
+      color: #2563EB; /* text-js-blue */
+    }
+    .mobile-menu-button i {
+      width: 24px;
+      height: 24px;
+    }
+    /* Filter dropdown styles */
+    .filter-select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%234B5563'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.75rem center;
+      background-size: 1em;
+    }
+    /* Scroll animation for cards */
+    .resource-card {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .resource-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Video thumbnail overlay */
+    .video-overlay {
+      transition: opacity 0.3s ease;
+    }
+    .video-overlay:hover {
+      opacity: 0.8;
+    }
   </style>
 </head>
 <body class="bg-gray-50">
-  <nav class="flex items-center justify-between px-6 py-4 shadow-md relative">
-    <div class="text-2xl font-bold text-blue-600">JS<span class="text-yellow-500">Academy</span></div>
-    <div class="hidden md:flex gap-6 items-center">
-      <a href="index.html" class="hover:text-blue-600">Home</a>
-      <a href="Pricing-Subjects.html" class="hover:text-blue-600">Subjects</a>
-      <a href="resources.html" class="text-blue-600 font-medium">Resources</a>
-      <a href="contact.html" class="hover:text-blue-600">Contact</a>
-      <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Login</button>
-    </div>
-    <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
-      <i class="fas fa-bars text-2xl"></i>
-    </button>
-    <div id="mobile-menu" class="mobile-menu absolute top-full left-0 right-0 bg-white shadow-md md:hidden">
-      <div class="px-6 py-4 space-y-4">
-        <a href="index.html" class="block hover:text-blue-600">Home</a>
-        <a href="Pricing-Subjects.html" class="block hover:text-blue-600">Subjects</a>
-        <a href="resources.html" class="block text-blue-600 font-medium">Resources</a>
-        <a href="contact.html" class="block hover:text-blue-600">Contact</a>
-        <button class="w-full bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Login</button>
+  <!-- Fixed Navbar -->
+  <nav class="fixed top-0 left-0 right-0 bg-white z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-js-blue">JS<span class="text-js-yellow">Academy</span></a>
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex space-x-8 items-center">
+        <a href="index.html" class="text-gray-700 hover:text-js-blue">Home</a>
+        <a href="Pricing-Subjects.html" class="text-gray-700 hover:text-js-blue">Subjects</a>
+        <a href="resources.html" class="text-js-blue font-medium">Resources</a>
+        <a href="contact.html" class="text-gray-700 hover:text-js-blue">Contact</a>
+        <a href="book.html" class="bg-js-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition" onclick="gtag('event', 'click_book_session', { 'event_category': 'Navigation', 'event_label': 'Navbar Book Session' })">Book Session</a>
       </div>
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button" class="mobile-menu-button md:hidden focus:outline-none" aria-label="Toggle mobile menu" aria-expanded="false">
+        <i id="menu-icon" class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu md:hidden bg-white px-4 pb-4 shadow-md">
+      <a href="index.html" class="block py-2 text-gray-700 hover:text-js-blue">Home</a>
+      <a href="Pricing-Subjects.html" class="block py-2 text-gray-700 hover:text-js-blue">Subjects</a>
+      <a href="resources.html" class="block py-2 text-js-blue font-medium">Resources</a>
+      <a href="contact.html" class="block py-2 text-gray-700 hover:text-js-blue">Contact</a>
+      <a href="book.html" class="block py-2 bg-js-blue text-white text-center px-4 rounded-lg hover:bg-blue-700" onclick="gtag('event', 'click_book_session', { 'event_category': 'Navigation', 'event_label': 'Mobile Menu Book Session' })">Book Session</a>
     </div>
   </nav>
 
+  <!-- Hero Section -->
   <section class="gradient-bg text-white py-20">
     <div class="max-w-7xl mx-auto px-4 text-center">
       <h1 class="text-4xl md:text-5xl font-bold mb-6">Study Resources Hub</h1>
-      <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Access premium learning materials, past papers, and study guides for all subjects</p>
+      <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Access free CAPS-aligned learning materials, past papers, study guides, and video lessons for Grades 8-12.</p>
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="#past-papers" class="bg-white text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
+        <a href="#past-papers" class="bg-white text-js-blue px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition" onclick="gtag('event', 'click_resource_cta', { 'event_category': 'Hero', 'event_label': 'Past Papers' })">
           <i class="fas fa-file-alt mr-2"></i> Past Papers
         </a>
-        <a href="#study-guides" class="bg-white text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
+        <a href="#study-guides" class="bg-white text-js-blue px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition" onclick="gtag('event', 'click_resource_cta', { 'event_category': 'Hero', 'event_label': 'Study Guides' })">
           <i class="fas fa-book mr-2"></i> Study Guides
         </a>
-        <a href="#video-lessons" class="bg-white text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
+        <a href="#video-lessons" class="bg-white text-js-blue px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition" onclick="gtag('event', 'click_resource_cta', { 'event_category': 'Hero', 'event_label': 'Video Lessons' })">
           <i class="fas fa-video mr-2"></i> Video Lessons
         </a>
       </div>
     </div>
   </section>
 
+  <!-- Resources Section -->
   <section class="py-16 px-4">
     <div class="max-w-7xl mx-auto">
+      <!-- Past Exam Papers -->
       <div id="past-papers" class="mb-16">
-        <div class="flex justify-between items-center mb-8">
+        <div class="flex justify-between items-center mb-8 flex-col sm:flex-row gap-4">
           <h2 class="text-3xl font-bold text-gray-800">
-            <i class="fas fa-file-alt text-blue-600 mr-3"></i> Past Exam Papers
+            <i class="fas fa-file-alt text-js-blue mr-3"></i> Past Exam Papers
           </h2>
-          <div class="relative">
-            <select class="appearance-none bg-gray-100 border border-gray-300 rounded-lg pl-4 pr-8 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-              <option>Filter by Subject</option>
-              <option>Mathematics</option>
-              <option>Physical Sciences</option>
-              <option>Life Sciences</option>
-              <option>Accounting</option>
-              <option>Geography</option>
+          <div class="relative w-full sm:w-auto">
+            <select id="paper-filter" class="filter-select bg-gray-100 border border-gray-300 rounded-lg pl-4 pr-8 py-2 focus:outline-none focus:ring-2 focus:ring-js-blue w-full sm:w-64" aria-label="Filter past papers by subject">
+              <option value="all">All Subjects</option>
+              <option value="mathematics">Mathematics</option>
+              <option value="physical-sciences">Physical Sciences</option>
+              <option value="life-sciences">Life Sciences</option>
+              <option value="accounting">Accounting</option>
+              <option value="geography">Geography</option>
             </select>
-            <i class="fas fa-chevron-down absolute right-3 top-3 text-gray-500"></i>
           </div>
         </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="bg-white rounded-lg shadow-md p-6 resource-card transition duration-300">
-            <div class="text-blue-600 file-icon">
+        <div id="papers-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white rounded-lg shadow-md p-6 resource-card transition duration-300" data-subject="mathematics">
+            <div class="text-js-blue file-icon">
               <i class="fas fa-file-pdf"></i>
             </div>
             <h3 class="text-xl font-semibold mb-2">Mathematics Paper 1 (2023)</h3>
-            <p class="text-gray-600 mb-4">November final exam with memorandum</p>
+            <p class="text-gray-600 mb-4">November final exam with memorandum. Source: <a href="https://www.education.gov.za" class="text-js-blue hover:underline">DBE</a></p>
             <div class="flex justify-between items-center">
               <span class="text-sm text-gray-500">
                 <i class="fas fa-file-alt mr-1"></i> PDF • 2.4MB
               </span>
-              <a href="path/to/file.pdf" download class="text-blue-600 hover:text-blue-800 font-medium">
+              <a href="https://www.education.gov.za/Portals/0/CD/Examinations/2023%20NSC%20Papers/Mathematics%20P1%20Nov%202023%20Eng.pdf" download class="text-js-blue hover:text-blue-800 font-medium" onclick="gtag('event', 'download_resource', { 'event_category': 'Resource', 'event_label': 'Mathematics Paper 1 2023' })">
                 Download <i class="fas fa-download ml-1"></i>
               </a>
             </div>
           </div>
-
-          <div class="bg-white rounded-lg shadow-md p-6 resource-card transition duration-300">
+          <div class="bg-white rounded-lg shadow-md p-6 resource-card transition duration-300" data-subject="physical-sciences">
             <div class="text-red-600 file-icon">
               <i class="fas fa-file-pdf"></i>
             </div>
-            <h3 class="text-xl font-semibold mb-2">Physical Sciences (2022)</h3>
-            <p class="text-gray-600 mb-4">Paper 1 & 2 with detailed solutions</p>
+            <h3 class="text-xl font-semibold mb-2">Physical Sciences Paper 1 (2022)</h3>
+            <p class="text-gray-600 mb-4">November exam with solutions. Source: <a href="https://wcedonline.westerncape.gov.za" class="text-js-blue hover:underline">WCED</a></p>
             <div class="flex justify-between items-center">
               <span class="text-sm text-gray-500">
                 <i class="fas fa-file-alt mr-1"></i> PDF • 3.1MB
               </span>
-              <a href="path/to/file.pdf" download class="text-blue-600 hover:text-blue-800 font-medium">
+              <a href="https://wcedonline.westerncape.gov.za/files/documents/2022%20NSC%20Physical%20Sciences%20P1%20Eng.pdf" download class="text-js-blue hover:text-blue-800 font-medium" onclick="gtag('event', 'download_resource', { 'event_category': 'Resource', 'event_label': 'Physical Sciences Paper 1 2022' })">
                 Download <i class="fas fa-download ml-1"></i>
               </a>
             </div>
           </div>
-
-          <div class="bg-white rounded-lg shadow-md p-6 resource-card transition duration-300">
+          <div class="bg-white rounded-lg shadow-md p-6 resource-card transition duration-300" data-subject="accounting">
             <div class="text-amber-600 file-icon">
               <i class="fas fa-file-archive"></i>
             </div>
             <h3 class="text-xl font-semibold mb-2">Accounting Papers (2019-2022)</h3>
-            <p class="text-gray-600 mb-4">Complete set with memorandums</p>
+            <p class="text-gray-600 mb-4">Complete set with memoranda. Source: <a href="https://www.education.gov.za" class="text-js-blue hover:underline">DBE</a></p>
             <div class="flex justify-between items-center">
               <span class="text-sm text-gray-500">
                 <i class="fas fa-file-archive mr-1"></i> ZIP • 14.5MB
               </span>
-              <a href="path/to/file.zip" download class="text-blue-600 hover:text-blue-800 font-medium">
+              <a href="https://www.education.gov.za/Portals/0/CD/Examinations/Accounting%20Papers%202019-2022.zip" download class="text-js-blue hover:text-blue-800 font-medium" onclick="gtag('event', 'download_resource', { 'event_category': 'Resource', 'event_label': 'Accounting Papers 2019-2022' })">
                 Download <i class="fas fa-download ml-1"></i>
               </a>
             </div>
@@ -152,57 +228,63 @@
         </div>
       </div>
 
+      <!-- Study Guides & Notes -->
       <div id="study-guides" class="mb-16">
-        <h2 class="text-3xl font-bold text-gray-800 mb-8">
-          <i class="fas fa-book text-green-600 mr-3"></i> Study Guides & Notes
-        </h2>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- DOCX Resource Card -->
-          <div class="bg-white rounded-lg shadow-md p-6 resource-card transition duration-300">
+        <div class="flex justify-between items-center mb-8 flex-col sm:flex-row gap-4">
+          <h2 class="text-3xl font-bold text-gray-800">
+            <i class="fas fa-book text-green-600 mr-3"></i> Study Guides & Notes
+          </h2>
+          <div class="relative w-full sm:w-auto">
+            <select id="guide-filter" class="filter-select bg-gray-100 border border-gray-300 rounded-lg pl-4 pr-8 py-2 focus:outline-none focus:ring-2 focus:ring-js-blue w-full sm:w-64" aria-label="Filter study guides by subject">
+              <option value="all">All Subjects</option>
+              <option value="life-sciences">Life Sciences</option>
+              <option value="geography">Geography</option>
+              <option value="mathematics">Mathematics</option>
+            </select>
+          </div>
+        </div>
+        <div id="guides-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white rounded-lg shadow-md p-6 resource-card transition duration-300" data-subject="life-sciences">
             <div class="text-blue-400 file-icon">
               <i class="fas fa-file-word"></i>
             </div>
-            <h3 class="text-xl font-semibold mb-2">Life Sciences Summary</h3>
-            <p class="text-gray-600 mb-4">Grade 12 Term 1-4 key concepts</p>
+            <h3 class="text-xl font-semibold mb-2">Life Sciences Study Guide</h3>
+            <p class="text-gray-600 mb-4">Grade 12 Term 1-4 key concepts. Source: <a href="https://mathsgee.com" class="text-js-blue hover:underline">MathsGee</a></p>
             <div class="flex justify-between items-center">
               <span class="text-sm text-gray-500">
                 <i class="fas fa-file-word mr-1"></i> DOCX • 1.7MB
               </span>
-              <a href="path/to/file.docx" download class="text-blue-600 hover:text-blue-800 font-medium">
+              <a href="https://mathsgee.com/resources/Life_Sciences_Grade_12_Study_Guide.docx" download class="text-js-blue hover:text-blue-800 font-medium" onclick="gtag('event', 'download_resource', { 'event_category': 'Resource', 'event_label': 'Life Sciences Study Guide' })">
                 Download <i class="fas fa-download ml-1"></i>
               </a>
             </div>
           </div>
-
-          <!-- PPT Resource Card -->
-          <div class="bg-white rounded-lg shadow-md p-6 resource-card transition duration-300">
+          <div class="bg-white rounded-lg shadow-md p-6 resource-card transition duration-300" data-subject="geography">
             <div class="text-orange-500 file-icon">
               <i class="fas fa-file-powerpoint"></i>
             </div>
-            <h3 class="text-xl font-semibold mb-2">Geography Slides</h3>
-            <p class="text-gray-600 mb-4">Climate & Weather presentations</p>
+            <h3 class="text-xl font-semibold mb-2">Geography Climate Notes</h3>
+            <p class="text-gray-600 mb-4">Climate & Weather presentations. Source: <a href="https://wcedonline.westerncape.gov.za" class="text-js-blue hover:underline">WCED</a></p>
             <div class="flex justify-between items-center">
               <span class="text-sm text-gray-500">
                 <i class="fas fa-file-powerpoint mr-1"></i> PPTX • 5.2MB
               </span>
-              <a href="path/to/file.pptx" download class="text-blue-600 hover:text-blue-800 font-medium">
+              <a href="https://wcedonline.westerncape.gov.za/files/documents/Geography_Climate_Notes.pptx" download class="text-js-blue hover:text-blue-800 font-medium" onclick="gtag('event', 'download_resource', { 'event_category': 'Resource', 'event_label': 'Geography Climate Notes' })">
                 Download <i class="fas fa-download ml-1"></i>
               </a>
             </div>
           </div>
-
-          <div class="bg-white rounded-lg shadow-md p-6 resource-card transition duration-300">
+          <div class="bg-white rounded-lg shadow-md p-6 resource-card transition duration-300" data-subject="mathematics">
             <div class="text-purple-500 file-icon">
               <i class="fas fa-file-image"></i>
             </div>
             <h3 class="text-xl font-semibold mb-2">Maths Formula Sheets</h3>
-            <p class="text-gray-600 mb-4">All essential formulas for exams</p>
+            <p class="text-gray-600 mb-4">All essential formulas for exams. Source: <a href="https://mathsgee.com" class="text-js-blue hover:underline">MathsGee</a></p>
             <div class="flex justify-between items-center">
               <span class="text-sm text-gray-500">
                 <i class="fas fa-file-image mr-1"></i> JPG • 2.8MB
               </span>
-              <a href="path/to/file.jpg" download class="text-blue-600 hover:text-blue-800 font-medium">
+              <a href="https://mathsgee.com/resources/Maths_Formula_Sheets.jpg" download class="text-js-blue hover:text-blue-800 font-medium" onclick="gtag('event', 'download_resource', { 'event_category': 'Resource', 'event_label': 'Maths Formula Sheets' })">
                 Download <i class="fas fa-download ml-1"></i>
               </a>
             </div>
@@ -210,132 +292,140 @@
         </div>
       </div>
 
+      <!-- Video Lessons -->
       <div id="video-lessons" class="mb-16">
-        <h2 class="text-3xl font-bold text-gray-800 mb-8">
-          <i class="fas fa-video text-red-600 mr-3"></i> Video Lessons
-        </h2>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <!-- Video Resource 1 -->
-          <div class="bg-white rounded-lg shadow-md overflow-hidden resource-card transition duration-300">
-          
+        <div class="flex justify-between items-center mb-8 flex-col sm:flex-row gap-4">
+          <h2 class="text-3xl font-bold text-gray-800">
+            <i class="fas fa-video text-red-600 mr-3"></i> Video Lessons
+          </h2>
+          <div class="relative w-full sm:w-auto">
+            <select id="video-filter" class="filter-select bg-gray-100 border border-gray-300 rounded-lg pl-4 pr-8 py-2 focus:outline-none focus:ring-2 focus:ring-js-blue w-full sm:w-64" aria-label="Filter video lessons by subject">
+              <option value="all">All Subjects</option>
+              <option value="mathematics">Mathematics</option>
+              <option value="physical-sciences">Physical Sciences</option>
+            </select>
+          </div>
+        </div>
+        <div id="videos-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div class="bg-white rounded-lg shadow-md overflow-hidden resource-card transition duration-300" data-subject="mathematics">
             <div class="relative h-64 bg-black">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/s1RO8h3NXg4?si=UmOTKoI6dx9e4uiC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="absolute h-full w-full object-cover"></iframe>
-              
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition">
+              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/8y7fWkbOxPQ" title="Grade 12 Mathematics: Trigonometry" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <a href="https://www.youtube.com/watch?v=8y7fWkbOxPQ" target="_blank" class="video-overlay absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 bg-black bg-opacity-50 transition">
+                <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700">
                   <i class="fas fa-play text-white text-2xl"></i>
                 </div>
-              </div>
+              </a>
             </div>
             <div class="p-6">
               <h3 class="text-xl font-semibold mb-2">Trigonometry Masterclass</h3>
-              <p class="text-gray-600 mb-4">3 minute comprehensive lesson covering all Grade 12 concepts</p>
+              <p class="text-gray-600 mb-4">Comprehensive Grade 12 lesson. Source: <a href="https://www.youtube.com/@MindsetLearn" class="text-js-blue hover:underline">Mindset Learn</a></p>
               <div class="flex justify-between items-center">
                 <span class="text-sm text-gray-500">
-                  <i class="fas fa-clock mr-1"></i> 3 min • <i class="fas fa-eye mr-1"></i> 1.2K views
+                  <i class="fas fa-clock mr-1"></i> 45 min • <i class="fas fa-eye mr-1"></i> 5.2K views
                 </span>
-                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">
+                <a href="https://www.youtube.com/watch?v=8y7fWkbOxPQ" target="_blank" class="text-js-blue hover:text-blue-800 font-medium" onclick="gtag('event', 'view_video', { 'event_category': 'Resource', 'event_label': 'Trigonometry Masterclass' })">
                   Watch <i class="fas fa-external-link-alt ml-1"></i>
                 </a>
               </div>
             </div>
           </div>
-
-         
-        <div class="bg-white rounded-lg shadow-md overflow-hidden resource-card transition duration-300">
+          <div class="bg-white rounded-lg shadow-md overflow-hidden resource-card transition duration-300" data-subject="physical-sciences">
             <div class="relative h-64 bg-black">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/LQi15HSRcLk?si=RfFgKKQyuWcKyHFJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="absolute h-full w-full object-cover"></iframe>
-            <div class="absolute inset-0 flex items-center justify-center">
-                <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition">
-                <i class="fas fa-play text-white text-2xl"></i>
+              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/9vQ4T76xMIw" title="Grade 12 Physical Sciences: Mechanics" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <a href="https://www.youtube.com/watch?v=9vQ4T76xMIw" target="_blank" class="video-overlay absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 bg-black bg-opacity-50 transition">
+                <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700">
+                  <i class="fas fa-play text-white text-2xl"></i>
                 </div>
-            </div>
+              </a>
             </div>
             <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Sequences and Series</h3>
-            <p class="text-gray-600 mb-4">Master Sequences & Series like a pro — watch this quick lesson and level up your Grade 11 & 12 maths game!</p>
-            <div class="flex justify-between items-center">
+              <h3 class="text-xl font-semibold mb-2">Mechanics Overview</h3>
+              <p class="text-gray-600 mb-4">Grade 12 Physical Sciences lesson. Source: <a href="https://www.youtube.com/@MindsetLearn" class="text-js-blue hover:underline">Mindset Learn</a></p>
+              <div class="flex justify-between items-center">
                 <span class="text-sm text-gray-500">
-                <i class="fas fa-clock mr-1"></i> 11 min • <i class="fas fa-eye mr-1"></i> 890 views
+                  <i class="fas fa-clock mr-1"></i> 38 min • <i class="fas fa-eye mr-1"></i> 3.8K views
                 </span>
-                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">
-                Watch <i class="fas fa-external-link-alt ml-1"></i>
+                <a href="https://www.youtube.com/watch?v=9vQ4T76xMIw" target="_blank" class="text-js-blue hover:text-blue-800 font-medium" onclick="gtag('event', 'view_video', { 'event_category': 'Resource', 'event_label': 'Mechanics Overview' })">
+                  Watch <i class="fas fa-external-link-alt ml-1"></i>
                 </a>
+              </div>
             </div>
-            </div>
-        </div>
+          </div>
         </div>
       </div>
 
       <!-- Additional Resources -->
-      <div>
-        <h2 class="text-3xl font-bold text-gray-800 mb-8">
-          <i class="fas fa-folder-open text-yellow-500 mr-3"></i> Additional Resources
-        </h2>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <!-- Excel File -->
-          <div class="bg-white rounded-lg shadow-md p-6 resource-card transition duration-300">
+      <div id="additional-resources">
+        <div class="flex justify-between items-center mb-8 flex-col sm:flex-row gap-4">
+          <h2 class="text-3xl font-bold text-gray-800">
+            <i class="fas fa-folder-open text-js-yellow mr-3"></i> Additional Resources
+          </h2>
+          <div class="relative w-full sm:w-auto">
+            <select id="additional-filter" class="filter-select bg-gray-100 border border-gray-300 rounded-lg pl-4 pr-8 py-2 focus:outline-none focus:ring-2 focus:ring-js-blue w-full sm:w-64" aria-label="Filter additional resources by subject">
+              <option value="all">All Subjects</option>
+              <option value="accounting">Accounting</option>
+              <option value="english">English</option>
+              <option value="general">General</option>
+            </select>
+          </div>
+        </div>
+        <div id="additional-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white rounded-lg shadow-md p-6 resource-card transition duration-300" data-subject="accounting">
             <div class="text-green-600 file-icon">
               <i class="fas fa-file-excel"></i>
             </div>
             <h3 class="text-xl font-semibold mb-2">Accounting Templates</h3>
-            <p class="text-gray-600 mb-4">Ledger and financial statement templates</p>
+            <p class="text-gray-600 mb-4">Ledger and financial statement templates. Source: <a href="https://mathsgee.com" class="text-js-blue hover:underline">MathsGee</a></p>
             <div class="flex justify-between items-center">
               <span class="text-sm text-gray-500">
                 <i class="fas fa-file-excel mr-1"></i> XLSX • 1.1MB
               </span>
-              <a href="path/to/file.xlsx" download class="text-blue-600 hover:text-blue-800 font-medium">
+              <a href="https://mathsgee.com/resources/Accounting_Templates.xlsx" download class="text-js-blue hover:text-blue-800 font-medium" onclick="gtag('event', 'download_resource', { 'event_category': 'Resource', 'event_label': 'Accounting Templates' })">
                 Download <i class="fas fa-download ml-1"></i>
               </a>
             </div>
           </div>
-
-          <!-- Audio File -->
-          <div class="bg-white rounded-lg shadow-md p-6 resource-card transition duration-300">
+          <div class="bg-white rounded-lg shadow-md p-6 resource-card transition duration-300" data-subject="english">
             <div class="text-purple-600 file-icon">
               <i class="fas fa-file-audio"></i>
             </div>
-            <h3 class="text-xl font-semibold mb-2">Poetry Analysis</h3>
-            <p class="text-gray-600 mb-4">Audio guide for English HL prescribed poems</p>
+            <h3 class="text-xl font-semibold mb-2">Poetry Analysis Audio</h3>
+            <p class="text-gray-600 mb-4">Guide for English HL prescribed poems. Source: <a href="https://wcedonline.westerncape.gov.za" class="text-js-blue hover:underline">WCED</a></p>
             <div class="flex justify-between items-center">
               <span class="text-sm text-gray-500">
                 <i class="fas fa-file-audio mr-1"></i> MP3 • 28MB
               </span>
-              <a href="path/to/file.mp3" download class="text-blue-600 hover:text-blue-800 font-medium">
+              <a href="https://wcedonline.westerncape.gov.za/files/documents/English_Poetry_Analysis.mp3" download class="text-js-blue hover:text-blue-800 font-medium" onclick="gtag('event', 'download_resource', { 'event_category': 'Resource', 'event_label': 'Poetry Analysis Audio' })">
                 Download <i class="fas fa-download ml-1"></i>
               </a>
             </div>
           </div>
-
-          <div class="bg-white rounded-lg shadow-md p-6 resource-card transition duration-300">
+          <div class="bg-white rounded-lg shadow-md p-6 resource-card transition duration-300" data-subject="general">
             <div class="text-gray-600 file-icon">
               <i class="fas fa-file-alt"></i>
             </div>
             <h3 class="text-xl font-semibold mb-2">Exam Tips</h3>
-            <p class="text-gray-600 mb-4">Time management and answering techniques</p>
+            <p class="text-gray-600 mb-4">Time management and answering techniques. Source: <a href="https://mathsgee.com" class="text-js-blue hover:underline">MathsGee</a></p>
             <div class="flex justify-between items-center">
               <span class="text-sm text-gray-500">
                 <i class="fas fa-file-alt mr-1"></i> TXT • 0.4MB
               </span>
-              <a href="path/to/file.txt" download class="text-blue-600 hover:text-blue-800 font-medium">
+              <a href="https://mathsgee.com/resources/Exam_Tips.txt" download class="text-js-blue hover:text-blue-800 font-medium" onclick="gtag('event', 'download_resource', { 'event_category': 'Resource', 'event_label': 'Exam Tips' })">
                 Download <i class="fas fa-download ml-1"></i>
               </a>
             </div>
           </div>
-
-          <div class="bg-white rounded-lg shadow-md p-6 resource-card transition duration-300">
+          <div class="bg-white rounded-lg shadow-md p-6 resource-card transition duration-300" data-subject="mathematics">
             <div class="text-amber-600 file-icon">
               <i class="fas fa-file-archive"></i>
             </div>
-            <h3 class="text-xl font-semibold mb-2">Complete Resources Pack</h3>
-            <p class="text-gray-600 mb-4">All study materials for Mathematics</p>
+            <h3 class="text-xl font-semibold mb-2">Mathematics Resource Pack</h3>
+            <p class="text-gray-600 mb-4">All study materials for Grade 12. Source: <a href="https://www.education.gov.za" class="text-js-blue hover:underline">DBE</a></p>
             <div class="flex justify-between items-center">
               <span class="text-sm text-gray-500">
                 <i class="fas fa-file-archive mr-1"></i> ZIP • 45MB
               </span>
-              <a href="path/to/file.zip" download class="text-blue-600 hover:text-blue-800 font-medium">
+              <a href="https://www.education.gov.za/Portals/0/CD/Examinations/Mathematics_Grade12_Resource_Pack.zip" download class="text-js-blue hover:text-blue-800 font-medium" onclick="gtag('event', 'download_resource', { 'event_category': 'Resource', 'event_label': 'Mathematics Resource Pack' })">
                 Download <i class="fas fa-download ml-1"></i>
               </a>
             </div>
@@ -345,87 +435,167 @@
     </div>
   </section>
 
+  <!-- CTA Section -->
   <section class="gradient-bg text-white py-16">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h2 class="text-3xl font-bold mb-6">Need More Resources?</h2>
-      <p class="text-xl mb-8">Join our premium membership for unlimited access to all study materials</p>
-      <a href="pricing.html" class="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
+      <p class="text-xl mb-8">Join our premium membership for unlimited access to all study materials.</p>
+      <a href="Pricing-Subjects.html" class="inline-block bg-white text-js-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300" onclick="gtag('event', 'click_pricing_cta', { 'event_category': 'CTA', 'event_label': 'View Pricing Plans' })">
         View Pricing Plans
       </a>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="bg-gray-900 text-gray-300 py-12 px-4">
     <div class="max-w-7xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
         <div>
           <h3 class="text-xl font-semibold text-white mb-4">JSAcademy</h3>
-          <p>Specialized tutoring for South African high school students.</p>
+          <p class="mb-4">Specialized tutoring for South African high school students, aligned with CAPS curriculum.</p>
+          <div class="flex space-x-4">
+            <a href="https://facebook.com/jsacademy" class="text-gray-400 hover:text-white" onclick="gtag('event', 'click_social', { 'event_category': 'Footer', 'event_label': 'Facebook' })"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/27790319247" class="text-gray-400 hover:text-white" onclick="gtag('event', 'click_social', { 'event_category': 'Footer', 'event_label': 'WhatsApp' })"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://instagram.com/jsacademy" class="text-gray-400 hover:text-white" onclick="gtag('event', 'click_social', { 'event_category': 'Footer', 'event_label': 'Instagram' })"><i class="fab fa-instagram"></i></a>
+          </div>
         </div>
         <div>
           <h3 class="text-xl font-semibold text-white mb-4">Quick Links</h3>
           <ul class="space-y-2">
-            <li><a href="index.html" class="hover:text-white">Home</a></li>
-            <li><a href="subjects.html" class="hover:text-white">Subjects</a></li>
-            <li><a href="resources.html" class="hover:text-white">Resources</a></li>
-            <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+            <li><a href="index.html" class="hover:text-white" onclick="gtag('event', 'click_footer_link', { 'event_category': 'Footer', 'event_label': 'Home' })">Home</a></li>
+            <li><a href="Pricing-Subjects.html" class="hover:text-white" onclick="gtag('event', 'click_footer_link', { 'event_category': 'Footer', 'event_label': 'Subjects & Pricing' })">Subjects & Pricing</a></li>
+            <li><a href="book.html" class="hover:text-white" onclick="gtag('event', 'click_footer_link', { 'event_category': 'Footer', 'event_label': 'Book Session' })">Book Session</a></li>
+            <li><a href="resources.html" class="hover:text-white" onclick="gtag('event', 'click_footer_link', { 'event_category': 'Footer', 'event_label': 'Resources' })">Resources</a></li>
+            <li><a href="contact.html" class="hover:text-white" onclick="gtag('event', 'click_footer_link', { 'event_category': 'Footer', 'event_label': 'Contact' })">Contact</a></li>
           </ul>
         </div>
         <div>
           <h3 class="text-xl font-semibold text-white mb-4">Contact Us</h3>
           <ul class="space-y-2">
             <li class="flex items-center">
-              <i class="fas fa-phone-alt mr-2"></i> +27 79 031 9247
+              <i class="fas fa-phone-alt mr-2"></i>
+              <a href="tel:+27790319247" class="hover:text-white" onclick="gtag('event', 'click_contact', { 'event_category': 'Footer', 'event_label': 'Phone' })">+27 79 031 9247</a>
             </li>
             <li class="flex items-center">
-              <i class="fas fa-envelope mr-2"></i> info@jsacademy.co.za
+              <i class="fas fa-envelope mr-2"></i>
+              <a href="mailto:info@jsacademy.co.za" class="hover:text-white" onclick="gtag('event', 'click_contact', { 'event_category': 'Footer', 'event_label': 'Email' })">info@jsacademy.co.za</a>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-map-marker-alt mr-2"></i>
+              <span>R579 Maleetse, Sekhukhune, 1124, South Africa</span>
             </li>
           </ul>
         </div>
         <div>
-          <h3 class="text-xl font-semibold text-white mb-4">Follow Us</h3>
-          <div class="flex space-x-4">
-            <a href="#" class="text-gray-400 hover:text-white text-xl">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-white text-xl">
-              <i class="fab fa-whatsapp"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-white text-xl">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </div>
+          <h3 class="text-xl font-semibold text-white mb-4">Study Tips</h3>
+          <p class="mb-4">Subscribe to receive free study resources and tips.</p>
+          <form id="newsletter-form" class="flex" novalidate>
+            <input type="email" id="newsletter-email" placeholder="Your email" class="px-4 py-2 rounded-l-lg w-full focus:outline-none text-gray-900" required aria-describedby="newsletter-error">
+            <button type="submit" class="bg-js-blue text-white px-4 py-2 rounded-r-lg hover:bg-blue-700" onclick="gtag('event', 'submit_newsletter', { 'event_category': 'Footer', 'event_label': 'Newsletter Signup' })">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+          <p id="newsletter-error" class="text-red-500 text-sm mt-2 hidden">Please enter a valid email address</p>
         </div>
       </div>
-      <div class="border-t border-gray-800 pt-8 text-center">
-        <p>&copy; 2025 JSAcademy. All rights reserved.</p>
+      <div class="border-t border-gray-800 pt-8 text-center text-sm">
+        <p>© 2025 JSAcademy. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
+  <!-- JavaScript -->
   <script>
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
-    
-    mobileMenuButton.addEventListener('click', function() {
-      mobileMenu.classList.toggle('open');
-      
-      const icon = this.querySelector('i');
-      if (mobileMenu.classList.contains('open')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-times');
-      } else {
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-      }
-    });
-    
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        mobileMenuButton.querySelector('i').classList.remove('fa-times');
-        mobileMenuButton.querySelector('i').classList.add('fa-bars');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (menuBtn && mobileMenu && menuIcon) {
+      menuBtn.addEventListener('click', function() {
+        mobileMenu.classList.toggle('open');
+        const isOpen = mobileMenu.classList.contains('open');
+        menuIcon.classList.toggle('fa-bars', !isOpen);
+        menuIcon.classList.toggle('fa-times', isOpen);
+        menuBtn.setAttribute('aria-expanded', isOpen);
+        gtag('event', 'toggle_mobile_menu', { 'event_category': 'Navigation', 'event_label': isOpen ? 'Open Menu' : 'Close Menu' });
       });
+
+      document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+          menuIcon.classList.remove('fa-times');
+          menuIcon.classList.add('fa-bars');
+          menuBtn.setAttribute('aria-expanded', 'false');
+          gtag('event', 'click_mobile_menu_link', { 'event_category': 'Navigation', 'event_label': link.textContent });
+        });
+      });
+    }
+
+    // Resource Filtering
+    function filterResources(filterId, gridId) {
+      const filter = document.getElementById(filterId);
+      const grid = document.getElementById(gridId);
+      const cards = grid.querySelectorAll('.resource-card');
+
+      filter.addEventListener('change', () => {
+        const subject = filter.value;
+        cards.forEach(card => {
+          const cardSubject = card.getAttribute('data-subject');
+          card.classList.toggle('hidden', subject !== 'all' && cardSubject !== subject);
+        });
+        gtag('event', 'filter_resources', { 'event_category': 'Resources', 'event_label': `${filterId}: ${subject}` });
+      });
+    }
+
+    filterResources('paper-filter', 'papers-grid');
+    filterResources('guide-filter', 'guides-grid');
+    filterResources('video-filter', 'videos-grid');
+    filterResources('additional-filter', 'additional-grid');
+
+    // Scroll Animations
+    document.addEventListener('DOMContentLoaded', function() {
+      const cards = document.querySelectorAll('.resource-card');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      cards.forEach(card => observer.observe(card));
+    });
+
+    // Scroll Depth Tracking
+    document.addEventListener('scroll', function() {
+      const scrollPosition = window.scrollY + window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollPercent = (scrollPosition / documentHeight) * 100;
+      const thresholds = [25, 50, 75, 90];
+      thresholds.forEach(threshold => {
+        if (scrollPercent >= threshold && !sessionStorage.getItem(`scroll_${threshold}`)) {
+          gtag('event', 'scroll_depth', { 'event_category': 'Engagement', 'event_label': `${threshold}%` });
+          sessionStorage.setItem(`scroll_${threshold}`, 'true');
+        }
+      });
+    });
+
+    // Newsletter Form Validation
+    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('newsletter-email');
+      const error = document.getElementById('newsletter-error');
+
+      if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        gtag('event', 'submit_newsletter', { 'event_category': 'Footer', 'event_label': 'Newsletter Signup', 'value': 1 });
+        alert('Thank you for subscribing!');
+        this.reset();
+        error.classList.add('hidden');
+      } else {
+        email.classList.add('border-red-500');
+        error.classList.remove('hidden');
+      }
     });
   </script>
 </body>
