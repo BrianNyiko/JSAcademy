@@ -2,90 +2,140 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LRVQFXXCQM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LRVQFXXCQM');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRVQFXXCQM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LRVQFXXCQM');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Subjects & Pricing | JSAcademy</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta name="description" content="Explore JSAcademy's tutoring subjects and pricing for Grades 8-12, aligned with South Africa's CAPS curriculum. Book a session today!">
+  <meta name="keywords" content="JSAcademy, South Africa tutoring, CAPS subjects, tutoring prices, Maths tutoring, Science tutoring">
+  <meta name="author" content="JSAcademy">
+  <!-- Open Graph / Twitter Card -->
+  <meta property="og:title" content="Subjects & Pricing | JSAcademy">
+  <meta property="og:description" content="Tutoring subjects and pricing for South African students, aligned with CAPS curriculum.">
+  <meta property="og:image" content="https://yourdomain.com/images/jsacademy-logo.jpg">
+  <meta property="og:url" content="https://yourdomain.com/Pricing-Subjects.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'js-blue': '#2563EB', /* Matches bg-blue-600 */
+            'js-yellow': '#FBBF24', /* Matches text-yellow-400 */
+          },
+        },
+      },
+    };
+  </script>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
+    /* Gradient background */
+    .gradient-bg {
+      background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    }
+    /* Subject card hover */
     .subject-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     }
+    /* Pricing card hover */
     .pricing-card:hover {
       transform: scale(1.03);
     }
-    .gradient-bg {
-      background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    /* Mobile menu transitions */
+    .mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
     }
-     .mobile-menu {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-out;
-        }
-        .mobile-menu.open {
-        max-height: 500px;
-        transition: max-height 0.5s ease-in;
-        }
+    .mobile-menu.open {
+      max-height: 500px;
+      transition: max-height 0.5s ease-in;
+    }
+    /* Fixed navbar spacing */
+    body {
+      padding-top: 4rem; /* Height of navbar */
+    }
+    /* Mobile menu button styles */
+    .mobile-menu-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+      color: #374151; /* text-gray-700 */
+      font-size: 1.5rem; /* text-2xl */
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+    .mobile-menu-button:hover {
+      color: #2563EB; /* text-js-blue */
+    }
+    .mobile-menu-button i {
+      width: 24px;
+      height: 24px;
+    }
   </style>
 </head>
 <body class="bg-gray-50">
-  <nav class="flex items-center justify-between px-6 py-4 shadow-md relative">
-    <div class="text-2xl font-bold text-blue-600">JS<span class="text-yellow-500">Academy</span></div>
-
-    <div class="hidden md:flex gap-6 items-center">
-      <a href="index.html" class="hover:text-blue-600">Home</a>
-      <a href="Pricing-Subjects.html" class="text-blue-600 font-medium">Subjects</a>
-      <a href="resources.html" class="hover:text-blue-600">Resources</a>
-      <a href="contact.html" class="hover:text-blue-600">Contact</a>
-      <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700" onclick="window.location.href='login.html'">Book Session</button>
-    </div>
-
-    <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
-      <i class="fas fa-bars text-2xl"></i>
-    </button>
-
-    <div id="mobile-menu" class="mobile-menu absolute top-full left-0 right-0 bg-white shadow-md md:hidden">
-      <div class="px-6 py-4 space-y-4">
-        <a href="index.html" class="block hover:text-blue-600">Home</a>
-        <a href="Pricing-Subjects.html" class="block text-blue-600 font-medium">Subjects</a>
-        <a href="resources.html" class="block hover:text-blue-600">Resources</a>
-        <a href="contact.html" class="block hover:text-blue-600">Contact</a>
-        <button class="w-full bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700" onclick="window.location.href='login.html'">Book Session</button>
+  <!-- Fixed Navbar -->
+  <nav class="fixed top-0 left-0 right-0 bg-white z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-js-blue">JS<span class="text-js-yellow">Academy</span></a>
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex space-x-8 items-center">
+        <a href="index.html" class="text-gray-700 hover:text-js-blue">Home</a>
+        <a href="Pricing-Subjects.html" class="text-js-blue font-medium">Subjects</a>
+        <a href="resources.html" class="text-gray-700 hover:text-js-blue">Resources</a>
+        <a href="contact.html" class="text-gray-700 hover:text-js-blue">Contact</a>
+        <a href="book.html" class="bg-js-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition" onclick="gtag('event', 'click_book_session', { 'event_category': 'Navigation', 'event_label': 'Navbar Book Session' })">Book Session</a>
       </div>
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button" class="mobile-menu-button md:hidden focus:outline-none" aria-label="Toggle mobile menu" aria-expanded="false">
+        <i id="menu-icon" class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu md:hidden bg-white px-4 pb-4 shadow-md">
+      <a href="index.html" class="block py-2 text-gray-700 hover:text-js-blue">Home</a>
+      <a href="Pricing-Subjects.html" class="block py-2 text-js-blue font-medium">Subjects</a>
+      <a href="resources.html" class="block py-2 text-gray-700 hover:text-js-blue">Resources</a>
+      <a href="contact.html" class="block py-2 text-gray-700 hover:text-js-blue">Contact</a>
+      <a href="book.html" class="block py-2 bg-js-blue text-white text-center px-4 rounded-lg hover:bg-blue-700" onclick="gtag('event', 'click_book_session', { 'event_category': 'Navigation', 'event_label': 'Mobile Menu Book Session' })">Book Session</a>
     </div>
   </nav>
 
+  <!-- Hero Section -->
   <section class="gradient-bg text-white py-20">
     <div class="max-w-7xl mx-auto px-4 text-center">
       <h1 class="text-4xl md:text-5xl font-bold mb-6">Master Your Subjects With Expert Guidance</h1>
       <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Comprehensive tutoring programs tailored for South African students from Grade 8-12</p>
-      <a href="#pricing" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 inline-block">
+      <a href="#pricing" class="bg-white text-js-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 inline-block" onclick="gtag('event', 'click_view_pricing', { 'event_category': 'Hero', 'event_label': 'View Pricing Plans' })">
         View Pricing Plans
       </a>
     </div>
   </section>
 
+  <!-- Subjects Section -->
   <section class="py-16 px-4">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16">
         <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Core Subjects</h2>
         <p class="text-gray-600 max-w-2xl mx-auto">Specialized tutoring in STEM and Commerce subjects aligned with the CAPS curriculum</p>
       </div>
-
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
+        <!-- Mathematics -->
         <div class="bg-white rounded-xl shadow-lg overflow-hidden subject-card transition duration-300">
-          <div class="h-48 bg-blue-600 flex items-center justify-center">
+          <div class="h-48 bg-js-blue flex items-center justify-center">
             <i class="fas fa-square-root-alt text-white text-6xl"></i>
           </div>
           <div class="p-8">
@@ -94,7 +144,7 @@
               <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">R200/month</span>
             </div>
             <p class="text-gray-600 mb-6">Master algebra, calculus, trigonometry and problem-solving techniques for all topics.</p>
-            <div class="space-y-3">
+            <div class="space-y-3 mb-6">
               <div class="flex items-center">
                 <i class="fas fa-check-circle text-green-500 mr-2"></i>
                 <span>Grade 8-12 coverage</span>
@@ -108,9 +158,9 @@
                 <span>Past paper analysis</span>
               </div>
             </div>
+            <a href="book.html" class="block w-full bg-js-blue text-white text-center py-3 rounded-lg font-medium hover:bg-blue-700 transition" onclick="gtag('event', 'click_book_subject', { 'event_category': 'Subjects', 'event_label': 'Mathematics' })" aria-label="Book Mathematics tutoring session">Book Now</a>
           </div>
         </div>
-
         <!-- Physical Sciences -->
         <div class="bg-white rounded-xl shadow-lg overflow-hidden subject-card transition duration-300">
           <div class="h-48 bg-purple-600 flex items-center justify-center">
@@ -122,7 +172,7 @@
               <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold">R200/month</span>
             </div>
             <p class="text-gray-600 mb-6">Comprehensive coverage of Physics and Chemistry concepts with practical applications.</p>
-            <div class="space-y-3">
+            <div class="space-y-3 mb-6">
               <div class="flex items-center">
                 <i class="fas fa-check-circle text-green-500 mr-2"></i>
                 <span>Grade 10-12 intensive</span>
@@ -136,9 +186,9 @@
                 <span>Formula mastery</span>
               </div>
             </div>
+            <a href="book.html" class="block w-full bg-js-blue text-white text-center py-3 rounded-lg font-medium hover:bg-blue-700 transition" onclick="gtag('event', 'click_book_subject', { 'event_category': 'Subjects', 'event_label': 'Physical Sciences' })" aria-label="Book Physical Sciences tutoring session">Book Now</a>
           </div>
         </div>
-
         <!-- Life Sciences -->
         <div class="bg-white rounded-xl shadow-lg overflow-hidden subject-card transition duration-300">
           <div class="h-48 bg-green-600 flex items-center justify-center">
@@ -150,7 +200,7 @@
               <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">R200/month</span>
             </div>
             <p class="text-gray-600 mb-6">In-depth understanding of biological concepts from cellular to ecological systems.</p>
-            <div class="space-y-3">
+            <div class="space-y-3 mb-6">
               <div class="flex items-center">
                 <i class="fas fa-check-circle text-green-500 mr-2"></i>
                 <span>Grade 10-12 focus</span>
@@ -164,9 +214,9 @@
                 <span>Research projects help</span>
               </div>
             </div>
+            <a href="book.html" class="block w-full bg-js-blue text-white text-center py-3 rounded-lg font-medium hover:bg-blue-700 transition" onclick="gtag('event', 'click_book_subject', { 'event_category': 'Subjects', 'event_label': 'Life Sciences' })" aria-label="Book Life Sciences tutoring session">Book Now</a>
           </div>
         </div>
-
         <!-- Accounting -->
         <div class="bg-white rounded-xl shadow-lg overflow-hidden subject-card transition duration-300">
           <div class="h-48 bg-red-600 flex items-center justify-center">
@@ -178,7 +228,7 @@
               <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-semibold">R200/month</span>
             </div>
             <p class="text-gray-600 mb-6">Master financial statements, ledger accounts, and accounting principles for all topics.</p>
-            <div class="space-y-3">
+            <div class="space-y-3 mb-6">
               <div class="flex items-center">
                 <i class="fas fa-check-circle text-green-500 mr-2"></i>
                 <span>Grade 10-12 coverage</span>
@@ -192,9 +242,9 @@
                 <span>Past paper practice</span>
               </div>
             </div>
+            <a href="book.html" class="block w-full bg-js-blue text-white text-center py-3 rounded-lg font-medium hover:bg-blue-700 transition" onclick="gtag('event', 'click_book_subject', { 'event_category': 'Subjects', 'event_label': 'Accounting' })" aria-label="Book Accounting tutoring session">Book Now</a>
           </div>
         </div>
-
         <!-- Economics -->
         <div class="bg-white rounded-xl shadow-lg overflow-hidden subject-card transition duration-300">
           <div class="h-48 bg-yellow-600 flex items-center justify-center">
@@ -206,7 +256,7 @@
               <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold">R200/month</span>
             </div>
             <p class="text-gray-600 mb-6">Understand micro and macroeconomics concepts with real-world applications.</p>
-            <div class="space-y-3">
+            <div class="space-y-3 mb-6">
               <div class="flex items-center">
                 <i class="fas fa-check-circle text-green-500 mr-2"></i>
                 <span>Grade 10-12 coverage</span>
@@ -220,9 +270,9 @@
                 <span>Case study analysis</span>
               </div>
             </div>
+            <a href="book.html" class="block w-full bg-js-blue text-white text-center py-3 rounded-lg font-medium hover:bg-blue-700 transition" onclick="gtag('event', 'click_book_subject', { 'event_category': 'Subjects', 'event_label': 'Economics' })" aria-label="Book Economics tutoring session">Book Now</a>
           </div>
         </div>
-
         <!-- Business Studies -->
         <div class="bg-white rounded-xl shadow-lg overflow-hidden subject-card transition duration-300">
           <div class="h-48 bg-indigo-600 flex items-center justify-center">
@@ -234,7 +284,7 @@
               <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-semibold">R200/month</span>
             </div>
             <p class="text-gray-600 mb-6">Learn business principles, entrepreneurship, and management concepts.</p>
-            <div class="space-y-3">
+            <div class="space-y-3 mb-6">
               <div class="flex items-center">
                 <i class="fas fa-check-circle text-green-500 mr-2"></i>
                 <span>Grade 10-12 coverage</span>
@@ -248,77 +298,78 @@
                 <span>Exam technique focus</span>
               </div>
             </div>
+            <a href="book.html" class="block w-full bg-js-blue text-white text-center py-3 rounded-lg font-medium hover:bg-blue-700 transition" onclick="gtag('event', 'click_book_subject', { 'event_category': 'Subjects', 'event_label': 'Business Studies' })" aria-label="Book Business Studies tutoring session">Book Now</a>
           </div>
         </div>
-
-        <!-- Geography Card -->
+        <!-- Geography -->
         <div class="bg-white rounded-xl shadow-lg overflow-hidden subject-card transition duration-300">
-            <div class="h-48 bg-gradient-to-br from-blue-500 to-green-500 flex items-center justify-center relative overflow-hidden">
+          <div class="h-48 bg-gradient-to-br from-blue-500 to-green-500 flex items-center justify-center relative overflow-hidden">
             <i class="fas fa-globe-africa text-white text-6xl z-10"></i>
             <div class="absolute inset-0 opacity-10 bg-[url('https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg')] bg-center bg-contain"></div>
-            </div>
-            <div class="p-8">
+          </div>
+          <div class="p-8">
             <div class="flex justify-between items-start mb-4">
-                <h3 class="text-2xl font-bold text-gray-800">Geography</h3>
-                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">R200/month</span>
+              <h3 class="text-2xl font-bold text-gray-800">Geography</h3>
+              <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">R200/month</span>
             </div>
             <p class="text-gray-600 mb-6">Explore our world through physical and human geography with specialized mapwork training.</p>
-            <div class="space-y-3">
-                <div class="flex items-center">
+            <div class="space-y-3 mb-6">
+              <div class="flex items-center">
                 <i class="fas fa-check-circle text-green-500 mr-2"></i>
                 <span>Topographic map mastery</span>
-                </div>
-                <div class="flex items-center">
+              </div>
+              <div class="flex items-center">
                 <i class="fas fa-check-circle text-green-500 mr-2"></i>
                 <span>Climate change analysis</span>
-                </div>
-                <div class="flex items-center">
+              </div>
+              <div class="flex items-center">
                 <i class="fas fa-check-circle text-green-500 mr-2"></i>
                 <span>GIS applications</span>
-                </div>
-                <div class="flex items-center">
+              </div>
+              <div class="flex items-center">
                 <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                <span>Geomorpholy</span>
-                </div>
+                <span>Geomorphology</span>
+              </div>
             </div>
-            </div>
+            <a href="book.html" class="block w-full bg-js-blue text-white text-center py-3 rounded-lg font-medium hover:bg-blue-700 transition" onclick="gtag('event', 'click_book_subject', { 'event_category': 'Subjects', 'event_label': 'Geography' })" aria-label="Book Geography tutoring session">Book Now</a>
+          </div>
         </div>
-
-        <!-- Agriculture Card -->
+        <!-- Agricultural Sciences -->
         <div class="bg-white rounded-xl shadow-lg overflow-hidden subject-card transition duration-300">
-            <div class="h-48 bg-gradient-to-br from-green-600 to-amber-700 flex items-center justify-center relative overflow-hidden">
+          <div class="h-48 bg-gradient-to-br from-green-600 to-amber-700 flex items-center justify-center relative overflow-hidden">
             <i class="fas fa-tractor text-white text-6xl z-10"></i>
             <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/asfalt-light.png')]"></div>
-            </div>
-            <div class="p-8">
+          </div>
+          <div class="p-8">
             <div class="flex justify-between items-start mb-4">
-                <h3 class="text-2xl font-bold text-gray-800">Agricultural Sciences</h3>
-                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">R200/month</span>
+              <h3 class="text-2xl font-bold text-gray-800">Agricultural Sciences</h3>
+              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">R200/month</span>
             </div>
             <p class="text-gray-600 mb-6">Cultivate knowledge in plant and animal production, soil science, and agribusiness.</p>
-            <div class="space-y-3">
-                <div class="flex items-center">
+            <div class="space-y-3 mb-6">
+              <div class="flex items-center">
                 <i class="fas fa-check-circle text-green-500 mr-2"></i>
                 <span>Soil chemistry labs</span>
-                </div>
-                <div class="flex items-center">
+              </div>
+              <div class="flex items-center">
                 <i class="fas fa-check-circle text-green-500 mr-2"></i>
                 <span>Livestock management</span>
-                </div>
-                <div class="flex items-center">
+              </div>
+              <div class="flex items-center">
                 <i class="fas fa-check-circle text-green-500 mr-2"></i>
                 <span>Crop production cycles</span>
-                </div>
-                <div class="flex items-center">
+              </div>
+              <div class="flex items-center">
                 <i class="fas fa-check-circle text-green-500 mr-2"></i>
                 <span>Agricultural economics</span>
-                </div>
+              </div>
             </div>
-            </div>
+            <a href="book.html" class="block w-full bg-js-blue text-white text-center py-3 rounded-lg font-medium hover:bg-blue-700 transition" onclick="gtag('event', 'click_book_subject', { 'event_category': 'Subjects', 'event_label': 'Agricultural Sciences' })" aria-label="Book Agricultural Sciences tutoring session">Book Now</a>
+          </div>
         </div>
         <!-- All Subjects -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden subject-card transition duration-300 border-2 border-blue-500">
-          <div class="h-48 bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center">
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden subject-card transition duration-300 border-2 border-js-blue">
+          <div class="h-48 bg-gradient-to-r from-js-blue to-purple-600 flex items-center justify-center">
             <i class="fas fa-star text-white text-6xl"></i>
           </div>
           <div class="p-8">
@@ -327,7 +378,7 @@
               <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">R1,399/month</span>
             </div>
             <p class="text-gray-600 mb-6">Access to all offered subjects in a stream with premium features and unlimited support.</p>
-            <div class="space-y-3">
+            <div class="space-y-3 mb-6">
               <div class="flex items-center">
                 <i class="fas fa-check-circle text-green-500 mr-2"></i>
                 <span>Any 7-8 subjects of choice</span>
@@ -345,12 +396,12 @@
                 <span>Weekly progress reports</span>
               </div>
             </div>
+            <a href="book.html" class="block w-full bg-js-blue text-white text-center py-3 rounded-lg font-medium hover:bg-blue-700 transition" onclick="gtag('event', 'click_book_subject', { 'event_category': 'Subjects', 'event_label': 'All Subjects Package' })" aria-label="Book All Subjects Package tutoring session">Book Now</a>
           </div>
         </div>
       </div>
     </div>
   </section>
-
 
   <!-- Pricing Section -->
   <section id="pricing" class="py-16 px-4 bg-gray-100">
@@ -359,7 +410,6 @@
         <h2 class="text-3xl font-bold text-gray-800 mb-4">Flexible Pricing Plans</h2>
         <p class="text-gray-600 max-w-2xl mx-auto">Choose the perfect plan for your learning needs and budget</p>
       </div>
-
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="bg-white rounded-xl shadow-lg overflow-hidden pricing-card transition duration-300">
           <div class="p-8 border-b">
@@ -369,7 +419,7 @@
               <span class="text-4xl font-bold">R499</span>
               <span class="text-gray-500">/month</span>
             </div>
-            <a href="booking.html" class="block w-full bg-gray-200 text-gray-800 text-center py-3 rounded-lg font-medium hover:bg-gray-300 transition">Get Started</a>
+            <a href="book.html" class="block w-full bg-gray-200 text-gray-800 text-center py-3 rounded-lg font-medium hover:bg-gray-300 transition" onclick="gtag('event', 'click_pricing_plan', { 'event_category': 'Pricing', 'event_label': 'Basic Support' })">Get Started</a>
           </div>
           <div class="p-8">
             <ul class="space-y-4 mb-8">
@@ -392,9 +442,8 @@
             </ul>
           </div>
         </div>
-
-        <div class="bg-white rounded-xl shadow-2xl overflow-hidden pricing-card transform scale-105 z-10 border-2 border-blue-500 transition duration-300">
-          <div class="bg-blue-500 text-white text-center py-2">
+        <div class="bg-white rounded-xl shadow-2xl overflow-hidden pricing-card transform scale-105 z-10 border-2 border-js-blue transition duration-300">
+          <div class="bg-js-blue text-white text-center py-2">
             <span class="font-semibold">MOST POPULAR</span>
           </div>
           <div class="p-8 border-b">
@@ -404,7 +453,7 @@
               <span class="text-4xl font-bold">R899</span>
               <span class="text-gray-500">/month</span>
             </div>
-            <a href="booking.html" class="block w-full bg-blue-600 text-white text-center py-3 rounded-lg font-medium hover:bg-blue-700 transition">Get Started</a>
+            <a href="book.html" class="block w-full bg-js-blue text-white text-center py-3 rounded-lg font-medium hover:bg-blue-700 transition" onclick="gtag('event', 'click_pricing_plan', { 'event_category': 'Pricing', 'event_label': 'Standard Program' })">Get Started</a>
           </div>
           <div class="p-8">
             <ul class="space-y-4 mb-8">
@@ -427,7 +476,6 @@
             </ul>
           </div>
         </div>
-
         <div class="bg-white rounded-xl shadow-lg overflow-hidden pricing-card transition duration-300">
           <div class="p-8 border-b">
             <h3 class="text-2xl font-bold text-gray-800 mb-2">Premium Tutoring</h3>
@@ -436,7 +484,7 @@
               <span class="text-4xl font-bold">R1,499</span>
               <span class="text-gray-500">/month</span>
             </div>
-            <a href="booking.html" class="block w-full bg-gray-200 text-gray-800 text-center py-3 rounded-lg font-medium hover:bg-gray-300 transition">Get Started</a>
+            <a href="book.html" class="block w-full bg-gray-200 text-gray-800 text-center py-3 rounded-lg font-medium hover:bg-gray-300 transition" onclick="gtag('event', 'click_pricing_plan', { 'event_category': 'Pricing', 'event_label': 'Premium Tutoring' })">Get Started</a>
           </div>
           <div class="p-8">
             <ul class="space-y-4 mb-8">
@@ -463,15 +511,14 @@
     </div>
   </section>
 
+  <!-- Success Stories Section -->
   <section class="py-16 px-4">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16">
         <h2 class="text-3xl font-bold text-gray-800 mb-4">Success Stories</h2>
         <p class="text-gray-600 max-w-2xl mx-auto">Hear from students who transformed their academic performance</p>
       </div>
-
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Testimonial 1 -->
         <div class="bg-white p-8 rounded-xl shadow-lg">
           <div class="flex items-center mb-4">
             <div class="text-yellow-400 mr-2">
@@ -485,15 +532,13 @@
           </div>
           <p class="text-gray-700 mb-6">"JSAcademy's Maths program helped me improve from 45% to 82% in just 3 months. The tutors explain concepts in ways I actually understand."</p>
           <div class="flex items-center">
-            <img src="Images/Tribby.jpeg" alt="Student" class="w-12 h-12 rounded-full mr-4">
+            <img src="Images/Tribby.jpeg" alt="Thabo M. testimonial" class="w-12 h-12 rounded-full mr-4">
             <div>
               <h4 class="font-semibold">Thabo M.</h4>
               <p class="text-gray-600 text-sm">Grade 12 Student, Pretoria</p>
             </div>
           </div>
         </div>
-
-        <!-- Testimonial 2 -->
         <div class="bg-white p-8 rounded-xl shadow-lg">
           <div class="flex items-center mb-4">
             <div class="text-yellow-400 mr-2">
@@ -507,15 +552,13 @@
           </div>
           <p class="text-gray-700 mb-6">"The Physical Sciences crash course before finals was a game-changer. I went from struggling to passing with distinction!"</p>
           <div class="flex items-center">
-            <img src="Images/Tribby.jpeg" alt="Student" class="w-12 h-12 rounded-full mr-4">
+            <img src="Images/Tribby.jpeg" alt="Lerato K. testimonial" class="w-12 h-12 rounded-full mr-4">
             <div>
               <h4 class="font-semibold">Lerato K.</h4>
               <p class="text-gray-600 text-sm">Grade 11 Student, Johannesburg</p>
             </div>
           </div>
         </div>
-
-        <!-- Testimonial 3 -->
         <div class="bg-white p-8 rounded-xl shadow-lg">
           <div class="flex items-center mb-4">
             <div class="text-yellow-400 mr-2">
@@ -529,7 +572,7 @@
           </div>
           <p class="text-gray-700 mb-6">"My daughter's confidence in Maths has skyrocketed since joining JSAcademy. She actually looks forward to her tutoring sessions now."</p>
           <div class="flex items-center">
-            <img src="Images/Tribby.jpeg" alt="Parent" class="w-12 h-12 rounded-full mr-4">
+            <img src="Images/Tribby.jpeg" alt="Mrs. Ndlovu testimonial" class="w-12 h-12 rounded-full mr-4">
             <div>
               <h4 class="font-semibold">Mrs. Ndlovu</h4>
               <p class="text-gray-600 text-sm">Parent, Cape Town</p>
@@ -540,21 +583,23 @@
     </div>
   </section>
 
+  <!-- CTA Section -->
   <section class="gradient-bg text-white py-20">
     <div class="max-w-7xl mx-auto px-4 text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Academic Performance?</h2>
       <p class="text-xl mb-8 max-w-2xl mx-auto">Join hundreds of students achieving their academic goals with our expert tutors</p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="booking.html" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 inline-block">
+        <a href="book.html" class="bg-white text-js-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 inline-block" onclick="gtag('event', 'click_book_session', { 'event_category': 'CTA', 'event_label': 'Book Your Session Now' })">
           Book Your Session Now
         </a>
-        <a href="contact.html" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition duration-300 inline-block">
+        <a href="contact.html" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-js-blue transition duration-300 inline-block" onclick="gtag('event', 'click_ask_questions', { 'event_category': 'CTA', 'event_label': 'Ask Questions' })">
           Ask Questions
         </a>
       </div>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="bg-gray-900 text-gray-300 py-12 px-4">
     <div class="max-w-7xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
@@ -562,82 +607,113 @@
           <h3 class="text-xl font-semibold text-white mb-4">JSAcademy</h3>
           <p class="mb-4">Specialized tutoring for South African high school students, aligned with CAPS curriculum.</p>
           <div class="flex space-x-4">
-            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-whatsapp"></i></a>
-            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com/jsacademy" class="text-gray-400 hover:text-white" onclick="gtag('event', 'click_social', { 'event_category': 'Footer', 'event_label': 'Facebook' })"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/27790319247" class="text-gray-400 hover:text-white" onclick="gtag('event', 'click_social', { 'event_category': 'Footer', 'event_label': 'WhatsApp' })"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://instagram.com/jsacademy" class="text-gray-400 hover:text-white" onclick="gtag('event', 'click_social', { 'event_category': 'Footer', 'event_label': 'Instagram' })"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
-
         <div>
           <h3 class="text-xl font-semibold text-white mb-4">Quick Links</h3>
           <ul class="space-y-2">
-            <li><a href="index.html" class="hover:text-white">Home</a></li>
-            <li><a href="Pricing-Subjects.html" class="hover:text-white">Subjects</a></li>
-            <li><a href="Pricing-Subjects.html" class="hover:text-white">Pricing</a></li>
-            <li><a href="book.html" class="hover:text-white">Book Session</a></li>
+            <li><a href="index.html" class="hover:text-white" onclick="gtag('event', 'click_footer_link', { 'event_category': 'Footer', 'event_label': 'Home' })">Home</a></li>
+            <li><a href="Pricing-Subjects.html" class="hover:text-white" onclick="gtag('event', 'click_footer_link', { 'event_category': 'Footer', 'event_label': 'Subjects & Pricing' })">Subjects & Pricing</a></li>
+            <li><a href="resources.html" class="hover:text-white" onclick="gtag('event', 'click_footer_link', { 'event_category': 'Footer', 'event_label': 'Resources' })">Resources</a></li>
+            <li><a href="contact.html" class="hover:text-white" onclick="gtag('event', 'click_footer_link', { 'event_category': 'Footer', 'event_label': 'Contact' })">Contact</a></li>
           </ul>
         </div>
-
         <div>
           <h3 class="text-xl font-semibold text-white mb-4">Contact Us</h3>
           <ul class="space-y-2">
             <li class="flex items-center">
               <i class="fas fa-phone-alt mr-2"></i>
-              <span>+27 79 031 9247</span>
+              <a href="tel:+27790319247" class="hover:text-white" onclick="gtag('event', 'click_contact', { 'event_category': 'Footer', 'event_label': 'Phone' })">+27 79 031 9247</a>
             </li>
             <li class="flex items-center">
               <i class="fas fa-envelope mr-2"></i>
-              <span>info@jsacademy.co.za</span>
+              <a href="mailto:info@jsacademy.co.za" class="hover:text-white" onclick="gtag('event', 'click_contact', { 'event_category': 'Footer', 'event_label': 'Email' })">info@jsacademy.co.za</a>
             </li>
             <li class="flex items-center">
               <i class="fas fa-map-marker-alt mr-2"></i>
-              <span>Sekhukhune, South Africa</span>
+              <span>R579 Maleetse, Sekhukhune, 1124, South Africa</span>
             </li>
           </ul>
         </div>
-
         <div>
           <h3 class="text-xl font-semibold text-white mb-4">Study Tips</h3>
           <p class="mb-4">Subscribe to receive free study resources and tips.</p>
-          <form class="flex">
-            <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg w-full focus:outline-none text-gray-900">
-            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-r-lg hover:bg-blue-700">
+          <form id="newsletter-form" class="flex" novalidate>
+            <input type="email" id="newsletter-email" placeholder="Your email" class="px-4 py-2 rounded-l-lg w-full focus:outline-none text-gray-900" required aria-describedby="newsletter-error">
+            <button type="submit" class="bg-js-blue text-white px-4 py-2 rounded-r-lg hover:bg-blue-700" onclick="gtag('event', 'submit_newsletter', { 'event_category': 'Footer', 'event_label': 'Newsletter Signup' })">
               <i class="fas fa-paper-plane"></i>
             </button>
           </form>
+          <p id="newsletter-error" class="text-red-500 text-sm mt-2 hidden">Please enter a valid email address</p>
         </div>
       </div>
-      
       <div class="border-t border-gray-800 pt-8 text-center text-sm">
-        <p>&copy; 2025 JSAcademy. All rights reserved.</p>
+        <p>© 2025 JSAcademy. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
+  <!-- JavaScript -->
   <script>
-     const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            
-            mobileMenuButton.addEventListener('click', function() {
-            mobileMenu.classList.toggle('open');
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
 
-            const icon = this.querySelector('i');
-            if (mobileMenu.classList.contains('open')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-            });
+    if (mobileMenuButton && mobileMenu && menuIcon) {
+      mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('open');
+        const isOpen = mobileMenu.classList.contains('open');
+        menuIcon.classList.toggle('fa-bars', !isOpen);
+        menuIcon.classList.toggle('fa-times', isOpen);
+        mobileMenuButton.setAttribute('aria-expanded', isOpen);
+        gtag('event', 'toggle_mobile_menu', { 'event_category': 'Navigation', 'event_label': isOpen ? 'Open Menu' : 'Close Menu' });
+      });
 
-            document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('open');
-                mobileMenuButton.querySelector('i').classList.remove('fa-times');
-                mobileMenuButton.querySelector('i').classList.add('fa-bars');
-            });
-            });
+      document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+          menuIcon.classList.remove('fa-times');
+          menuIcon.classList.add('fa-bars');
+          mobileMenuButton.setAttribute('aria-expanded', 'false');
+          gtag('event', 'click_mobile_menu_link', { 'event_category': 'Navigation', 'event_label': link.textContent });
+        });
+      });
+    }
+
+    // Scroll Depth Tracking
+    document.addEventListener('scroll', function() {
+      const scrollPosition = window.scrollY + window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollPercent = (scrollPosition / documentHeight) * 100;
+      const thresholds = [25, 50, 75, 90];
+      thresholds.forEach(threshold => {
+        if (scrollPercent >= threshold && !sessionStorage.getItem(`scroll_${threshold}`)) {
+          gtag('event', 'scroll_depth', { 'event_category': 'Engagement', 'event_label': `${threshold}%` });
+          sessionStorage.setItem(`scroll_${threshold}`, 'true');
+        }
+      });
+    });
+
+    // Newsletter Form Validation
+    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('newsletter-email');
+      const error = document.getElementById('newsletter-error');
+
+      if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        gtag('event', 'submit_newsletter', { 'event_category': 'Footer', 'event_label': 'Newsletter Signup', 'value': 1 });
+        alert('Thank you for subscribing!');
+        this.reset();
+        error.classList.add('hidden');
+      } else {
+        email.classList.add('border-red-500');
+        error.classList.remove('hidden');
+      }
+    });
   </script>
 </body>
 </html>
