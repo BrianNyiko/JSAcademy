@@ -2,20 +2,41 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LRVQFXXCQM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LRVQFXXCQM');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRVQFXXCQM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LRVQFXXCQM');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JSAcademy - Book a Session</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <title>JSAcademy - Book a Tutoring Session</title>
+  <meta name="description" content="Book your Mathematics or Science tutoring session with JSAcademy for Grades 8-12. Choose 1-on-1, group, or crash course sessions.">
+  <meta name="keywords" content="JSAcademy, book tutoring, maths tutoring, science tutoring, online tutoring, South Africa, grades 8-12">
+  <meta name="author" content="JSAcademy">
+  <!-- Open Graph / Twitter Card -->
+  <meta property="og:title" content="JSAcademy - Book a Tutoring Session">
+  <meta property="og:description" content="Schedule your tutoring session with JSAcademy for expert Maths and Science support.">
+  <meta property="og:image" content="https://yourdomain.com/Images/JSImage.jpg">
+  <meta property="og:url" content="https://yourdomain.com/book.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'js-blue': '#2563EB', /* Matches bg-blue-600 */
+            'js-yellow': '#FBBF24', /* Matches text-yellow-400 */
+          },
+        },
+      },
+    };
+  </script>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     /* Smooth transitions for mobile menu */
     .mobile-menu {
@@ -27,75 +48,114 @@
       max-height: 500px;
       transition: max-height 0.5s ease-in;
     }
+    /* Fixed navbar spacing */
+    body {
+      padding-top: 4rem; /* Height of navbar */
+    }
+    /* Mobile menu button styles */
+    .mobile-menu-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+      color: #374151; /* Matches text-gray-700 */
+      font-size: 1.5rem; /* Matches text-2xl */
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      visibility: visible !important;
+    }
+    .mobile-menu-button:hover {
+      color: #2563EB; /* Matches text-js-blue */
+    }
+    .mobile-menu-button i {
+      width: 24px;
+      height: 24px;
+    }
+    /* Form input styles */
+    input:invalid:focus, select:invalid:focus, textarea:invalid:focus {
+      border-color: #EF4444; /* red-500 */
+      ring: 2px solid #EF4444;
+    }
+    /* Modal animations */
+    #confirmation-modal {
+      transition: opacity 0.3s ease-in-out;
+    }
+    #confirmation-modal.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
   </style>
 </head>
 <body class="bg-gray-50">
-
-  <nav class="bg-white shadow-md">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-      <a href="index.html" class="text-2xl font-bold text-blue-600">JS<span class="text-yellow-500">Academy</span></a>
-
-      <div class="hidden md:flex space-x-8">
-        <a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a>
-        <a href="pricing.html" class="text-gray-700 hover:text-blue-600">Pricing</a>
-        <a href="booking.html" class="text-blue-600 font-medium">Book Session</a>
-        <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
+  <!-- Fixed Navbar -->
+  <nav class="fixed top-0 left-0 right-0 bg-white z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-js-blue">JS<span class="text-js-yellow">Academy</span></a>
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex space-x-8 items-center">
+        <a href="index.html" class="text-gray-700 hover:text-js-blue">Home</a>
+        <a href="Pricing-Subjects.html" class="text-gray-700 hover:text-js-blue">Pricing</a>
+        <a href="resources.html" class="text-js-blue font-medium">Resources</a>
+        <a href="contact.html" class="text-gray-700 hover:text-js-blue">Contact</a>
       </div>
-
-      <div class="md:hidden">
-        <button id="menu-btn" class="text-gray-700 focus:outline-none">
-          <i id="menu-icon" class="fas fa-bars text-2xl"></i>
-        </button>
-      </div>
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button" class="mobile-menu-button md:hidden focus:outline-none" aria-label="Toggle mobile menu" aria-expanded="false">
+        <i id="menu-icon" class="fas fa-bars text-2xl"></i>
+      </button>
     </div>
-
-    <div id="mobile-menu" class="mobile-menu md:hidden bg-white px-4 pb-4">
-      <a href="index.html" class="block py-2 text-gray-700 hover:text-blue-600">Home</a>
-      <a href="Pricing-Subjects.html" class="block py-2 text-gray-700 hover:text-blue-600">Pricing</a>
-      <a href="book.html" class="block py-2 text-blue-600 font-medium">Book Session</a>
-      <a href="contact.html" class="block py-2 text-gray-700 hover:text-blue-600">Contact</a>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu md:hidden bg-white px-4 pb-4 shadow-md">
+      <a href="index.html" class="block py-2 text-gray-700 hover:text-js-blue">Home</a>
+      <a href="Pricing-Subjects.html" class="block py-2 text-gray-700 hover:text-js-blue">Pricing</a>
+      <a href="resources.html" class="block py-2 text-js-blue font-medium">Resources</a>
+      <a href="contact.html" class="block py-2 text-gray-700 hover:text-js-blue">Contact</a>
     </div>
   </nav>
+
+  <!-- Booking Section -->
   <section class="py-12 px-4">
     <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
       <div class="md:flex">
         <!-- Booking Form -->
         <div class="p-8 w-full">
           <h2 class="text-3xl font-bold text-gray-800 mb-6">Book Your Tutoring Session</h2>
-          
-          <form id="booking-form">
+          <form id="booking-form" novalidate>
             <!-- Step 1: Personal Info -->
             <div id="step-1" class="booking-step">
-              <h3 class="text-xl font-semibold mb-4 text-blue-600">1. Your Information</h3>
+              <h3 class="text-xl font-semibold mb-4 text-js-blue">1. Your Information</h3>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
                   <label for="first-name" class="block text-gray-700 mb-2">First Name</label>
-                  <input type="text" id="first-name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                  <input type="text" id="first-name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-js-blue" required aria-describedby="first-name-error">
+                  <p id="first-name-error" class="text-red-500 text-sm hidden">Please enter your first name</p>
                 </div>
                 <div>
                   <label for="last-name" class="block text-gray-700 mb-2">Last Name</label>
-                  <input type="text" id="last-name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                  <input type="text" id="last-name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-js-blue" required aria-describedby="last-name-error">
+                  <p id="last-name-error" class="text-red-500 text-sm hidden">Please enter your last name</p>
                 </div>
               </div>
               <div class="mb-6">
                 <label for="email" class="block text-gray-700 mb-2">Email</label>
-                <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-js-blue" required aria-describedby="email-error">
+                <p id="email-error" class="text-red-500 text-sm hidden">Please enter a valid email address</p>
               </div>
               <div class="mb-6">
                 <label for="phone" class="block text-gray-700 mb-2">Phone Number</label>
-                <input type="tel" id="phone" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                <input type="tel" id="phone" pattern="\+?[0-9]{10,12}" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-js-blue" required aria-describedby="phone-error">
+                <p id="phone-error" class="text-red-500 text-sm hidden">Please enter a valid phone number (10-12 digits)</p>
               </div>
               <div class="flex justify-end">
-                <button type="button" onclick="nextStep(1, 2)" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">Next</button>
+                <button type="button" onclick="nextStep(1, 2)" class="bg-js-blue text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition" onclick="gtag('event', 'click_form_next', { 'event_category': 'Booking Form', 'event_label': 'Step 1 to Step 2' })">Next</button>
               </div>
             </div>
-            
             <!-- Step 2: Session Details -->
             <div id="step-2" class="booking-step hidden">
-              <h3 class="text-xl font-semibold mb-4 text-blue-600">2. Session Details</h3>
+              <h3 class="text-xl font-semibold mb-4 text-js-blue">2. Session Details</h3>
               <div class="mb-6">
-                <label class="block text-gray-700 mb-2">Subject</label>
-                <select id="subject" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                <label for="subject" class="block text-gray-700 mb-2">Subject</label>
+                <select id="subject" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-js-blue" required aria-describedby="subject-error">
                   <option value="">Select a subject</option>
                   <option value="math">Mathematics</option>
                   <option value="physics">Physical Sciences</option>
@@ -103,52 +163,54 @@
                   <option value="biology">Life Sciences</option>
                   <option value="other">Other</option>
                 </select>
+                <p id="subject-error" class="text-red-500 text-sm hidden">Please select a subject</p>
               </div>
               <div class="mb-6">
-                <label class="block text-gray-700 mb-2">Grade Level</label>
-                <select id="grade" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                <label for="grade" class="block text-gray-700 mb-2">Grade Level</label>
+                <select id="grade" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-js-blue" required aria-describedby="grade-error">
                   <option value="">Select grade</option>
                   <option value="8">Grade 8</option>
                   <option value="9">Grade 9</option>
                   <option value="10">Grade 10</option>
                   <option value="11">Grade 11</option>
                   <option value="12">Grade 12</option>
-                  <option value="12">Upgrade</option>
+                  <option value="upgrade">Upgrade</option>
                 </select>
+                <p id="grade-error" class="text-red-500 text-sm hidden">Please select a grade level</p>
               </div>
               <div class="mb-6">
                 <label class="block text-gray-700 mb-2">Session Type</label>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <label class="flex items-center space-x-2">
-                    <input type="radio" name="session-type" value="individual" class="text-blue-600" checked>
+                    <input type="radio" name="session-type" value="individual" class="text-js-blue focus:ring-js-blue" checked>
                     <span>1-on-1 Session</span>
                   </label>
                   <label class="flex items-center space-x-2">
-                    <input type="radio" name="session-type" value="group" class="text-blue-600">
+                    <input type="radio" name="session-type" value="group" class="text-js-blue focus:ring-js-blue">
                     <span>Group Session</span>
                   </label>
                   <label class="flex items-center space-x-2">
-                    <input type="radio" name="session-type" value="crash-course" class="text-blue-600">
+                    <input type="radio" name="session-type" value="crash-course" class="text-js-blue focus:ring-js-blue">
                     <span>Crash Course</span>
                   </label>
                 </div>
               </div>
               <div class="flex justify-between">
-                <button type="button" onclick="prevStep(2, 1)" class="text-blue-600 hover:text-blue-800 transition">Back</button>
-                <button type="button" onclick="nextStep(2, 3)" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">Next</button>
+                <button type="button" onclick="prevStep(2, 1)" class="text-js-blue hover:text-blue-800 transition" onclick="gtag('event', 'click_form_back', { 'event_category': 'Booking Form', 'event_label': 'Step 2 to Step 1' })">Back</button>
+                <button type="button" onclick="nextStep(2, 3)" class="bg-js-blue text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition" onclick="gtag('event', 'click_form_next', { 'event_category': 'Booking Form', 'event_label': 'Step 2 to Step 3' })">Next</button>
               </div>
             </div>
-            
             <!-- Step 3: Schedule -->
             <div id="step-3" class="booking-step hidden">
-              <h3 class="text-xl font-semibold mb-4 text-blue-600">3. Schedule Your Session</h3>
+              <h3 class="text-xl font-semibold mb-4 text-js-blue">3. Schedule Your Session</h3>
               <div class="mb-6">
                 <label for="session-date" class="block text-gray-700 mb-2">Preferred Date</label>
-                <input type="date" id="session-date" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                <input type="date" id="session-date" min="2025-05-06" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-js-blue" required aria-describedby="session-date-error">
+                <p id="session-date-error" class="text-red-500 text-sm hidden">Please select a valid future date</p>
               </div>
               <div class="mb-6">
                 <label for="session-time" class="block text-gray-700 mb-2">Preferred Time</label>
-                <select id="session-time" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                <select id="session-time" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-js-blue" required aria-describedby="session-time-error">
                   <option value="">Select time</option>
                   <option value="08:00">8:00 AM</option>
                   <option value="10:00">10:00 AM</option>
@@ -156,35 +218,35 @@
                   <option value="16:00">4:00 PM</option>
                   <option value="18:00">6:00 PM</option>
                 </select>
+                <p id="session-time-error" class="text-red-500 text-sm hidden">Please select a time</p>
               </div>
               <div class="mb-6">
                 <label for="notes" class="block text-gray-700 mb-2">Special Requests</label>
-                <textarea id="notes" rows="3" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                <textarea id="notes" rows="3" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-js-blue"></textarea>
               </div>
               <div class="flex justify-between">
-                <button type="button" onclick="prevStep(3, 2)" class="text-blue-600 hover:text-blue-800 transition">Back</button>
-                <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">Book Session</button>
+                <button type="button" onclick="prevStep(3, 2)" class="text-js-blue hover:text-blue-800 transition" onclick="gtag('event', 'click_form_back', { 'event_category': 'Booking Form', 'event_label': 'Step 3 to Step 2' })">Back</button>
+                <button type="submit" class="bg-js-blue text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition" onclick="gtag('event', 'submit_booking_form', { 'event_category': 'Booking Form', 'event_label': 'Book Session' })">Book Session</button>
               </div>
             </div>
           </form>
         </div>
-
+        <!-- Booking Summary -->
         <div class="bg-blue-50 p-8 md:w-1/3">
-          <h3 class="text-xl font-semibold mb-4 text-blue-600">Your Booking Summary</h3>
+          <h3 class="text-xl font-semibold mb-4 text-js-blue">Your Booking Summary</h3>
           <div id="booking-summary" class="space-y-4">
             <p class="text-gray-600">Complete the form to see your booking details</p>
           </div>
-          
           <div class="mt-8 pt-6 border-t border-blue-200">
             <h4 class="font-semibold mb-2">Need help?</h4>
             <p class="text-sm text-gray-600 mb-4">Contact us for any questions about booking sessions.</p>
-            <div class="flex items-center text-blue-600 mb-2">
+            <div class="flex items-center text-js-blue mb-2">
               <i class="fas fa-phone-alt mr-2"></i>
-              <span>+27 79 031 9247</span>
+              <a href="tel:+27790319247" onclick="gtag('event', 'click_phone', { 'event_category': 'Booking Summary', 'event_label': 'Phone Call' })">+27 79 031 9247</a>
             </div>
-            <div class="flex items-center text-blue-600">
+            <div class="flex items-center text-js-blue">
               <i class="fas fa-envelope mr-2"></i>
-              <span>bookings@jsacademy.co.za</span>
+              <a href="mailto:bookings@jsacademy.co.za" onclick="gtag('event', 'click_email', { 'event_category': 'Booking Summary', 'event_label': 'Email' })">bookings@jsacademy.co.za</a>
             </div>
           </div>
         </div>
@@ -192,58 +254,93 @@
     </div>
   </section>
 
+  <!-- Confirmation Modal -->
   <div id="confirmation-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
     <div class="bg-white rounded-lg p-8 max-w-md mx-4">
       <div class="text-center">
         <i class="fas fa-check-circle text-5xl text-green-500 mb-4"></i>
         <h3 class="text-2xl font-bold mb-2">Booking Confirmed!</h3>
-        <p class="text-gray-600 mb-6">Your tutoring session has been successfully booked. We've sent the details to your email.</p>
-        <button onclick="closeModal()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">Done</button>
+        <p class="text-gray-600 mb-6">Your tutoring session has been requested. We've sent the details to your WhatsApp and email.</p>
+        <button onclick="closeModal()" class="bg-js-blue text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition" onclick="gtag('event', 'click_modal_close', { 'event_category': 'Booking Form', 'event_label': 'Close Confirmation Modal' })">Done</button>
       </div>
     </div>
   </div>
 
+  <!-- JavaScript -->
   <script>
-    const menuBtn = document.getElementById('menu-btn');
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     const menuIcon = document.getElementById('menu-icon');
-    
-    menuBtn.addEventListener('click', function() {
 
-      mobileMenu.classList.toggle('open');
-
-      if (mobileMenu.classList.contains('open')) {
-        menuIcon.classList.remove('fa-bars');
-        menuIcon.classList.add('fa-times');
-      } else {
-        menuIcon.classList.remove('fa-times');
-        menuIcon.classList.add('fa-bars');
-      }
-    });
-
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        menuIcon.classList.remove('fa-times');
-        menuIcon.classList.add('fa-bars');
+    if (menuBtn && mobileMenu && menuIcon) {
+      menuBtn.addEventListener('click', function() {
+        mobileMenu.classList.toggle('open');
+        const isOpen = mobileMenu.classList.contains('open');
+        menuIcon.classList.toggle('fa-bars', !isOpen);
+        menuIcon.classList.toggle('fa-times', isOpen);
+        menuBtn.setAttribute('aria-expanded', isOpen);
+        gtag('event', 'toggle_mobile_menu', { 'event_category': 'Navigation', 'event_label': isOpen ? 'Open Menu' : 'Close Menu' });
       });
-    });
 
-    function nextStep(current, next) {
-      document.getElementById(`step-${current}`).classList.add('hidden');
-      document.getElementById(`step-${next}`).classList.remove('hidden');
-      updateSummary();
+      document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+          menuIcon.classList.remove('fa-times');
+          menuIcon.classList.add('fa-bars');
+          menuBtn.setAttribute('aria-expanded', 'false');
+          gtag('event', 'click_mobile_menu_link', { 'event_category': 'Navigation', 'event_label': link.textContent });
+        });
+      });
     }
-    
+
+    // Form Navigation
+    function nextStep(current, next) {
+      const currentStep = document.getElementById(`step-${current}`);
+      if (validateStep(current)) {
+        currentStep.classList.add('hidden');
+        document.getElementById(`step-${next}`).classList.remove('hidden');
+        updateSummary();
+        gtag('event', 'click_form_next', { 'event_category': 'Booking Form', 'event_label': `Step ${current} to Step ${next}` });
+      }
+    }
+
     function prevStep(current, prev) {
       document.getElementById(`step-${current}`).classList.add('hidden');
       document.getElementById(`step-${prev}`).classList.remove('hidden');
+      gtag('event', 'click_form_back', { 'event_category': 'Booking Form', 'event_label': `Step ${current} to Step ${prev}` });
     }
 
+    // Form Validation
+    function validateStep(step) {
+      let isValid = true;
+      const fields = {
+        1: ['first-name', 'last-name', 'email', 'phone'],
+        2: ['subject', 'grade'],
+        3: ['session-date', 'session-time']
+      };
+
+      fields[step].forEach(id => {
+        const input = document.getElementById(id);
+        const error = document.getElementById(`${id}-error`);
+        if (!input.value || (id === 'phone' && !/\+?[0-9]{10,12}/.test(input.value)) || (id === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value))) {
+          input.classList.add('border-red-500');
+          error.classList.remove('hidden');
+          isValid = false;
+        } else {
+          input.classList.remove('border-red-500');
+          error.classList.add('hidden');
+        }
+      });
+
+      return isValid;
+    }
+
+    // Update Booking Summary
     function updateSummary() {
       const summary = document.getElementById('booking-summary');
       let html = '';
-      
+
       if (document.getElementById('first-name').value) {
         html += `
           <div class="flex justify-between">
@@ -256,7 +353,7 @@
           </div>
         `;
       }
-      
+
       if (document.getElementById('subject').value) {
         html += `
           <div class="flex justify-between">
@@ -269,11 +366,11 @@
           </div>
           <div class="flex justify-between">
             <span class="text-gray-600">Type:</span>
-            <span>${document.querySelector('input[name="session-type"]:checked').value.replace('-', ' ')}</span>
+            <span>${document.querySelector('input[name="session-type"]:checked').value.replace('-', ' ').replace(/\b\w/g, c => c.toUpperCase())}</span>
           </div>
         `;
       }
-      
+
       if (document.getElementById('session-date').value) {
         const date = new Date(document.getElementById('session-date').value);
         html += `
@@ -287,61 +384,66 @@
           </div>
         `;
       }
-      
+
       summary.innerHTML = html || '<p class="text-gray-600">Complete the form to see your booking details</p>';
     }
 
+    // Form Submission
     document.getElementById('booking-form').addEventListener('submit', function(e) {
       e.preventDefault();
+      if (validateStep(3)) {
+        const formData = {
+          firstName: document.getElementById('first-name').value,
+          lastName: document.getElementById('last-name').value,
+          email: document.getElementById('email').value,
+          phone: document.getElementById('phone').value,
+          subject: document.getElementById('subject').options[document.getElementById('subject').selectedIndex].text,
+          grade: document.getElementById('grade').options[document.getElementById('grade').selectedIndex].text,
+          sessionType: document.querySelector('input[name="session-type"]:checked').value.replace('-', ' ').replace(/\b\w/g, c => c.toUpperCase()),
+          date: new Date(document.getElementById('session-date').value).toLocaleDateString('en-ZA', { weekday: 'short', day: 'numeric', month: 'short' }),
+          time: document.getElementById('session-time').options[document.getElementById('session-time').selectedIndex].text,
+          notes: document.getElementById('notes').value || 'None'
+        };
 
-    const formData = {
-      firstName: document.getElementById('first-name').value,
-      lastName: document.getElementById('last-name').value,
-      phone: document.getElementById('phone').value,
-      subject: document.getElementById('subject').options[document.getElementById('subject').selectedIndex].text,
-      grade: document.getElementById('grade').options[document.getElementById('grade').selectedIndex].text,
-      sessionType: document.querySelector('input[name="session-type"]:checked').value.replace('-', ' '),
-      date: new Date(document.getElementById('session-date').value).toLocaleDateString('en-ZA', { weekday: 'short', day: 'numeric', month: 'short' }),
-      time: document.getElementById('session-time').options[document.getElementById('session-time').selectedIndex].text,
-      notes: document.getElementById('notes').value || 'None'
-    };
+        const whatsappMessage = `
+*NEW TUTORING SESSION REQUEST*
 
-    const whatsappMessage = `
-    *NEW TUTORING SESSION REQUEST*
+*Student Name:* ${formData.firstName} ${formData.lastName}
+*Email:* ${formData.email}
+*Contact Number:* ${formData.phone}
+*Subject:* ${formData.subject} (Grade ${formData.grade})
+*Session Type:* ${formData.sessionType}
+*Preferred Date:* ${formData.date}
+*Preferred Time:* ${formData.time}
+*Special Requests:* ${formData.notes}
 
-    *Student Name:* ${formData.firstName} ${formData.lastName}
-    *Contact Number:* ${formData.phone}
-    *Subject:* ${formData.subject} (Grade ${formData.grade})
-    *Session Type:* ${formData.sessionType}
-    *Preferred Date:* ${formData.date}
-    *Preferred Time:* ${formData.time}
-    *Special Requests:* ${formData.notes}
-
-    *Please confirm this booking*
+*Please confirm this booking*
         `;
-
         const encodedMessage = encodeURIComponent(whatsappMessage);
-
         const whatsappNumber = '27790319247';
-
         window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
-        
 
         document.getElementById('confirmation-modal').classList.remove('hidden');
         this.reset();
-        
+
         // Reset form steps
         document.querySelectorAll('.booking-step').forEach(step => {
-            step.classList.add('hidden');
+          step.classList.add('hidden');
         });
         document.getElementById('step-1').classList.remove('hidden');
         document.getElementById('booking-summary').innerHTML = '<p class="text-gray-600">Complete the form to see your booking details</p>';
-        });
-        
-        function closeModal() {
-        document.getElementById('confirmation-modal').classList.add('hidden');
-        }
 
+        gtag('event', 'submit_booking_form', { 'event_category': 'Booking Form', 'event_label': 'Booking Confirmed', 'value': 1 });
+      }
+    });
+
+    // Close Modal
+    function closeModal() {
+      document.getElementById('confirmation-modal').classList.add('hidden');
+      gtag('event', 'click_modal_close', { 'event_category': 'Booking Form', 'event_label': 'Close Confirmation Modal' });
+    }
+
+    // Real-time Summary Updates
     document.querySelectorAll('input, select').forEach(element => {
       element.addEventListener('change', updateSummary);
     });
