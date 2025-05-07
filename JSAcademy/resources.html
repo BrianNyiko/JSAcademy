@@ -19,8 +19,9 @@
   <meta property="og:title" content="Study Resources | JSAcademy">
   <meta property="og:description" content="Free CAPS-aligned resources for South African students, including past papers, study guides, and video lessons.">
   <meta property="og:image" content="https://briannyiko.github.io/JSAcademy/JSAcademy/images/JSAcademy.jpg">
-  <meta property="og:url" content="https://briannyiko.github.io/JSAcademy/JSAcademy/resources.html">4
-  <link rel="icon" type="image/x-icon" href="https://briannyiko.github.io/JSAcademy/JSAcademy/Images/JSAcademy.ico?v=3">
+  <meta property="og:url" content="https://briannyiko.github.io/JSAcademy/JSAcademy/resources.html">
+  <link rel="icon" type="image/x-icon" href="https://briannyiko.github.io/JSAcademy/JSAcademy/images/JSAcademy.ico?v=2">
+  <link rel="alternate icon" type="image/png" href="https://briannyiko.github.io/JSAcademy/JSAcademy/images/JSAcademy.png?v=2">
   <meta name="twitter:card" content="summary_large_image">
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -29,8 +30,8 @@
       theme: {
         extend: {
           colors: {
-            'js-blue': '#2563EB', /* Matches bg-blue-600 */
-            'js-yellow': '#FBBF24', /* Matches text-yellow-400 */
+            'js-blue': '#2563EB',
+            'js-yellow': '#FBBF24',
           },
         },
       },
@@ -43,15 +44,9 @@
     .gradient-bg {
       background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
     }
-    /* Mobile menu transitions */
-    .mobile-menu {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease-out;
-    }
-    .mobile-menu.open {
-      max-height: 500px;
-      transition: max-height 0.5s ease-in;
+    /* Mobile menu */
+    #mobile-menu.hidden {
+      display: none;
     }
     /* Resource card hover effect */
     .resource-card:hover {
@@ -62,29 +57,6 @@
     .file-icon {
       font-size: 2.5rem;
       margin-bottom: 1rem;
-    }
-    /* Fixed navbar spacing */
-    body {
-      padding-top: 4rem; /* Height of navbar */
-    }
-    /* Mobile menu button styles */
-    .mobile-menu-button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.5rem;
-      color: #374151; /* text-gray-700 */
-      font-size: 1.5rem; /* text-2xl */
-      background: transparent;
-      border: none;
-      cursor: pointer;
-    }
-    .mobile-menu-button:hover {
-      color: #2563EB; /* text-js-blue */
-    }
-    .mobile-menu-button i {
-      width: 24px;
-      height: 24px;
     }
     /* Filter dropdown styles */
     .filter-select {
@@ -116,28 +88,30 @@
 <body class="bg-gray-50">
   <!-- Fixed Navbar -->
   <nav class="fixed top-0 left-0 right-0 bg-white z-50 shadow-md">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
       <a href="index.html" class="text-2xl font-bold text-js-blue">JS<span class="text-js-yellow">Academy</span></a>
       <!-- Desktop Navigation -->
-      <div class="hidden md:flex space-x-8 items-center">
+      <div class="hidden md:flex space-x-6 items-center">
         <a href="index.html" class="text-gray-700 hover:text-js-blue">Home</a>
-        <a href="Pricing-Subjects.html" class="text-gray-700 hover:text-js-blue">Subjects</a>
-        <a href="resources.html" class="text-js-blue font-medium">Resources</a>
+        <a href="Pricing-Subjects.html" class="text-js-blue font-medium">Subjects</a>
+        <a href="resources.html" class="text-gray-700 hover:text-js-blue">Resources</a>
         <a href="contact.html" class="text-gray-700 hover:text-js-blue">Contact</a>
-        <a href="book.html" class="bg-js-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition" onclick="gtag('event', 'click_book_session', { 'event_category': 'Navigation', 'event_label': 'Navbar Book Session' })">Book Session</a>
+        <a href="book.html" class="bg-js-blue text-white px-4 py-2 rounded-full hover:bg-blue-700 transition" onclick="gtag('event', 'click_book_session', { 'event_category': 'Navigation', 'event_label': 'Navbar Book Session' })">Book Session</a>
       </div>
       <!-- Mobile Menu Button -->
-      <button id="mobile-menu-button" class="mobile-menu-button md:hidden focus:outline-none" aria-label="Toggle mobile menu" aria-expanded="false">
+      <button class="md:hidden text-gray-700 hover:text-js-blue focus:outline-none" id="mobile-menu-button">
         <i id="menu-icon" class="fas fa-bars text-2xl"></i>
       </button>
     </div>
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="mobile-menu md:hidden bg-white px-4 pb-4 shadow-md">
-      <a href="index.html" class="block py-2 text-gray-700 hover:text-js-blue">Home</a>
-      <a href="Pricing-Subjects.html" class="block py-2 text-gray-700 hover:text-js-blue">Subjects</a>
-      <a href="resources.html" class="block py-2 text-js-blue font-medium">Resources</a>
-      <a href="contact.html" class="block py-2 text-gray-700 hover:text-js-blue">Contact</a>
-      <a href="book.html" class="block py-2 bg-js-blue text-white text-center px-4 rounded-lg hover:bg-blue-700" onclick="gtag('event', 'click_book_session', { 'event_category': 'Navigation', 'event_label': 'Mobile Menu Book Session' })">Book Session</a>
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+      <div class="px-4 pt-2 pb-4 space-y-2">
+        <a href="index.html" class="block text-gray-700 hover:text-js-blue">Home</a>
+        <a href="Pricing-Subjects.html" class="block text-js-blue font-medium">Subjects</a>
+        <a href="resources.html" class="block text-gray-700 hover:text-js-blue">Resources</a>
+        <a href="contact.html" class="block text-gray-700 hover:text-js-blue">Contact</a>
+        <a href="book.html" class="block bg-js-blue text-white text-center px-4 py-2 rounded-full hover:bg-blue-700" onclick="gtag('event', 'click_book_session', { 'event_category': 'Navigation', 'event_label': 'Mobile Menu Book Session' })">Book Session</a>
+      </div>
     </div>
   </nav>
 
@@ -508,30 +482,15 @@
   <!-- JavaScript -->
   <script>
     // Mobile Menu Toggle
-    const menuBtn = document.getElementById('mobile-menu-button');
+    const menuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     const menuIcon = document.getElementById('menu-icon');
-
-    if (menuBtn && mobileMenu && menuIcon) {
-      menuBtn.addEventListener('click', function() {
-        mobileMenu.classList.toggle('open');
-        const isOpen = mobileMenu.classList.contains('open');
-        menuIcon.classList.toggle('fa-bars', !isOpen);
-        menuIcon.classList.toggle('fa-times', isOpen);
-        menuBtn.setAttribute('aria-expanded', isOpen);
-        gtag('event', 'toggle_mobile_menu', { 'event_category': 'Navigation', 'event_label': isOpen ? 'Open Menu' : 'Close Menu' });
-      });
-
-      document.querySelectorAll('#mobile-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-          mobileMenu.classList.remove('open');
-          menuIcon.classList.remove('fa-times');
-          menuIcon.classList.add('fa-bars');
-          menuBtn.setAttribute('aria-expanded', 'false');
-          gtag('event', 'click_mobile_menu_link', { 'event_category': 'Navigation', 'event_label': link.textContent });
-        });
-      });
-    }
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      const isHidden = mobileMenu.classList.contains('hidden');
+      menuIcon.classList.toggle('fa-bars', isHidden);
+      menuIcon.classList.toggle('fa-times', !isHidden);
+    });
 
     // Resource Filtering
     function filterResources(filterId, gridId) {
