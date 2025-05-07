@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRVQFXXCQM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LRVQFXXCQM');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About JSAcademy - Transforming Maths with the JS Method</title>
+  <meta name="description" content="Discover JSAcademy’s story and the revolutionary JS Method for mastering trigonometry, created by founder John Squad. Learn how we’ve empowered students across Limpopo since 2018.">
+  <meta name="keywords" content="JSAcademy, JS Method, trigonometry tutoring, maths tutoring, South Africa, Grade 12 tutoring, Limpopo tutoring, CAPS curriculum">
+  <meta name="author" content="JSAcademy">
+  <!-- Open Graph / Twitter Card -->
+  <meta property="og:title" content="About JSAcademy - Master Maths with the JS Method">
+  <meta property="og:description" content="Learn about JSAcademy’s mission and the JS Method, a game-changing approach to trigonometry, helping students excel since 2018.">
+  <meta property="og:image" content="https://briannyiko.github.io/JSAcademy/JSAcademy/Images/JSAcademy.jpg">
+  <meta property="og:url" content="https://briannyiko.github.io/JSAcademy/JSAcademy/about.html">
+  <link rel="icon" type="image/png" href="Images/JSAcademy (1)-7.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "JSAcademy",
+    "url": "https://briannyiko.github.io/JSAcademy/JSAcademy/",
+    "logo": "https://briannyiko.github.io/JSAcademy/JSAcademy/Images/JSAcademy.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Mabodibeng Secondary School, Ga-Moloi Village",
+      "addressRegion": "Limpopo",
+      "addressCountry": "ZA"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+27-79-031-9247",
+      "contactType": "Customer Service",
+      "availableLanguage": "English"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "John Squad"
+    }
+  }
+  </script>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'js-blue': '#2563EB',
+            'js-yellow': '#FBBF24',
+          },
+        },
+      },
+    };
+  </script>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .mobile-menu.open {
+      max-height: 500px;
+      transition: max-height 0.5s ease-in;
+    }
+    body {
+      padding-top: 4rem;
+    }
+    nav {
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .text-js-blue {
+      color: #2563EB;
+    }
+    .bg-js-blue {
+      background-color: #2563EB;
+    }
+    .text-js-yellow {
+      color: #FBBF24;
+    }
+    .hover\:bg-js-blue:hover {
+      background-color: #1E40AF;
+    }
+    .mobile-menu-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+      color: #374151;
+      font-size: 1.5rem;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      visibility: visible !important;
+    }
+    .mobile-menu-button:hover {
+      color: #2563EB;
+    }
+    .mobile-menu-button i,
+    .mobile-menu-button svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+      stroke: currentColor;
+      visibility: visible !important;
+    }
+    button, a[role="button"] {
+      transition: background-color 0.3s, color 0.3s;
+    }
+    @media (max-width: 768px) {
+      .hero-section {
+        padding-top: 5rem;
+      }
+    }
+    @media (min-width: 768px) {
+      .mobile-menu-button {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+  <!-- Fixed Navbar -->
+  <nav class="fixed top-0 left-0 right-0 bg-white z-50 flex items-center justify-between px-6 py-4 shadow-md">
+    <div class="text-2xl font-bold text-js-blue">JS<span class="text-js-yellow">Academy</span></div>
+    
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex gap-6 items-center">
+      <a href="index.html" class="text-gray-700 hover:text-js-blue">Home</a>
+      <a href="Pricing-Subjects.html" class="text-gray-700 hover:text-js-blue">Subjects</a>
+      <a href="resources.html" class="text-gray-700 hover:text-js-blue">Resources</a>
+      <a href="about.html" class="text-js-blue font-medium hover:text-blue-700">About</a>
+      <a href="contact.html" class="text-gray-700 hover:text-js-blue">Contact</a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-button" class="mobile-menu-button md:hidden focus:outline-none" aria-label="Toggle mobile menu" aria-expanded="false">
+      <i class="fas fa-bars text-2xl"></i>
+      <svg class="hamburger-icon hidden" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"/>
+      </svg>
+      <svg class="close-icon hidden" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"/>
+      </svg>
+    </button>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu absolute top-full left-0 right-0 bg-white shadow-md md:hidden z-40">
+      <div class="px-6 py-4 space-y-4">
+        <a href="index.html" class="block text-gray-700 hover:text-js-blue">Home</a>
+        <a href="Pricing-Subjects.html" class="block text-gray-700 hover:text-js-blue">Subjects</a>
+        <a href="resources.html" class="block text-gray-700 hover:text-js-blue">Resources</a>
+        <a href="about.html" class="block text-js-blue font-medium hover:text-blue-700">About</a>
+        <a href="contact.html" class="block text-gray-700 hover:text-js-blue">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section flex flex-col md:flex-row items-center justify-between px-6 py-16 max-w-7xl mx-auto bg-blue-50">
+    <div class="md:w-1/2 space-y-6">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900">Meet JSAcademy: Where Maths Becomes Magic</h1>
+      <p class="text-lg text-gray-600">Founded by John Squad, JSAcademy is revolutionizing how South African students conquer Mathematics with the groundbreaking JS Method. Since 2018, we’ve empowered thousands across Limpopo to ace their exams and unlock their potential.</p>
+      <a href="contact.html" class="inline-block bg-js-blue text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition" onclick="gtag('event', 'click_join_us', { 'event_category': 'About', 'event_label': 'Join Us' })">Join Us Today</a>
+    </div>
+    <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center">
+      <img src="Images/founder.jpg" alt="John Squad, Founder of JSAcademy" class="w-80 h-80 rounded-full shadow-lg object-cover" loading="eager">
+    </div>
+  </section>
+
+  <!-- Our Story Section -->
+  <section class="py-16 px-6 bg-white">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Our Story: From a Grade 11 Breakthrough to a Maths Revolution</h2>
+      <p class="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">Back in Grade 11, John Squad, a passionate student at Gasekhukhune Refilwe Secondary School, faced the same struggle many South African learners know too well: trigonometry. Determined to crack its code, John didn’t just study—he innovated. By simplifying complex concepts into an intuitive system, he created the <span class="font-semibold text-js-blue">JS Method</span> (J for John, S for Squad), a game-changer that made trigonometry feel like a breeze.</p>
+      <p class="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">What started as a personal breakthrough became a lifeline for his peers. John’s method helped classmates excel, and word spread fast. By 2018, he began tutoring formally, sharing the JS Method with students at Gasekhukhune Refilwe Secondary. Since then, John and JSAcademy have reached <span class="font-semibold text-js-yellow">97 schools across Limpopo</span>, transforming how thousands of Grade 8-12 students tackle Mathematics.</p>
+      <div class="flex justify-center gap-8">
+        <div class="text-center">
+          <p class="text-4xl font-bold text-js-blue">97</p>
+          <p class="text-gray-600">Schools Impacted</p>
+        </div>
+        <div class="text-center">
+          <p class="text-4xl font-bold text-js-blue">2018</p>
+          <p class="text-gray-600">Year Founded</p>
+        </div>
+        <div class="text-center">
+          <p class="text-4xl font-bold text-js-blue">1000+</p>
+          <p class="text-gray-600">Students Empowered</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JS Method Section -->
+  <section class="py-16 px-6 bg-blue-50">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">The JS Method: Making Trigonometry Simple</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-lg text-gray-600 mb-6">Trigonometry doesn’t have to be a nightmare. The <span class="font-semibold text-js-blue">JS Method</span>, crafted by John Squad, breaks down sine, cosine, and tangent into a straightforward, memorable system that clicks for students. Developed when John was just 16, this method has proven its worth, helping learners not just pass but <span class="italic">dominate</span> their Maths exams.</p>
+          <p class="text-lg text-gray-600 mb-6">Unlike traditional approaches that drown you in formulas, the JS Method uses intuitive patterns and practical shortcuts, making trigonometry accessible even for those who’ve struggled before. It’s not just a technique—it’s a mindset that builds confidence and clarity.</p>
+          <a href="Pricing-Subjects.html" class="inline-block bg-js-blue text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition" onclick="gtag('event', 'click_explore_js_method', { 'event_category': 'About', 'event_label': 'Explore JS Method' })">Explore the JS Method</a>
+        </div>
+        <div class="flex justify-center">
+          <img src="Images/Trig.jpeg" alt="JS Method Trigonometry Diagram" class="w-full max-w-md rounded-lg shadow-lg object-cover" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="py-16 px-6 bg-white">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Our Mission: Empowering Every Learner</h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-12">At JSAcademy, we believe every student deserves to shine in Mathematics. Our mission is to make high-quality, CAPS-aligned tutoring accessible across South Africa, starting with Limpopo. Through the JS Method and personalized support, we’re not just teaching Maths—we’re building futures.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold text-js-blue mb-4">Innovate Learning</h3>
+          <p class="text-gray-600">We simplify complex concepts like trigonometry with methods that stick.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold text-js-blue mb-4">Build Confidence</h3>
+          <p class="text-gray-600">Our tutors empower students to believe in their potential.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold text-js-blue mb-4">Impact Communities</h3>
+          <p class="text-gray-600">From one school to 97, we’re transforming education in Limpopo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section class="py-16 px-6 bg-js-blue text-white">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Master Maths with JSAcademy?</h2>
+      <p class="text-lg mb-8 max-w-2xl mx-auto">Join thousands of students who’ve transformed their grades with the JS Method. Whether it’s trigonometry or matric prep, we’ve got your back.</p>
+      <div class="flex justify-center gap-4">
+        <a href="Pricing-Subjects.html" class="bg-white text-js-blue px-6 py-3 rounded-lg hover:bg-gray-100 transition" onclick="gtag('event', 'click_view_programs', { 'event_category': 'About', 'event_label': 'View Programs' })">View Programs</a>
+        <a href="contact.html" class="border border-white text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition" onclick="gtag('event', 'click_contact_us', { 'event_category': 'About', 'event_label': 'Contact Us' })">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-16 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-4">Follow us!</h3>
+          <div class="flex space-x-4 mb-6">
+            <a href="https://www.facebook.com/profile.php?id=100083658292700" target="_blank" class="text-gray-400 hover:text-white transition" aria-label="Follow JSAcademy on Facebook" onclick="gtag('event', 'click_social_media', { 'event_category': 'Footer', 'event_label': 'Facebook' })">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+              </svg>
+            </a>
+            <a href="https://wa.me/27790319247" target="_blank" class="text-gray-400 hover:text-white transition" aria-label="Follow JSAcademy on WhatsApp" onclick="gtag('event', 'click_social_media', { 'event_category': 'Footer', 'event_label': 'WhatsApp' })">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+              </svg>
+            </a>
+            <a href="http://www.youtube.com/@JohnSquadscientisEtralessons" target="_blank" class="text-gray-400 hover:text-white transition" aria-label="Follow JSAcademy on YouTube" onclick="gtag('event', 'click_social_media', { 'event_category': 'Footer', 'event_label': 'YouTube' })">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
+              </svg>
+            </a>
+          </div>
+          <h4 class="text-xl font-semibold text-white mb-3">Refer and Earn</h4>
+          <p class="text-gray-400">Get rewards when you refer friends to JSAcademy.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-white mb-4">Company</h3>
+          <ul class="space-y-2">
+            <li><a href="about.html" class="hover:text-white transition">About us</a></li>
+            <li><a href="#" class="hover:text-white transition">Tutors</a></li>
+            <li><a href="#" class="hover:text-white transition">Alumni speak</a></li>
+            <li><a href="#" class="hover:text-white transition">Grievance redressal</a></li>
+            <li><a href="contact.html" class="hover:text-white transition">Contact us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-white mb-4">Work with us</h3>
+          <ul class="space-y-2">
+            <li><a href="apply.html" class="hover:text-white transition">Become a tutor</a></li>
+            <li><a href="blog.html" class="hover:text-white transition">Blog as guest</a></li>
+            <li><a href="resources.html" class="hover:text-white transition">Free Resources</a></li>
+            <li><a href="resources.html" class="hover:text-white transition">Study Guides</a></li>
+            <li><a href="resources.html" class="hover:text-white transition">Exam Prep Materials</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-white mb-4">For Schools</h3>
+          <ul class="space-y-2 mb-6">
+            <li><a href="#" class="hover:text-white transition">School partnerships</a></li>
+            <li><a href="#" class="hover:text-white transition">JSAcademy Hub+</a></li>
+            <li><a href="#" class="hover:text-white transition">Guaranteed results</a></li>
+          </ul>
+          <h4 class="text-lg font-semibold text-white mb-3">Learn On the Go!</h4>
+          <div class="space-y-3">
+            <a href="#" class="flex items-center text-gray-400 hover:text-white transition" onclick="gtag('event', 'click_app_download', { 'event_category': 'Footer', 'event_label': 'Android App' })">
+              <span class="w-5 h-5 border border-gray-400 rounded mr-2 flex items-center justify-center">✓</span>
+              Get the Android App
+            </a>
+            <a href="#" class="flex items-center text-gray-400 hover:text-white transition" onclick="gtag('event', 'click_app_download', { 'event_category': 'Footer', 'event_label': 'iOS App' })">
+              <span class="w-5 h-5 border border-gray-400 rounded mr-2 flex items-center justify-center">✓</span>
+              Get the iOS App
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="mb-12">
+        <h3 class="text-xl font-semibold text-white mb-4">Trending Grade 12 Programs</h3>
+        <div class="flex flex-wrap gap-4 text-sm">
+          <a href="#" class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded transition" onclick="gtag('event', 'click_trending_program', { 'event_category': 'Footer', 'event_label': 'Maths Mastery' })">Maths Mastery</a>
+          <a href="#" class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded transition" onclick="gtag('event', 'click_trending_program', { 'event_category': 'Footer', 'event_label': 'Physical Sciences' })">Physical Sciences</a>
+          <a href="#" class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded transition" onclick="gtag('event', 'click_trending_program', { 'event Motel', 'event_label': 'Exam Crash Course' })">Exam Crash Course</a>
+          <a href="#" class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded transition" onclick="gtag('event', 'click_trending_program', { 'event_category': 'Footer', 'event_label': 'Finals Prep' })">Finals Prep</a>
+          <a href="#" class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded transition" onclick="gtag('event', 'click_trending_program', { 'event_category': 'Footer', 'event_label': 'Trigonometry Intensive' })">Trigonometry Intensive</a>
+          <a href="#" class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded transition" onclick="gtag('event', 'click_trending_program', { 'event_category': 'Footer', 'event_label': 'Calculus Program' })">Calculus Program</a>
+          <a href="#" class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded transition" onclick="gtag('event', 'click_trending_program', { 'event_category': 'Footer', 'event_label': 'Algebra Fundamentals' })">Algebra Fundamentals</a>
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-800">
+        <div class="flex space-x-6 mb-4 md:mb-0">
+          <a href="contact.html" class="text-blue-400 hover:text-blue-300 transition" onclick="gtag('event', 'click_request_callback', { 'event_category': 'Footer', 'event_label': 'Request a Callback' })">Request a callback</a>
+          <a href="tel:+27790319247" class="flex items-center text-gray-400 hover:text-white transition" onclick="gtag('event', 'click_phone', { 'event_category': 'Footer', 'event_label': 'Phone Call' })">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+            </svg>
+            +27 79 031 9247
+          </a>
+        </div>
+        <div class="text-sm text-gray-500">
+          © 2025 JSAcademy. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Check if Font Awesome is loaded
+      const fontAwesomeLoaded = document.querySelector('link[href*="font-awesome"]') !== null;
+      console.log('Font Awesome loaded:', fontAwesomeLoaded);
+
+      // Mobile Menu Toggle
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      if (mobileMenuButton && mobileMenu) {
+        const faIcon = mobileMenuButton.querySelector('i');
+        const hamburgerSvg = mobileMenuButton.querySelector('.hamburger-icon');
+        const closeSvg = mobileMenuButton.querySelector('.close-icon');
+
+        // If Font Awesome failed, use SVG fallback
+        if (!fontAwesomeLoaded && hamburgerSvg && closeSvg) {
+          faIcon.style.display = 'none';
+          hamburgerSvg.classList.remove('hidden');
+        }
+
+        mobileMenuButton.addEventListener('click', function() {
+          mobileMenu.classList.toggle('open');
+          const isOpen = mobileMenu.classList.contains('open');
+
+          if (fontAwesomeLoaded && faIcon) {
+            faIcon.classList.toggle('fa-bars', !isOpen);
+            faIcon.classList.toggle('fa-times', isOpen);
+          } else if (hamburgerSvg && closeSvg) {
+            hamburgerSvg.classList.toggle('hidden', isOpen);
+            closeSvg.classList.toggle('hidden', !isOpen);
+          }
+
+          mobileMenuButton.setAttribute('aria-expanded', isOpen);
+          gtag('event', 'toggle_mobile_menu', { 'event_category': 'Navigation', 'event_label': isOpen ? 'Open Menu' : 'Close Menu' });
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            if (fontAwesomeLoaded && faIcon) {
+              faIcon.classList.remove('fa-times');
+              faIcon.classList.add('fa-bars');
+            } else if (hamburgerSvg && closeSvg) {
+              closeSvg.classList.add('hidden');
+              hamburgerSvg.classList.remove('hidden');
+            }
+            mobileMenuButton.setAttribute('aria-expanded', 'false');
+            gtag('event', 'click_mobile_menu_link', { 'event_category': 'Navigation', 'event_label': link.textContent });
+          });
+        });
+      } else {
+        console.error('Mobile menu button or menu not found');
+      }
+    });
+  </script>
+</body>
+</html>
